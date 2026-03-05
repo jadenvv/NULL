@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "TRF7970ARHBR"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2019-07-08-08:49:10)
+    (mountForm default
+        (footprintRef "QFN50P500X500X100-33N-D")
+        (spec "System")
+    )
+)

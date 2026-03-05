@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/jadenvelasco/Documents/NULL/null/build/CMakeFiles/bootloader
+/Users/jadenvelasco/Documents/NULL/null/build/CMakeFiles/bootloader.rule
+/Users/jadenvelasco/Documents/NULL/null/build/CMakeFiles/bootloader-complete.rule
+/Users/jadenvelasco/Documents/NULL/null/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/jadenvelasco/Documents/NULL/null/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/jadenvelasco/Documents/NULL/null/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/jadenvelasco/Documents/NULL/null/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/jadenvelasco/Documents/NULL/null/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/jadenvelasco/Documents/NULL/null/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/jadenvelasco/Documents/NULL/null/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

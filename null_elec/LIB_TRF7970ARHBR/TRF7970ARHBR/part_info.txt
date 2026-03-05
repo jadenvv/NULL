@@ -1,0 +1,9 @@
+Manufacturer=Texas Instruments
+PartNumber=TRF7970ARHBR
+PartCategory=Integrated Circuit
+PackageCategory=Quad Flat No-Lead
+PinCount=33
+Version=1.1
+Released=2020-12-02 15:08:32
+Downloaded=2026-02-08 21:27:35
+3D=Y

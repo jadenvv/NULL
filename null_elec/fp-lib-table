@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "opl")(type "KiCad")(uri "${KIPRJMOD}/OPL_Kicad_Library-master/Seeed Studio XIAO Series Library")(options "")(descr ""))
+  (lib (name "sky")(type "KiCad")(uri "${KIPRJMOD}/SKY_KiCad")(options "")(descr ""))
+  (lib (name "trt")(type "KiCad")(uri "${KIPRJMOD}/LIB_TRF7970ARHBR/TRF7970ARHBR/KiCad")(options "")(descr ""))
+)
