@@ -1,0 +1,422 @@
+Command: ninja all
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /Users/jadenvelasco/Documents/NULL/null_code/build/bootloader/esp-idf/esptool_py && /Users/jadenvelasco/required_idf_tools_path/python_env/idf5.5_py3.12_env/bin/python /Users/jadenvelasco/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/jadenvelasco/Documents/NULL/null_code/build/bootloader/bootloader.bin
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/i2c.c.obj
+FAILED: [code=1] esp-idf/main/CMakeFiles/__idf_main.dir/i2c.c.obj 
+/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.5.2\" -DLV_CONF_INCLUDE_SIMPLE -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/jadenvelasco/Documents/NULL/null_code/build/config -I/Users/jadenvelasco/Documents/NULL/null_code/main -I/Users/jadenvelasco/esp/esp-idf/components/newlib/platform_include -I/Users/jadenvelasco/esp/esp-idf/components/freertos/config/include -I/Users/jadenvelasco/esp/esp-idf/components/freertos/config/include/freertos -I/Users/jadenvelasco/esp/esp-idf/components/freertos/config/xtensa/include -I/Users/jadenvelasco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/jadenvelasco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/jadenvelasco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/jadenvelasco/esp/esp-idf/components/freertos/esp_additions/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/dma/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/ldo/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/debug_probe/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/power_supply/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/port/esp32s3/. -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/port/esp32s3/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/. -I/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/include -I/Users/jadenvelasco/esp/esp-idf/components/heap/include -I/Users/jadenvelasco/esp/esp-idf/components/heap/tlsf -I/Users/jadenvelasco/esp/esp-idf/components/log/include -I/Users/jadenvelasco/esp/esp-idf/components/soc/include -I/Users/jadenvelasco/esp/esp-idf/components/soc/esp32s3 -I/Users/jadenvelasco/esp/esp-idf/components/soc/esp32s3/include -I/Users/jadenvelasco/esp/esp-idf/components/soc/esp32s3/register -I/Users/jadenvelasco/esp/esp-idf/components/hal/platform_port/include -I/Users/jadenvelasco/esp/esp-idf/components/hal/esp32s3/include -I/Users/jadenvelasco/esp/esp-idf/components/hal/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_rom/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_rom/esp32s3/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_rom/esp32s3/include/esp32s3 -I/Users/jadenvelasco/esp/esp-idf/components/esp_rom/esp32s3 -I/Users/jadenvelasco/esp/esp-idf/components/esp_common/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_system/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_system/port/soc -I/Users/jadenvelasco/esp/esp-idf/components/esp_system/port/include/private -I/Users/jadenvelasco/esp/esp-idf/components/xtensa/esp32s3/include -I/Users/jadenvelasco/esp/esp-idf/components/xtensa/include -I/Users/jadenvelasco/esp/esp-idf/components/xtensa/deprecated_include -I/Users/jadenvelasco/esp/esp-idf/components/lwip/include -I/Users/jadenvelasco/esp/esp-idf/components/lwip/include/apps -I/Users/jadenvelasco/esp/esp-idf/components/lwip/include/apps/sntp -I/Users/jadenvelasco/esp/esp-idf/components/lwip/lwip/src/include -I/Users/jadenvelasco/esp/esp-idf/components/lwip/port/include -I/Users/jadenvelasco/esp/esp-idf/components/lwip/port/freertos/include -I/Users/jadenvelasco/esp/esp-idf/components/lwip/port/esp32xx/include -I/Users/jadenvelasco/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/Users/jadenvelasco/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_i2c/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_lcd/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_lcd/interface -I/Users/jadenvelasco/esp/esp-idf/components/esp_lcd/rgb/include -I/Users/jadenvelasco/esp/esp-idf/components/driver/deprecated -I/Users/jadenvelasco/esp/esp-idf/components/driver/i2c/include -I/Users/jadenvelasco/esp/esp-idf/components/driver/touch_sensor/include -I/Users/jadenvelasco/esp/esp-idf/components/driver/twai/include -I/Users/jadenvelasco/esp/esp-idf/components/driver/touch_sensor/esp32s3/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_pm/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_ringbuf/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_gpio/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_pcnt/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_gptimer/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_spi/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_mcpwm/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_ana_cmpr/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_i2s/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_sdmmc/include -I/Users/jadenvelasco/esp/esp-idf/components/sdmmc/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_sdspi/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_sdio/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_dac/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_rmt/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_tsens/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_sdm/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_uart/include -I/Users/jadenvelasco/esp/esp-idf/components/vfs/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_ledc/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_parlio/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_usb_serial_jtag/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_driver_twai/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_wifi/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_wifi/include/local -I/Users/jadenvelasco/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_wifi/wifi_apps/nan_app/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_event/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_phy/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_phy/esp32s3/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_netif/include -I/Users/jadenvelasco/esp/esp-idf/components/esp_timer/include -I/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include -I/Users/jadenvelasco/Documents/NULL/null_code/managed_components/lvgl__lvgl -I/Users/jadenvelasco/Documents/NULL/null_code/managed_components/lvgl__lvgl/src -I/Users/jadenvelasco/Documents/NULL/null_code/managed_components -I/Users/jadenvelasco/Documents/NULL/null_code/managed_components/lvgl__lvgl/examples -I/Users/jadenvelasco/Documents/NULL/null_code/managed_components/lvgl__lvgl/demos -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/Users/jadenvelasco/Documents/NULL/null_code=. -fmacro-prefix-map=/Users/jadenvelasco/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/i2c.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/i2c.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/i2c.c.obj -c /Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c: In function 'init_OLED':
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:5:16: error: variable 'bus_config' has initializer but incomplete type
+    5 |         struct i2c_master_bus_config_t bus_config = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:6:18: error: 'struct i2c_master_bus_config_t' has no member named 'i2c_port'
+    6 |                 .i2c_port =  I2C_NUM_0,
+      |                  ^~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:6:30: warning: excess elements in struct initializer
+    6 |                 .i2c_port =  I2C_NUM_0,
+      |                              ^~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:6:30: note: (near initialization for 'bus_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:7:18: error: 'struct i2c_master_bus_config_t' has no member named 'sda_io_num'
+    7 |                 .sda_io_num = I2C_MASTER_SDA,
+      |                  ^~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:7:31: error: 'I2C_MASTER_SDA' undeclared (first use in this function); did you mean 'I2C_MASTER_ACK'?
+    7 |                 .sda_io_num = I2C_MASTER_SDA,
+      |                               ^~~~~~~~~~~~~~
+      |                               I2C_MASTER_ACK
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:7:31: note: each undeclared identifier is reported only once for each function it appears in
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:7:31: warning: excess elements in struct initializer
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:7:31: note: (near initialization for 'bus_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:8:18: error: 'struct i2c_master_bus_config_t' has no member named 'scl_io_num'
+    8 |                 .scl_io_num = I2C_MASTER_SCL,
+      |                  ^~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:8:31: error: 'I2C_MASTER_SCL' undeclared (first use in this function); did you mean 'I2C_MASTER_ACK'?
+    8 |                 .scl_io_num = I2C_MASTER_SCL,
+      |                               ^~~~~~~~~~~~~~
+      |                               I2C_MASTER_ACK
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:8:31: warning: excess elements in struct initializer
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:8:31: note: (near initialization for 'bus_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:9:18: error: 'struct i2c_master_bus_config_t' has no member named 'i2c_clock_source_t'
+    9 |                 .i2c_clock_source_t = I2C_CLK_SRC_RC_FAST,
+      |                  ^~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:9:39: warning: excess elements in struct initializer
+    9 |                 .i2c_clock_source_t = I2C_CLK_SRC_RC_FAST,
+      |                                       ^~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:9:39: note: (near initialization for 'bus_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:10:18: error: 'struct i2c_master_bus_config_t' has no member named 'glitch_ignore_cnt'
+   10 |                 .glitch_ignore_cnt= 7 //might change,
+      |                  ^~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:11:17: error: request for member 'intr_priority' in something not a structure or union
+   11 |                 .intr_priority =0 ,
+      |                 ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:10:37: warning: excess elements in struct initializer
+   10 |                 .glitch_ignore_cnt= 7 //might change,
+      |                                     ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:10:37: note: (near initialization for 'bus_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:12:18: error: 'struct i2c_master_bus_config_t' has no member named 'trans_queue_depth'
+   12 |                 .trans_queue_depth = 7,
+      |                  ^~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:12:38: warning: excess elements in struct initializer
+   12 |                 .trans_queue_depth = 7,
+      |                                      ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:12:38: note: (near initialization for 'bus_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:13:18: error: 'struct i2c_master_bus_config_t' has no member named 'allow_pd'
+   13 |                 .allow_pd = true
+      |                  ^~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:13:29: warning: excess elements in struct initializer
+   13 |                 .allow_pd = true
+      |                             ^~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:13:29: note: (near initialization for 'bus_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:5:40: error: storage size of 'bus_config' isn't known
+    5 |         struct i2c_master_bus_config_t bus_config = {
+      |                                        ^~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:16:25: error: implicit declaration of function 'i2c_new_bus_master' [-Wimplicit-function-declaration]
+   16 |         esp_err_t err = i2c_new_bus_master(&config, &bus_handle);
+      |                         ^~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:16:45: error: 'config' undeclared (first use in this function); did you mean 'configMAX'?
+   16 |         esp_err_t err = i2c_new_bus_master(&config, &bus_handle);
+      |                                             ^~~~~~
+      |                                             configMAX
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:18:16: error: variable 'device_config' has initializer but incomplete type
+   18 |         struct i2c_device_config_t device_config = {
+      |                ^~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:19:18: error: 'struct i2c_device_config_t' has no member named 'dev_addr_length'
+   19 |                 .dev_addr_length = I2C_ADDR_BIT_LEN_7,
+      |                  ^~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:19:36: warning: excess elements in struct initializer
+   19 |                 .dev_addr_length = I2C_ADDR_BIT_LEN_7,
+      |                                    ^~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:19:36: note: (near initialization for 'device_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:20:18: error: 'struct i2c_device_config_t' has no member named 'device_address'
+   20 |                 .device_address = I2C_DEVICE_ADDRESS,
+      |                  ^~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:20:35: error: 'I2C_DEVICE_ADDRESS' undeclared (first use in this function)
+   20 |                 .device_address = I2C_DEVICE_ADDRESS,
+      |                                   ^~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:20:35: warning: excess elements in struct initializer
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:20:35: note: (near initialization for 'device_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:21:18: error: 'struct i2c_device_config_t' has no member named 'scl_speed_hz'
+   21 |                 .scl_speed_hz = I2C_MASTER_FREQUENCY,
+      |                  ^~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:21:33: error: 'I2C_MASTER_FREQUENCY' undeclared (first use in this function); did you mean 'I2C_MASTER_READ'?
+   21 |                 .scl_speed_hz = I2C_MASTER_FREQUENCY,
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+      |                                 I2C_MASTER_READ
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:21:33: warning: excess elements in struct initializer
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:21:33: note: (near initialization for 'device_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:22:18: error: 'struct i2c_device_config_t' has no member named 'scl_wait_us'
+   22 |                 .scl_wait_us = 0,
+      |                  ^~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:22:32: warning: excess elements in struct initializer
+   22 |                 .scl_wait_us = 0,
+      |                                ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:22:32: note: (near initialization for 'device_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:23:18: error: 'struct i2c_device_config_t' has no member named 'disable_ack_check'
+   23 |                 .disable_ack_check = false
+      |                  ^~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:23:38: warning: excess elements in struct initializer
+   23 |                 .disable_ack_check = false
+      |                                      ^~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:23:38: note: (near initialization for 'device_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:18:36: error: storage size of 'device_config' isn't known
+   18 |         struct i2c_device_config_t device_config = {
+      |                                    ^~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:25:9: error: expected ',' or ';' before 'i2c_master_dev_handle_t'
+   25 |         i2c_master_dev_handle_t dev_handle;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/jadenvelasco/esp/esp-idf/components/esp_timer/include/esp_timer.h:38,
+                 from /Users/jadenvelasco/Documents/NULL/null_code/main/utility.h:3,
+                 from /Users/jadenvelasco/Documents/NULL/null_code/main/i2c.h:3,
+                 from /Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:1:
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:26:80: error: 'dev_handle' undeclared (first use in this function); did you mean 'bus_handle'?
+   26 |         ESP_ERROR_CHECK(i2c_master_bus_add_device(bus_handle, &device_config, &dev_handle));
+      |                                                                                ^~~~~~~~~~
+/Users/jadenvelasco/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:27:16: error: expected expression before '{' token
+   27 |         return {bus_handle,dev_handle} ;
+      |                ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:18:36: warning: unused variable 'device_config' [-Wunused-variable]
+   18 |         struct i2c_device_config_t device_config = {
+      |                                    ^~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:5:40: warning: unused variable 'bus_config' [-Wunused-variable]
+    5 |         struct i2c_master_bus_config_t bus_config = {
+      |                                        ^~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c: In function 'ssd1306_driver_init':
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:32:16: error: variable 'config' has initializer but incomplete type
+   32 |         struct esp_lcd_panel_io_i2c_config_t config = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:33:18: error: 'struct esp_lcd_panel_io_i2c_config_t' has no member named 'dev_addr'
+   33 |                 .dev_addr = I2C_DEVICE_ADDRESS,
+      |                  ^~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:33:29: error: 'I2C_DEVICE_ADDRESS' undeclared (first use in this function)
+   33 |                 .dev_addr = I2C_DEVICE_ADDRESS,
+      |                             ^~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:33:29: warning: excess elements in struct initializer
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:33:29: note: (near initialization for 'config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:34:18: error: 'struct esp_lcd_panel_io_i2c_config_t' has no member named 'scl_speed_hz'
+   34 |                 .scl_speed_hz = I2C_MASTER_FREQUENCY,
+      |                  ^~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:34:33: error: 'I2C_MASTER_FREQUENCY' undeclared (first use in this function); did you mean 'I2C_MASTER_READ'?
+   34 |                 .scl_speed_hz = I2C_MASTER_FREQUENCY,
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+      |                                 I2C_MASTER_READ
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:34:33: warning: excess elements in struct initializer
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:34:33: note: (near initialization for 'config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:35:18: error: 'struct esp_lcd_panel_io_i2c_config_t' has no member named 'control_phase_bytes'
+   35 |                 .control_phase_bytes = 1,
+      |                  ^~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:35:40: warning: excess elements in struct initializer
+   35 |                 .control_phase_bytes = 1,
+      |                                        ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:35:40: note: (near initialization for 'config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:36:18: error: 'struct esp_lcd_panel_io_i2c_config_t' has no member named 'dc_bit_offset'
+   36 |                 .dc_bit_offset = 6,
+      |                  ^~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:36:34: warning: excess elements in struct initializer
+   36 |                 .dc_bit_offset = 6,
+      |                                  ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:36:34: note: (near initialization for 'config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:37:18: error: 'struct esp_lcd_panel_io_i2c_config_t' has no member named 'lcd_cmd_bits'
+   37 |                 .lcd_cmd_bits = 8,
+      |                  ^~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:37:33: warning: excess elements in struct initializer
+   37 |                 .lcd_cmd_bits = 8,
+      |                                 ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:37:33: note: (near initialization for 'config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:38:18: error: 'struct esp_lcd_panel_io_i2c_config_t' has no member named 'lcd_param_bits'
+   38 |                 .lcd_param_bits = 8
+      |                  ^~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:38:35: warning: excess elements in struct initializer
+   38 |                 .lcd_param_bits = 8
+      |                                   ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:38:35: note: (near initialization for 'config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:32:46: error: storage size of 'config' isn't known
+   32 |         struct esp_lcd_panel_io_i2c_config_t config = {
+      |                                              ^~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:43:16: error: variable 'panel_config' has initializer but incomplete type
+   43 |         struct esp_lcd_panel_dev_config_t panel_config = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:44:18: error: 'struct esp_lcd_panel_dev_config_t' has no member named 'bits_per_pixel'
+   44 |                 .bits_per_pixel = 1,
+      |                  ^~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:44:35: warning: excess elements in struct initializer
+   44 |                 .bits_per_pixel = 1,
+      |                                   ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:44:35: note: (near initialization for 'panel_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:45:18: error: 'struct esp_lcd_panel_dev_config_t' has no member named 'reset_gpio_num'
+   45 |                 .reset_gpio_num = -1
+      |                  ^~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:45:35: warning: excess elements in struct initializer
+   45 |                 .reset_gpio_num = -1
+      |                                   ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:45:35: note: (near initialization for 'panel_config')
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:43:43: error: storage size of 'panel_config' isn't known
+   43 |         struct esp_lcd_panel_dev_config_t panel_config = {
+      |                                           ^~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:47:16: error: variable 'panel_handle' has initializer but incomplete type
+   47 |         struct esp_lcd_panel_handel_t panel_handle = NULL;
+      |                ^~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:47:39: error: storage size of 'panel_handle' isn't known
+   47 |         struct esp_lcd_panel_handel_t panel_handle = NULL;
+      |                                       ^~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:48:25: error: implicit declaration of function 'esp_lcd_new_panel_ssd1306'; did you mean 'esp_lcd_new_panel_io_i80'? [-Wimplicit-function-declaration]
+   48 |         ESP_ERROR_CHECK(esp_lcd_new_panel_ssd1306(io_handle, &panel_config, &panel_handle));
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:48:51: error: 'io_handle' undeclared (first use in this function); did you mean 'IO_handle'?
+   48 |         ESP_ERROR_CHECK(esp_lcd_new_panel_ssd1306(io_handle, &panel_config, &panel_handle));
+      |                                                   ^~~~~~~~~
+/Users/jadenvelasco/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:15: error: unknown type name 'lvgl_port_cfg'; did you mean 'lvgl_port_cfg_t'?
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |               ^~~~~~~~~~~~~
+      |               lvgl_port_cfg_t
+In file included from /Users/jadenvelasco/Documents/NULL/null_code/main/i2c.h:7:
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:67:9: error: field name not in record or union initializer
+   67 |         .task_priority = 4,                        \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:67:9: note: (near initialization for 'lvgl_config')
+   67 |         .task_priority = 4,                        \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:68:9: error: field name not in record or union initializer
+   68 |         .task_stack = 7168,                        \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:68:9: note: (near initialization for 'lvgl_config')
+   68 |         .task_stack = 7168,                        \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:68:23: warning: excess elements in scalar initializer
+   68 |         .task_stack = 7168,                        \
+      |                       ^~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:68:23: note: (near initialization for 'lvgl_config')
+   68 |         .task_stack = 7168,                        \
+      |                       ^~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:69:9: error: field name not in record or union initializer
+   69 |         .task_affinity = -1,                       \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:69:9: note: (near initialization for 'lvgl_config')
+   69 |         .task_affinity = -1,                       \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:69:26: warning: excess elements in scalar initializer
+   69 |         .task_affinity = -1,                       \
+      |                          ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:69:26: note: (near initialization for 'lvgl_config')
+   69 |         .task_affinity = -1,                       \
+      |                          ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:70:9: error: field name not in record or union initializer
+   70 |         .task_max_sleep_ms = 500,                  \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:70:9: note: (near initialization for 'lvgl_config')
+   70 |         .task_max_sleep_ms = 500,                  \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:70:30: warning: excess elements in scalar initializer
+   70 |         .task_max_sleep_ms = 500,                  \
+      |                              ^~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:70:30: note: (near initialization for 'lvgl_config')
+   70 |         .task_max_sleep_ms = 500,                  \
+      |                              ^~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:71:9: error: field name not in record or union initializer
+   71 |         .task_stack_caps = MALLOC_CAP_INTERNAL | MALLOC_CAP_DEFAULT,    \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:71:9: note: (near initialization for 'lvgl_config')
+   71 |         .task_stack_caps = MALLOC_CAP_INTERNAL | MALLOC_CAP_DEFAULT,    \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/jadenvelasco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:56,
+                 from /Users/jadenvelasco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:57,
+                 from /Users/jadenvelasco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:69,
+                 from /Users/jadenvelasco/esp/esp-idf/components/esp_driver_spi/include/driver/spi_master.h:10,
+                 from /Users/jadenvelasco/esp/esp-idf/components/esp_lcd/include/esp_lcd_io_spi.h:11,
+                 from /Users/jadenvelasco/esp/esp-idf/components/esp_lcd/include/esp_lcd_panel_io.h:13,
+                 from /Users/jadenvelasco/Documents/NULL/null_code/main/i2c.h:5:
+/Users/jadenvelasco/esp/esp-idf/components/heap/include/esp_heap_caps.h:40:37: warning: excess elements in scalar initializer
+   40 | #define MALLOC_CAP_INTERNAL         (1<<11) ///< Memory must be internal; specifically it should not disappear when flash/spiram cache is switched off
+      |                                     ^
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:71:28: note: in expansion of macro 'MALLOC_CAP_INTERNAL'
+   71 |         .task_stack_caps = MALLOC_CAP_INTERNAL | MALLOC_CAP_DEFAULT,    \
+      |                            ^~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/esp/esp-idf/components/heap/include/esp_heap_caps.h:40:37: note: (near initialization for 'lvgl_config')
+   40 | #define MALLOC_CAP_INTERNAL         (1<<11) ///< Memory must be internal; specifically it should not disappear when flash/spiram cache is switched off
+      |                                     ^
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:71:28: note: in expansion of macro 'MALLOC_CAP_INTERNAL'
+   71 |         .task_stack_caps = MALLOC_CAP_INTERNAL | MALLOC_CAP_DEFAULT,    \
+      |                            ^~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:72:9: error: field name not in record or union initializer
+   72 |         .timer_period_ms = 5,                      \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:72:9: note: (near initialization for 'lvgl_config')
+   72 |         .timer_period_ms = 5,                      \
+      |         ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:72:28: warning: excess elements in scalar initializer
+   72 |         .timer_period_ms = 5,                      \
+      |                            ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:72:28: note: (near initialization for 'lvgl_config')
+   72 |         .timer_period_ms = 5,                      \
+      |                            ^
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:54:43: note: in expansion of macro 'ESP_LVGL_PORT_INIT_CONFIG'
+   54 |         const lvgl_port_cfg lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:55:24: error: passing argument 1 of 'lvgl_port_init' from incompatible pointer type [-Wincompatible-pointer-types]
+   55 |         lvgl_port_init(&lvgl_config);
+      |                        ^~~~~~~~~~~~
+      |                        |
+      |                        const int *
+/Users/jadenvelasco/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port/include/esp_lvgl_port.h:86:49: note: expected 'const lvgl_port_cfg_t *' but argument is of type 'const int *'
+   86 | esp_err_t lvgl_port_init(const lvgl_port_cfg_t *cfg);
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~^~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:59:32: error: 'HEIGHT_OLED' undeclared (first use in this function)
+   59 |                 .buffer_size = HEIGHT_OLED * WIDTH_OLED,
+      |                                ^~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:59:46: error: 'WIDTH_OLED' undeclared (first use in this function)
+   59 |                 .buffer_size = HEIGHT_OLED * WIDTH_OLED,
+      |                                              ^~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:71:40: error: 'notify_lvgl_flush_ready' undeclared (first use in this function)
+   71 |                 .on_color_trans_done = notify_lvgl_flush_ready
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:73:9: error: implicit declaration of function 'esp_lcd_panel_io_register_event_callback'; did you mean 'esp_lcd_panel_io_register_event_callbacks'? [-Wimplicit-function-declaration]
+   73 |         esp_lcd_panel_io_register_event_callback(io_handle, &cbs, disp);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         esp_lcd_panel_io_register_event_callbacks
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:47:39: warning: unused variable 'panel_handle' [-Wunused-variable]
+   47 |         struct esp_lcd_panel_handel_t panel_handle = NULL;
+      |                                       ^~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:43:43: warning: unused variable 'panel_config' [-Wunused-variable]
+   43 |         struct esp_lcd_panel_dev_config_t panel_config = {
+      |                                           ^~~~~~~~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:32:46: warning: unused variable 'config' [-Wunused-variable]
+   32 |         struct esp_lcd_panel_io_i2c_config_t config = {
+      |                                              ^~~~~~
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c: In function 'init_OLED':
+/Users/jadenvelasco/Documents/NULL/null_code/main/i2c.c:28:1: error: control reaches end of non-void function [-Werror=return-type]
+   28 | }
+      | ^
+cc1: some warnings being treated as errors
+ninja: build stopped: subcommand failed.
