@@ -6888,11 +6888,21 @@
                 "range": null,
                 "title": "Master Frequency",
                 "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "The address of the I2c device when initializing",
+                "id": "I2C_DEVICE_ADDRESS",
+                "name": "I2C_DEVICE_ADDRESS",
+                "range": null,
+                "title": "Address",
+                "type": "hex"
             }
         ],
         "depends_on": null,
-        "id": "i2c-configuration-gpio",
-        "title": "I2C configuration GPIO",
+        "id": "i2c-configuration-",
+        "title": "I2C configuration ",
         "type": "menu"
     },
     {

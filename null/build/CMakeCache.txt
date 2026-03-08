@@ -18,18 +18,18 @@
 CCACHE_ENABLE:UNINITIALIZED=0
 
 //Path to a program.
-CMAKE_ADDR2LINE:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-addr2line
+CMAKE_ADDR2LINE:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-addr2line
 
 //Path to a program.
-CMAKE_AR:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar
+CMAKE_AR:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_ASM_COMPILER_AR:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar
+CMAKE_ASM_COMPILER_AR:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_ASM_COMPILER_RANLIB:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib
+CMAKE_ASM_COMPILER_RANLIB:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib
 
 //ASM Compiler Base Flags
 CMAKE_ASM_FLAGS:STRING='-mlongcalls '
@@ -52,11 +52,11 @@ CMAKE_BUILD_TYPE:STRING=
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_AR:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar
+CMAKE_CXX_COMPILER_AR:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib
 
 //C++ Compiler Base Flags
 CMAKE_CXX_FLAGS:STRING=-mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy
@@ -75,11 +75,11 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_AR:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar
+CMAKE_C_COMPILER_AR:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_RANLIB:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib
+CMAKE_C_COMPILER_RANLIB:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib
 
 //C Compiler Base Flags
 CMAKE_C_FLAGS:STRING=-mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy
@@ -175,7 +175,7 @@ CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
 CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //Path to a program.
-CMAKE_LINKER:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ld
+CMAKE_LINKER:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ld
 
 //Program used to build from build.ninja files.
 CMAKE_MAKE_PROGRAM:FILEPATH=/usr/local/bin/ninja
@@ -201,13 +201,13 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_NM:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-nm
+CMAKE_NM:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-nm
 
 //Path to a program.
-CMAKE_OBJCOPY:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objcopy
+CMAKE_OBJCOPY:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objcopy
 
 //Path to a program.
-CMAKE_OBJDUMP:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objdump
+CMAKE_OBJDUMP:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objdump
 
 //Value Computed by CMake
 CMAKE_PROJECT_COMPAT_VERSION:STATIC=
@@ -240,10 +240,10 @@ CMAKE_PROJECT_VERSION_PATCH:STATIC=5
 CMAKE_PROJECT_VERSION_TWEAK:STATIC=
 
 //Path to a program.
-CMAKE_RANLIB:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib
+CMAKE_RANLIB:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib
 
 //Path to a program.
-CMAKE_READELF:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-readelf
+CMAKE_READELF:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-readelf
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
@@ -293,7 +293,7 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_STRIP:FILEPATH=/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-strip
+CMAKE_STRIP:FILEPATH=/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-strip
 
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
@@ -359,7 +359,7 @@ Mbed TLS_IS_TOP_LEVEL:STATIC=OFF
 Mbed TLS_SOURCE_DIR:STATIC=/Users/jadenvelasco/esp/esp-idf/components/mbedtls/mbedtls
 
 //No help, variable specified on the command line.
-PYTHON:UNINITIALIZED=/Users/jadenvelasco/.espressif/python_env/idf5.5_py3.12_env/bin/python
+PYTHON:UNINITIALIZED=/Users/jadenvelasco/required_idf_tools_path/python_env/idf5.5_py3.12_env/bin/python
 
 //No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
@@ -608,7 +608,7 @@ C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS:INTERNAL=1
 //Details about finding Git
 FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v2.39.5 (Apple Git-154)()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/Users/jadenvelasco/.espressif/python_env/idf5.5_py3.12_env/bin/python][found components: Interpreter ][v3.12.3()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/Users/jadenvelasco/required_idf_tools_path/python_env/idf5.5_py3.12_env/bin/python][found components: Interpreter ][v3.12.3()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GIT_EXECUTABLE
@@ -619,10 +619,10 @@ _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 _Python3_Compiler_REASON_FAILURE:INTERNAL=
 //Development reason failure
 _Python3_Development_REASON_FAILURE:INTERNAL=
-_Python3_EXECUTABLE:INTERNAL=/Users/jadenvelasco/.espressif/python_env/idf5.5_py3.12_env/bin/python
+_Python3_EXECUTABLE:INTERNAL=/Users/jadenvelasco/required_idf_tools_path/python_env/idf5.5_py3.12_env/bin/python
 //Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;3;32;64;;;abi3;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12;/Users/jadenvelasco/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12;/Users/jadenvelasco/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages;/Users/jadenvelasco/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=b8e278b278f3366ad7d39c8f85ff5ec5
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;3;32;64;;;abi3;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12;/Users/jadenvelasco/required_idf_tools_path/python_env/idf5.5_py3.12_env/lib/python3.12;/Users/jadenvelasco/required_idf_tools_path/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages;/Users/jadenvelasco/required_idf_tools_path/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=b32a66c1094b2b483e1fa58c5e278ce1
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 
