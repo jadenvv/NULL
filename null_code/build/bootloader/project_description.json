@@ -19,7 +19,7 @@
     "phy_data_partition": "",
     "monitor_baud" :      "115200",
     "monitor_toolprefix": "xtensa-esp32s3-elf-",
-    "c_compiler":         "/Users/jadenvelasco/required_idf_tools_path/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc",
+    "c_compiler":         "/Users/jadenvelasco/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc",
     "config_environment" : {
         "COMPONENT_KCONFIGS" : "/Users/jadenvelasco/esp/esp-idf/components/efuse/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/esp_common/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/esp_hw_support/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/esp_rom/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/esp_security/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/esp_system/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/freertos/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/hal/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/log/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/newlib/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/soc/Kconfig;/Users/jadenvelasco/esp/esp-idf/components/spi_flash/Kconfig",
         "COMPONENT_KCONFIGS_PROJBUILD" : "/Users/jadenvelasco/esp/esp-idf/components/bootloader/Kconfig.projbuild;/Users/jadenvelasco/esp/esp-idf/components/esp_app_format/Kconfig.projbuild;/Users/jadenvelasco/esp/esp-idf/components/esp_rom/Kconfig.projbuild;/Users/jadenvelasco/esp/esp-idf/components/esptool_py/Kconfig.projbuild;/Users/jadenvelasco/esp/esp-idf/components/partition_table/Kconfig.projbuild"
