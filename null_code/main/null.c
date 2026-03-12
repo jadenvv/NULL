@@ -1,4 +1,9 @@
-#include "null.h"
+#include <stdio.h>
+#include "utility.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "i2c.h"
+
 void app_main(void)
 {
 	//setup display	

@@ -19,4 +19,5 @@ struct i2c_handles {
 }; 
 struct i2c_handles init_OLED();
 lv_disp_t * ssd1306_driver_init(struct i2c_handles dev_handle); 
+esp_err_t print_string(lv_disp_t * display); 
 #endif 

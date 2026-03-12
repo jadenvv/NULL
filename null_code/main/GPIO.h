@@ -1,11 +1,11 @@
-#ifndef BUTTON_H
-#define BUTTON_H
+#ifndef GPIO_H 
+#define GPIO_H 
 #include "utility.h"
 #include "driver/gpio.h"
 enum button_event{
-	UP_EVENT, 
-	SELECT_EVENT, 
-	DOWN_EVENT
+	UP_EVENT = CONFIG_UP_BUTTON_GPIO, 
+	SELECT_EVENT = CONFIG_SELECT_BUTTON_GPIO, 
+	DOWN_EVENT = CONFIG_DOWN_BUTTON_GPIO
 };
 
 #define BIT_MASK(x) (uint64_t)((1<< x));
