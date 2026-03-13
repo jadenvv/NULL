@@ -1,5 +1,1 @@
-0000000000000000000000000000000000000000 6d3f95bb96190afb783e4ab0c7cfca66060ac128 Jaden Velasco <jvelasco20081@gmail.com> 1769893582 -0800	clone: from github.com:jadenvv/NULL.git
-6d3f95bb96190afb783e4ab0c7cfca66060ac128 0a06bb7f9da6d2cb12ada1a323b51cce26ecc166 Jaden Velasco <jvelasco20081@gmail.com> 1769895117 -0800	commit: created idf-project
-0a06bb7f9da6d2cb12ada1a323b51cce26ecc166 d4cba8e220bd5fb3418c1ef85b1381ecb1db5cc5 Jaden Velasco <jvelasco20081@gmail.com> 1772746677 -0800	commit: added electronics
-d4cba8e220bd5fb3418c1ef85b1381ecb1db5cc5 8b938383b3f2839fcb46fc68eb7a45ea59236cbb Jaden Velasco <jvelasco20081@gmail.com> 1772939283 -0800	commit: i2c init of ssd1306
-8b938383b3f2839fcb46fc68eb7a45ea59236cbb f5e03e28d9354261dea28b09d603ffa496562e82 Jaden Velasco <jvelasco20081@gmail.com> 1773009127 -0700	commit: added wifi, button files; finished i2c oled impl; need to debug code
+8820bcb392e9769aecb5fbdf47b83040ea8f95b4

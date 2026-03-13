@@ -3723,6 +3723,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_WIFI_TXOP_SUPPORT",
+        "name": "SOC_WIFI_TXOP_SUPPORT",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_WIFI_CSI_SUPPORT",
         "name": "SOC_WIFI_CSI_SUPPORT",
         "range": null,
@@ -7385,6 +7395,16 @@
             {
                 "children": [
                     {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "ESP_HW_SUPPORT_FUNC_IN_IRAM",
+                        "name": "ESP_HW_SUPPORT_FUNC_IN_IRAM",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
                         "children": [
                             {
                                 "children": [
@@ -7845,6 +7865,26 @@
                                 ],
                                 "title": "Number of cycles for RTC_SLOW_CLK calibration",
                                 "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Place RTC clock module (all rtc clock functions and const data) into IRAM.",
+                                "id": "RTC_CLK_FUNC_IN_IRAM",
+                                "name": "RTC_CLK_FUNC_IN_IRAM",
+                                "range": null,
+                                "title": "Place RTC clock module functions into IRAM",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Place RTC time module (all rtc clock functions) into IRAM.",
+                                "id": "RTC_TIME_FUNC_IN_IRAM",
+                                "name": "RTC_TIME_FUNC_IN_IRAM",
+                                "range": null,
+                                "title": "Place RTC time module functions into IRAM",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": null,

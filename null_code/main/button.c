@@ -1,5 +1,5 @@
 #include "GPIO.h"
-void gpio_handler_function(uint32_t gpio_number)
+void gpio_handler_function(void *gpio_number)
 {
 
 }
@@ -19,7 +19,7 @@ gpio_config_t gpio_cfg = {
 	gpio_install_isr_service(ESP_INTR_FLAG_SHARED);
 	for(size_t i=0; i<3; i++)
 	{
-		gpio_isr_handler_add(GPIOS[i], &gpio_handler_function, (void*)&GPIOS[i]);
+		gpio_isr_handler_add(GPIOS[i], gpio_handler_function, (void*)&GPIOS[i]);
 
 	}
 	return ESP_OK;

@@ -2,7 +2,8 @@
 #define UTILITY_H
 #include "esp_timer.h"
 #include "esp_log.h"
-#include "esp_intr_alloc"
+#include "esp_intr_alloc.h"
+#include "lvgl.h"
 #include "sdkconfig.h"
 #include <string.h>
 enum state {

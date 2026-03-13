@@ -3723,6 +3723,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_WIFI_TXOP_SUPPORT",
+        "name": "SOC_WIFI_TXOP_SUPPORT",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_WIFI_CSI_SUPPORT",
         "name": "SOC_WIFI_CSI_SUPPORT",
         "range": null,
@@ -8154,16 +8164,6 @@
                             {
                                 "children": [],
                                 "depends_on": "BT_BLUEDROID_ENABLED && BT_BLUEDROID_ENABLED",
-                                "help": "Bluedroid memory debug",
-                                "id": "BT_BLUEDROID_MEM_DEBUG",
-                                "name": "BT_BLUEDROID_MEM_DEBUG",
-                                "range": null,
-                                "title": "Bluedroid memory debug",
-                                "type": "bool"
-                            },
-                            {
-                                "children": [],
-                                "depends_on": "BT_BLUEDROID_ENABLED && BT_BLUEDROID_ENABLED",
                                 "help": "Enable Espressif Vendor-specific HCI commands for coexist status configuration",
                                 "id": "BT_BLUEDROID_ESP_COEX_VSC",
                                 "name": "BT_BLUEDROID_ESP_COEX_VSC",
@@ -8250,7 +8250,7 @@
                                                     {
                                                         "children": [],
                                                         "depends_on": "BT_AVRCP_ENABLED && BT_BLUEDROID_ENABLED",
-                                                        "help": "This enable Cover Art feature of AVRCP CT role",
+                                                        "help": "This enable Cover Art feature for AVRCP CT role, Cover Art requires AVRCP\nversion 1.6 or higher. Therefore, if the Cover Art feature is enabled,\nAVRCP version will set to 1.6, otherwise, it will remain at 1.5",
                                                         "id": "BT_AVRCP_CT_COVER_ART_ENABLED",
                                                         "name": "BT_AVRCP_CT_COVER_ART_ENABLED",
                                                         "range": null,
@@ -8512,7 +8512,18 @@
                                                 "type": "bool"
                                             },
                                             {
-                                                "children": [],
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "BT_BLE_BLUFI_ENABLE && BT_BLE_SMP_ENABLE && BT_BLUEDROID_ENABLED",
+                                                        "help": "Enable BLE Security Manager Protocol (SMP) for BluFi.\nWhen enabled, BluFi will support BLE pairing and encryption\nbefore Wi-Fi provisioning, providing a more secure provisioning process.\nThis feature is only supported with the Bluedroid host.",
+                                                        "id": "BT_BLUFI_BLE_SMP_ENABLE",
+                                                        "name": "BT_BLUFI_BLE_SMP_ENABLE",
+                                                        "range": null,
+                                                        "title": "Enable BLE SMP support for BluFi",
+                                                        "type": "bool"
+                                                    }
+                                                ],
                                                 "depends_on": "BT_GATTS_ENABLE && BT_BLUEDROID_ENABLED",
                                                 "help": "This option can be close when the app does not require blufi function.",
                                                 "id": "BT_BLE_BLUFI_ENABLE",
@@ -8609,6 +8620,26 @@
                                                 "name": "BT_GATTS_APPEARANCE_WRITABLE",
                                                 "range": null,
                                                 "title": "Allow to write appearance by GATT clients",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_GATTS_ENABLE && BT_BLUEDROID_ENABLED",
+                                                "help": "Enable LE GATT Security Levels Characteristic",
+                                                "id": "BT_GATTS_SECURITY_LEVELS_CHAR",
+                                                "name": "BT_GATTS_SECURITY_LEVELS_CHAR",
+                                                "range": null,
+                                                "title": "Enable LE GATT Security Levels Characteristic",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_GATTS_ENABLE && BT_BLUEDROID_ENABLED",
+                                                "help": "Enable the Encrypted Data Key Material characteristic in GAP service.\nThis characteristic allows advertising data to be decrypted and authenticated\nusing the key material (session key + IV) as defined in Bluetooth Core\nSpecification Version 5.4. The characteristic requires encrypted link to read.",
+                                                "id": "BT_GATTS_KEY_MATERIAL_CHAR",
+                                                "name": "BT_GATTS_KEY_MATERIAL_CHAR",
+                                                "range": null,
+                                                "title": "Enable Encrypted Data Key Material Characteristic",
                                                 "type": "bool"
                                             }
                                         ],
@@ -8743,6 +8774,65 @@
                                 "range": null,
                                 "title": "Bluetooth Low Energy",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_BLUEDROID_ENABLED && BT_BLUEDROID_ENABLED",
+                                        "help": "Bluedroid memory debug",
+                                        "id": "BT_BLUEDROID_MEM_DEBUG",
+                                        "name": "BT_BLUEDROID_MEM_DEBUG",
+                                        "range": null,
+                                        "title": "Bluedroid memory debug",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_BLUEDROID_ENABLED && !BT_BLUEDROID_MEM_DEBUG && BT_BLUEDROID_ENABLED",
+                                        "help": "Enable Bluedroid memory usage statistics",
+                                        "id": "BT_BLUEDROID_MEM_STATS",
+                                        "name": "BT_BLUEDROID_MEM_STATS",
+                                        "range": null,
+                                        "title": "Bluedroid memory statistics",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_BLUEDROID_THREAD_DEBUG && BT_BLUEDROID_ENABLED",
+                                                "help": "Indicates how long it takes for the thread to execute an item\nbefore it is considered blocked.",
+                                                "id": "BT_BLUEDROID_THREAD_BLOCK_TIME",
+                                                "name": "BT_BLUEDROID_THREAD_BLOCK_TIME",
+                                                "range": null,
+                                                "title": "OSI thread block time (in ms)",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_BLUEDROID_THREAD_DEBUG && BT_BLUEDROID_ENABLED",
+                                                "help": "Indicates how many messages are added to the queue\nwhile the threadis executing an item before it is considered blocked.",
+                                                "id": "BT_BLUEDROID_THREAD_BLOCK_MSG",
+                                                "name": "BT_BLUEDROID_THREAD_BLOCK_MSG",
+                                                "range": null,
+                                                "title": "OSI thread block message count",
+                                                "type": "int"
+                                            }
+                                        ],
+                                        "depends_on": "BT_BLUEDROID_ENABLED && BT_BLUEDROID_ENABLED",
+                                        "help": "Enable Bluedroid thread debug mode.\nUsed to debug whether the thread is blocked and\ndump information about the thread\u2019s related work queue.",
+                                        "id": "BT_BLUEDROID_THREAD_DEBUG",
+                                        "name": "BT_BLUEDROID_THREAD_DEBUG",
+                                        "range": null,
+                                        "title": "Bluedroid thread debug",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "BT_BLUEDROID_ENABLED",
+                                "id": "component-config-bluetooth-bluedroid-options-bluedroid-debug-option",
+                                "title": "Bluedroid debug option",
+                                "type": "menu"
                             },
                             {
                                 "children": [],
@@ -10803,7 +10893,7 @@
                                 "is_menuconfig": true,
                                 "name": "BT_BLE_50_FEATURES_SUPPORTED",
                                 "range": null,
-                                "title": "Enable BLE 5.0 features(please disable BLE 4.2 if enable BLE 5.0)",
+                                "title": "Enable BLE 5.0 and above features(please disable BLE 4.2 if enable BLE 5.0)",
                                 "type": "menu"
                             },
                             {
@@ -10837,46 +10927,14 @@
                                 "type": "bool"
                             },
                             {
-                                "children": [
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_BLE_42_FEATURES_SUPPORTED && BT_BLUEDROID_ENABLED",
-                                        "help": "This enables BLE 4.2 direct test mode",
-                                        "id": "BT_BLE_42_DTM_TEST_EN",
-                                        "name": "BT_BLE_42_DTM_TEST_EN",
-                                        "range": null,
-                                        "title": "Enable BLE 4.2 DTM test",
-                                        "type": "bool"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_BLE_42_FEATURES_SUPPORTED && BT_BLUEDROID_ENABLED",
-                                        "help": "This enables BLE v4.2 advertising",
-                                        "id": "BT_BLE_42_ADV_EN",
-                                        "name": "BT_BLE_42_ADV_EN",
-                                        "range": null,
-                                        "title": "Enable BLE 4.2 advertising",
-                                        "type": "bool"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_BLE_42_FEATURES_SUPPORTED && BT_BLUEDROID_ENABLED",
-                                        "help": "This enables BLE v4.2 scan",
-                                        "id": "BT_BLE_42_SCAN_EN",
-                                        "name": "BT_BLE_42_SCAN_EN",
-                                        "range": null,
-                                        "title": "Enable BLE 4.2 scan",
-                                        "type": "bool"
-                                    }
-                                ],
-                                "depends_on": "BT_BLE_ENABLED && BT_BLUEDROID_ENABLED",
-                                "help": "This enables BLE 4.2 features.\nThis option is universally supported by all ESP chips with BLE capabilities.\nBLE 4.2 and BLE 5.0 cannot be used simultaneously.",
-                                "id": "BT_BLE_42_FEATURES_SUPPORTED",
-                                "is_menuconfig": true,
-                                "name": "BT_BLE_42_FEATURES_SUPPORTED",
+                                "children": [],
+                                "depends_on": "BT_BLE_50_EXTEND_SYNC_EN && BT_BLUEDROID_ENABLED",
+                                "help": "Set the maximum retry count when periodic advertising create sync fails\nwith error code 0x3E (Connection Failed to be Established).\nSet to 0 to disable retry. Default is 3.",
+                                "id": "BT_BLE_FEAT_CREATE_SYNC_RETRY_MAX",
+                                "name": "BT_BLE_FEAT_CREATE_SYNC_RETRY_MAX",
                                 "range": null,
-                                "title": "Enable BLE 4.2 features(please disable BLE 5.0 if enable BLE 4.2)",
-                                "type": "menu"
+                                "title": "Maximum retry count for periodic advertising create sync",
+                                "type": "int"
                             },
                             {
                                 "children": [
@@ -11044,6 +11102,78 @@
                             },
                             {
                                 "children": [],
+                                "depends_on": "BT_BLE_50_FEATURES_SUPPORTED && ((BT_CONTROLLER_ENABLED && SOC_BLE_PAWR_SUPPORTED) || BT_CONTROLLER_DISABLED) && BT_BLUEDROID_ENABLED",
+                                "help": "Enable BLE Periodic Advertisement with Response(PAwR) feature",
+                                "id": "BT_BLE_FEAT_PAWR_EN",
+                                "name": "BT_BLE_FEAT_PAWR_EN",
+                                "range": null,
+                                "title": "Enable Periodic Advertisement with Response(PAwR)",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "BT_BLE_50_FEATURES_SUPPORTED && ((BT_CONTROLLER_ENABLED && SOC_BLE_ADV_CODING_SELECT_SUPPORTED) || BT_CONTROLLER_DISABLED) && BT_BLUEDROID_ENABLED",
+                                "help": "Enable Advertising Coding Selection",
+                                "id": "BT_BLE_FEAT_ADV_CODING_SELECTION",
+                                "name": "BT_BLE_FEAT_ADV_CODING_SELECTION",
+                                "range": null,
+                                "title": "Enable Advertising Coding Selection",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "BT_BLE_50_FEATURES_SUPPORTED && ((BT_CONTROLLER_ENABLED && SOC_BLE_CHANNEL_SOUNDING_SUPPORTED) || BT_CONTROLLER_DISABLED) && BT_BLUEDROID_ENABLED",
+                                "help": "Enable BLE channel sounding",
+                                "id": "BT_BLE_FEAT_CHANNEL_SOUNDING",
+                                "name": "BT_BLE_FEAT_CHANNEL_SOUNDING",
+                                "range": null,
+                                "title": "Enable BLE channel sounding",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_BLE_42_FEATURES_SUPPORTED && BT_BLUEDROID_ENABLED",
+                                        "help": "This enables BLE 4.2 direct test mode",
+                                        "id": "BT_BLE_42_DTM_TEST_EN",
+                                        "name": "BT_BLE_42_DTM_TEST_EN",
+                                        "range": null,
+                                        "title": "Enable BLE 4.2 DTM test",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_BLE_42_FEATURES_SUPPORTED && BT_BLUEDROID_ENABLED",
+                                        "help": "This enables BLE v4.2 advertising",
+                                        "id": "BT_BLE_42_ADV_EN",
+                                        "name": "BT_BLE_42_ADV_EN",
+                                        "range": null,
+                                        "title": "Enable BLE 4.2 advertising",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_BLE_42_FEATURES_SUPPORTED && BT_BLUEDROID_ENABLED",
+                                        "help": "This enables BLE v4.2 scan",
+                                        "id": "BT_BLE_42_SCAN_EN",
+                                        "name": "BT_BLE_42_SCAN_EN",
+                                        "range": null,
+                                        "title": "Enable BLE 4.2 scan",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "BT_BLE_ENABLED && BT_BLUEDROID_ENABLED",
+                                "help": "This enables BLE 4.2 features.\nThis option is universally supported by all ESP chips with BLE capabilities.\nBLE 4.2 and BLE 5.0 cannot be used simultaneously.",
+                                "id": "BT_BLE_42_FEATURES_SUPPORTED",
+                                "is_menuconfig": true,
+                                "name": "BT_BLE_42_FEATURES_SUPPORTED",
+                                "range": null,
+                                "title": "Enable BLE 4.2 features(please disable BLE 5.0 if enable BLE 4.2)",
+                                "type": "menu"
+                            },
+                            {
+                                "children": [],
                                 "depends_on": "BT_BLE_ENABLED && BT_BLUEDROID_ENABLED",
                                 "help": "This enables BLE vendor HCI command and event",
                                 "id": "BT_BLE_VENDOR_HCI_EN",
@@ -11203,7 +11333,7 @@
                                     {
                                         "children": [],
                                         "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "Enables central role",
+                                        "help": "Enables BLE Central role",
                                         "id": "BT_NIMBLE_ROLE_CENTRAL",
                                         "name": "BT_NIMBLE_ROLE_CENTRAL",
                                         "range": null,
@@ -11213,7 +11343,7 @@
                                     {
                                         "children": [],
                                         "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "Enable peripheral role",
+                                        "help": "Enable BLE Peripheral role",
                                         "id": "BT_NIMBLE_ROLE_PERIPHERAL",
                                         "name": "BT_NIMBLE_ROLE_PERIPHERAL",
                                         "range": null,
@@ -11223,7 +11353,7 @@
                                     {
                                         "children": [],
                                         "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "Enables broadcaster role",
+                                        "help": "Enables BLE broadcaster role",
                                         "id": "BT_NIMBLE_ROLE_BROADCASTER",
                                         "name": "BT_NIMBLE_ROLE_BROADCASTER",
                                         "range": null,
@@ -11233,7 +11363,7 @@
                                     {
                                         "children": [],
                                         "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "Enables observer role",
+                                        "help": "Enables BLE Observer role",
                                         "id": "BT_NIMBLE_ROLE_OBSERVER",
                                         "name": "BT_NIMBLE_ROLE_OBSERVER",
                                         "range": null,
@@ -11284,7 +11414,7 @@
                                                 "children": [
                                                     {
                                                         "children": [],
-                                                        "depends_on": "BT_NIMBLE_SECURITY_ENABLE && BT_NIMBLE_SM_SC && BT_NIMBLE_ENABLED",
+                                                        "depends_on": "BT_NIMBLE_SM_SC && BT_NIMBLE_SECURITY_ENABLE && BT_NIMBLE_ENABLED",
                                                         "help": "If this option is enabled, SM uses predefined DH key pair as described\nin Core Specification, Vol. 3, Part H, 2.3.5.6.1. This allows to\ndecrypt air traffic easily and thus should only be used for debugging.",
                                                         "id": "BT_NIMBLE_SM_SC_DEBUG_KEYS",
                                                         "name": "BT_NIMBLE_SM_SC_DEBUG_KEYS",
@@ -11303,7 +11433,7 @@
                                             },
                                             {
                                                 "children": [],
-                                                "depends_on": "BT_NIMBLE_SECURITY_ENABLE && BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                                "depends_on": "BT_NIMBLE_SECURITY_ENABLE && BT_NIMBLE_ENABLED",
                                                 "help": "Enable encryption connection",
                                                 "id": "BT_NIMBLE_LL_CFG_FEAT_LE_ENCRYPTION",
                                                 "name": "BT_NIMBLE_LL_CFG_FEAT_LE_ENCRYPTION",
@@ -11330,6 +11460,46 @@
                                                 "range": null,
                                                 "title": "Enable Secure Connections Only Mode",
                                                 "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_NIMBLE_SECURITY_ENABLE && BT_NIMBLE_ENABLED",
+                                                "help": "There are tracking risks associated with using a fixed or static IRK.\nIf enabled this option, NimBLE will assign a new randomly-generated IRK\nwhen all pairing and bonding records are deleted. This would decrease the ability\nof a previously paired peer to be used to determine whether a device\nwith which it previously shared an IRK is within range.",
+                                                "id": "BT_NIMBLE_SMP_ID_RESET",
+                                                "name": "BT_NIMBLE_SMP_ID_RESET",
+                                                "range": null,
+                                                "title": "Reset device identity when all bonding records are deleted",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_NIMBLE_SECURITY_ENABLE && BT_NIMBLE_ENABLED",
+                                                "help": "Enable this flag to make bonding persistent across device reboots",
+                                                "id": "BT_NIMBLE_NVS_PERSIST",
+                                                "name": "BT_NIMBLE_NVS_PERSIST",
+                                                "range": null,
+                                                "title": "Persist the BLE Bonding keys in NVS",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_NIMBLE_SECURITY_ENABLE && BT_NIMBLE_ENABLED",
+                                                "help": "Defines maximum number of bonds to save for peer security and our security",
+                                                "id": "BT_NIMBLE_MAX_BONDS",
+                                                "name": "BT_NIMBLE_MAX_BONDS",
+                                                "range": null,
+                                                "title": "Maximum number of bonds to save across reboots",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_NIMBLE_SECURITY_ENABLE && BT_NIMBLE_ENABLED",
+                                                "help": "Use this option to let stack internally handle the request for repeat pairing.\nEnabling this option will delete the pairing of the device and stack will NOT post any event\nto application. If this option is disabled, application will get BLE_GAP_EVENT_REPEAT_PAIRING\nevent.",
+                                                "id": "BT_NIMBLE_HANDLE_REPEAT_PAIRING_DELETION",
+                                                "name": "BT_NIMBLE_HANDLE_REPEAT_PAIRING_DELETION",
+                                                "range": null,
+                                                "title": "Enable stack handling of repeat pairing",
+                                                "type": "bool"
                                             }
                                         ],
                                         "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
@@ -11362,7 +11532,7 @@
                                     {
                                         "children": [],
                                         "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "BLE list size",
+                                        "help": "BLE Whitelist size",
                                         "id": "BT_NIMBLE_WHITELIST_SIZE",
                                         "name": "BT_NIMBLE_WHITELIST_SIZE",
                                         "range": null,
@@ -11383,7 +11553,7 @@
                                             }
                                         ],
                                         "depends_on": "BT_NIMBLE_ENABLED",
-                                        "help": "Enable to make the NimBLE host to reattempt GAP connection on connection\nestablishment failure.",
+                                        "help": "Enable to make the NimBLE host to reattempt GAP connection attempt in case of\nconnection establishment failure due to reason 0x3E.",
                                         "id": "BT_NIMBLE_ENABLE_CONN_REATTEMPT",
                                         "name": "BT_NIMBLE_ENABLE_CONN_REATTEMPT",
                                         "range": null,
@@ -11391,23 +11561,24 @@
                                         "type": "bool"
                                     },
                                     {
-                                        "children": [],
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_HS_PVCY && IDF_TARGET_ESP32 && BT_NIMBLE_ENABLED",
+                                                "help": "Use this option to do host based Random Private Address resolution.\nThis option is valid only for ESP32",
+                                                "id": "BT_NIMBLE_HOST_BASED_PRIVACY",
+                                                "name": "BT_NIMBLE_HOST_BASED_PRIVACY",
+                                                "range": null,
+                                                "title": "Enable host based privacy for random address.",
+                                                "type": "bool"
+                                            }
+                                        ],
                                         "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "Use this option to let stack internally handle the request for repeat pairing.\nEnabling this option will delete the pairing of the device and stack will NOT post any event\nto application. If this option is disabled, application will get BLE_GAP_EVENT_REPEAT_PAIRING\nevent.",
-                                        "id": "BT_NIMBLE_HANDLE_REPEAT_PAIRING_DELETION",
-                                        "name": "BT_NIMBLE_HANDLE_REPEAT_PAIRING_DELETION",
+                                        "help": "Enable this option to include host-side APIs related to BLE privacy.\nDisable it if your application does not require privacy features (such as\nRPA generation, resolving, or privacy-based pairing). Disabling this option\nexcludes privacy-related code from the host to reduce memory usage.",
+                                        "id": "BT_NIMBLE_HS_PVCY",
+                                        "name": "BT_NIMBLE_HS_PVCY",
                                         "range": null,
-                                        "title": "Enable stack handling of repeat pairing",
-                                        "type": "bool"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED && IDF_TARGET_ESP32 && BT_NIMBLE_ENABLED",
-                                        "help": "Use this option to do host based Random Private Address resolution.\nIf this option is disabled then controller based privacy is used.",
-                                        "id": "BT_NIMBLE_HOST_BASED_PRIVACY",
-                                        "name": "BT_NIMBLE_HOST_BASED_PRIVACY",
-                                        "range": null,
-                                        "title": "Enable host based privacy for random address.",
+                                        "title": "Enable privacy related APIs",
                                         "type": "bool"
                                     },
                                     {
@@ -11432,7 +11603,7 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "depends_on": "(BT_NIMBLE_ROLE_CENTRAL || BT_NIMBLE_ROLE_PERIPHERAL) && BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
                                         "help": "Defines maximum number of concurrent BLE connections. For ESP32, user\nis expected to configure BTDM_CTRL_BLE_MAX_CONN from controller menu\nalong with this option. Similarly for ESP32-C3 or ESP32-S3, user is expected to\nconfigure BT_CTRL_BLE_MAX_ACT from controller menu.\nFor ESP32C2, ESP32C6 and ESP32H2, each connection will take about 1k DRAM.",
                                         "id": "BT_NIMBLE_MAX_CONNECTIONS",
                                         "name": "BT_NIMBLE_MAX_CONNECTIONS",
@@ -11443,71 +11614,11 @@
                                     {
                                         "children": [],
                                         "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "Defines maximum number of bonds to save for peer security and our security",
-                                        "id": "BT_NIMBLE_MAX_BONDS",
-                                        "name": "BT_NIMBLE_MAX_BONDS",
-                                        "range": null,
-                                        "title": "Maximum number of bonds to save across reboots",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
                                         "help": "Defines maximum number of CCC descriptors to save",
                                         "id": "BT_NIMBLE_MAX_CCCDS",
                                         "name": "BT_NIMBLE_MAX_CCCDS",
                                         "range": null,
                                         "title": "Maximum number of CCC descriptors to save across reboots",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "Enable this flag to make bonding persistent across device reboots",
-                                        "id": "BT_NIMBLE_NVS_PERSIST",
-                                        "name": "BT_NIMBLE_NVS_PERSIST",
-                                        "range": null,
-                                        "title": "Persist the BLE Bonding keys in NVS",
-                                        "type": "bool"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED",
-                                        "help": "There are tracking risks associated with using a fixed or static IRK.\nIf enabled this option, NimBLE will assign a new randomly-generated IRK\nwhen all pairing and bonding records are deleted. This would decrease the ability\nof a previously paired peer to be used to determine whether a device\nwith which it previously shared an IRK is within range.",
-                                        "id": "BT_NIMBLE_SMP_ID_RESET",
-                                        "name": "BT_NIMBLE_SMP_ID_RESET",
-                                        "range": null,
-                                        "title": "Reset device identity when all bonding records are deleted",
-                                        "type": "bool"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "This is the default value of ATT MTU indicated by the device during an ATT MTU exchange.\nThis value can be changed using API ble_att_set_preferred_mtu()",
-                                        "id": "BT_NIMBLE_ATT_PREFERRED_MTU",
-                                        "name": "BT_NIMBLE_ATT_PREFERRED_MTU",
-                                        "range": null,
-                                        "title": "Preferred MTU size in octets",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "This is the default value of ATT Maximum prepare entries",
-                                        "id": "BT_NIMBLE_ATT_MAX_PREP_ENTRIES",
-                                        "name": "BT_NIMBLE_ATT_MAX_PREP_ENTRIES",
-                                        "range": null,
-                                        "title": "Max Prepare write entries",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "Maximum number of GATT client procedures that can be executed.",
-                                        "id": "BT_NIMBLE_GATT_MAX_PROCS",
-                                        "name": "BT_NIMBLE_GATT_MAX_PROCS",
-                                        "range": null,
-                                        "title": "Maximum number of GATT client procedures",
                                         "type": "int"
                                     },
                                     {
@@ -11538,16 +11649,6 @@
                                         "name": "BT_NIMBLE_USE_ESP_TIMER",
                                         "range": null,
                                         "title": "Enable Esp Timer for Nimble",
-                                        "type": "bool"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED",
-                                        "help": "This option is used when data to be sent is more than 512 bytes. For peripheral role,\nBT_NIMBLE_MSYS_1_BLOCK_COUNT needs to be increased according to the need.",
-                                        "id": "BT_NIMBLE_BLE_GATT_BLOB_TRANSFER",
-                                        "name": "BT_NIMBLE_BLE_GATT_BLOB_TRANSFER",
-                                        "range": null,
-                                        "title": "Blob transfer",
                                         "type": "bool"
                                     },
                                     {
@@ -11593,8 +11694,158 @@
                                     }
                                 ],
                                 "depends_on": "BT_NIMBLE_ENABLED",
-                                "id": "component-config-bluetooth-nimble-options-gap-gatt-device-settings",
-                                "title": "GAP / GATT / Device Settings",
+                                "id": "component-config-bluetooth-nimble-options-gap",
+                                "title": "GAP",
+                                "type": "menu"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "(BT_NIMBLE_GATT_CLIENT || BT_NIMBLE_GATT_SERVER) && BT_NIMBLE_ENABLED",
+                                        "help": "This is the default value of ATT MTU indicated by the device during an ATT MTU exchange.\nThis value can be changed using API ble_att_set_preferred_mtu()",
+                                        "id": "BT_NIMBLE_ATT_PREFERRED_MTU",
+                                        "name": "BT_NIMBLE_ATT_PREFERRED_MTU",
+                                        "range": null,
+                                        "title": "Preferred MTU size in octets",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "(BT_NIMBLE_GATT_CLIENT || BT_NIMBLE_GATT_SERVER) && BT_NIMBLE_ENABLED",
+                                        "help": "This is the default value of ATT Maximum prepare entries",
+                                        "id": "BT_NIMBLE_ATT_MAX_PREP_ENTRIES",
+                                        "name": "BT_NIMBLE_ATT_MAX_PREP_ENTRIES",
+                                        "range": null,
+                                        "title": "Max Prepare write entries",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "(BT_NIMBLE_GATT_CLIENT || BT_NIMBLE_GATT_SERVER) && BT_NIMBLE_ENABLED",
+                                        "help": "Maximum number of GATT client procedures that can be executed.",
+                                        "id": "BT_NIMBLE_GATT_MAX_PROCS",
+                                        "name": "BT_NIMBLE_GATT_MAX_PROCS",
+                                        "range": null,
+                                        "title": "Maximum number of GATT client procedures",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "(BT_NIMBLE_GATT_CLIENT || BT_NIMBLE_GATT_SERVER) && BT_NIMBLE_ENABLED",
+                                        "help": "This option is used when data to be sent is more than 512 bytes. For peripheral role,\nBT_NIMBLE_MSYS_1_BLOCK_COUNT needs to be increased according to the need.",
+                                        "id": "BT_NIMBLE_BLE_GATT_BLOB_TRANSFER",
+                                        "name": "BT_NIMBLE_BLE_GATT_BLOB_TRANSFER",
+                                        "range": null,
+                                        "title": "Blob transfer",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                                "help": "Enable this option to include *included services* (e.g., services referenced by other services)\nin the GATT database cache. Disabling this will skip caching of included service entries.",
+                                                "id": "BT_NIMBLE_GATT_CACHING_INCLUDE_SERVICES",
+                                                "name": "BT_NIMBLE_GATT_CACHING_INCLUDE_SERVICES",
+                                                "range": null,
+                                                "title": "Include services in GATT caching",
+                                                "type": "bool"
+                                            }
+                                        ],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "Enable GATT caching",
+                                        "id": "BT_NIMBLE_GATT_CACHING",
+                                        "is_menuconfig": true,
+                                        "name": "BT_NIMBLE_GATT_CACHING",
+                                        "range": null,
+                                        "title": "Enable GATT caching",
+                                        "type": "menu"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED",
+                                        "help": "Enable this option to start discovery for included service.",
+                                        "id": "BT_NIMBLE_INCL_SVC_DISCOVERY",
+                                        "name": "BT_NIMBLE_INCL_SVC_DISCOVERY",
+                                        "range": null,
+                                        "title": "Enable Included service discovery",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                        "help": "Set this option to set the upper limit on number of connections to be cached.",
+                                        "id": "BT_NIMBLE_GATT_CACHING_MAX_CONNS",
+                                        "name": "BT_NIMBLE_GATT_CACHING_MAX_CONNS",
+                                        "range": null,
+                                        "title": "Maximum connections to be cached",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                        "help": "Set this option to set the upper limit on number of services per connection to be cached.",
+                                        "id": "BT_NIMBLE_GATT_CACHING_MAX_SVCS",
+                                        "name": "BT_NIMBLE_GATT_CACHING_MAX_SVCS",
+                                        "range": null,
+                                        "title": "Maximum number of services per connection",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                        "help": "Set this option to set the upper limit on number of included services per connection to be cached.",
+                                        "id": "BT_NIMBLE_GATT_CACHING_MAX_INCL_SVCS",
+                                        "name": "BT_NIMBLE_GATT_CACHING_MAX_INCL_SVCS",
+                                        "range": null,
+                                        "title": "Maximum number of included services per connection",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                        "help": "Set this option to set the upper limit on number of characteristics per connection to be cached.",
+                                        "id": "BT_NIMBLE_GATT_CACHING_MAX_CHRS",
+                                        "name": "BT_NIMBLE_GATT_CACHING_MAX_CHRS",
+                                        "range": null,
+                                        "title": "Maximum number of characteristics per connection",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                        "help": "Set this option to set the upper limit on number of descriptors per connection to be cached.",
+                                        "id": "BT_NIMBLE_GATT_CACHING_MAX_DSCS",
+                                        "name": "BT_NIMBLE_GATT_CACHING_MAX_DSCS",
+                                        "range": null,
+                                        "title": "Maximum number of descriptors per connection",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                        "help": "When client receives ATT out-of-sync error message, it will not automatically start the discovery procedure\nto correct the invalid cache.",
+                                        "id": "BT_NIMBLE_GATT_CACHING_DISABLE_AUTO",
+                                        "name": "BT_NIMBLE_GATT_CACHING_DISABLE_AUTO",
+                                        "range": null,
+                                        "title": "Do not start discovery procedure automatically upon receiving Out of Sync",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                        "help": "Enable this option to use associated address caching instead of performing service discovery.",
+                                        "id": "BT_NIMBLE_GATT_CACHING_ASSOC_ENABLE",
+                                        "name": "BT_NIMBLE_GATT_CACHING_ASSOC_ENABLE",
+                                        "range": null,
+                                        "title": "Enable association-based GATT caching",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "BT_NIMBLE_ENABLED",
+                                "id": "component-config-bluetooth-nimble-options-gatt-att",
+                                "title": "GATT / ATT",
                                 "type": "menu"
                             },
                             {
@@ -11650,7 +11901,7 @@
                                     {
                                         "children": [],
                                         "depends_on": "BT_NIMBLE_ENABLED",
-                                        "help": "Dynamic memory count",
+                                        "help": "Dynamic memory count for block 2",
                                         "id": "BT_NIMBLE_MSYS_2_BLOCK_COUNT",
                                         "name": "BT_NIMBLE_MSYS_2_BLOCK_COUNT",
                                         "range": null,
@@ -11844,7 +12095,7 @@
                                                             },
                                                             {
                                                                 "children": [],
-                                                                "depends_on": "BT_NIMBLE_ENABLE_PERIODIC_ADV && BT_NIMBLE_EXT_ADV && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                                                "depends_on": "BT_NIMBLE_ENABLE_PERIODIC_ADV && SOC_BLE_PERIODIC_ADV_WITH_RESPONSE && BT_NIMBLE_EXT_ADV && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                                                 "help": "This enables controller PAwR (Periodic Advertisement with Response).",
                                                                 "id": "BT_NIMBLE_PERIODIC_ADV_WITH_RESPONSES",
                                                                 "name": "BT_NIMBLE_PERIODIC_ADV_WITH_RESPONSES",
@@ -12095,7 +12346,7 @@
                                             }
                                         ],
                                         "depends_on": "BT_NIMBLE_ENABLED && (SOC_BLE_60_SUPPORTED || BT_CONTROLLER_DISABLED) && (SOC_BLE_60_SUPPORTED || BT_CONTROLLER_DISABLED) && BT_NIMBLE_ENABLED",
-                                        "help": "Enable BLE 6 feature",
+                                        "help": "Enable BLE 6.x feature support",
                                         "id": "BT_NIMBLE_60_FEATURE_SUPPORT",
                                         "is_menuconfig": true,
                                         "name": "BT_NIMBLE_60_FEATURE_SUPPORT",
@@ -12714,108 +12965,6 @@
                                         "type": "bool"
                                     },
                                     {
-                                        "children": [
-                                            {
-                                                "children": [],
-                                                "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
-                                                "help": "Enable this option to include *included services* (e.g., services referenced by other services)\nin the GATT database cache. Disabling this will skip caching of included service entries.",
-                                                "id": "BT_NIMBLE_GATT_CACHING_INCLUDE_SERVICES",
-                                                "name": "BT_NIMBLE_GATT_CACHING_INCLUDE_SERVICES",
-                                                "range": null,
-                                                "title": "Include services in GATT caching",
-                                                "type": "bool"
-                                            }
-                                        ],
-                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                        "help": "Enable GATT caching",
-                                        "id": "BT_NIMBLE_GATT_CACHING",
-                                        "is_menuconfig": true,
-                                        "name": "BT_NIMBLE_GATT_CACHING",
-                                        "range": null,
-                                        "title": "Enable GATT caching",
-                                        "type": "menu"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED",
-                                        "help": "Enable this option to start discovery for included service.",
-                                        "id": "BT_NIMBLE_INCL_SVC_DISCOVERY",
-                                        "name": "BT_NIMBLE_INCL_SVC_DISCOVERY",
-                                        "range": null,
-                                        "title": "Enable Included service discovery",
-                                        "type": "bool"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
-                                        "help": "Set this option to set the upper limit on number of connections to be cached.",
-                                        "id": "BT_NIMBLE_GATT_CACHING_MAX_CONNS",
-                                        "name": "BT_NIMBLE_GATT_CACHING_MAX_CONNS",
-                                        "range": null,
-                                        "title": "Maximum connections to be cached",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
-                                        "help": "Set this option to set the upper limit on number of services per connection to be cached.",
-                                        "id": "BT_NIMBLE_GATT_CACHING_MAX_SVCS",
-                                        "name": "BT_NIMBLE_GATT_CACHING_MAX_SVCS",
-                                        "range": null,
-                                        "title": "Maximum number of services per connection",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
-                                        "help": "Set this option to set the upper limit on number of included services per connection to be cached.",
-                                        "id": "BT_NIMBLE_GATT_CACHING_MAX_INCL_SVCS",
-                                        "name": "BT_NIMBLE_GATT_CACHING_MAX_INCL_SVCS",
-                                        "range": null,
-                                        "title": "Maximum number of included services per connection",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
-                                        "help": "Set this option to set the upper limit on number of characteristics per connection to be cached.",
-                                        "id": "BT_NIMBLE_GATT_CACHING_MAX_CHRS",
-                                        "name": "BT_NIMBLE_GATT_CACHING_MAX_CHRS",
-                                        "range": null,
-                                        "title": "Maximum number of characteristics per connection",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
-                                        "help": "Set this option to set the upper limit on number of descriptors per connection to be cached.",
-                                        "id": "BT_NIMBLE_GATT_CACHING_MAX_DSCS",
-                                        "name": "BT_NIMBLE_GATT_CACHING_MAX_DSCS",
-                                        "range": null,
-                                        "title": "Maximum number of descriptors per connection",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
-                                        "help": "When client receives ATT out-of-sync error message, it will not automatically start the discovery procedure\nto correct the invalid cache.",
-                                        "id": "BT_NIMBLE_GATT_CACHING_DISABLE_AUTO",
-                                        "name": "BT_NIMBLE_GATT_CACHING_DISABLE_AUTO",
-                                        "range": null,
-                                        "title": "Do not start discovery procedure automatically upon receiving Out of Sync",
-                                        "type": "bool"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
-                                        "help": "Enable this option to use associated address caching instead of performing service discovery.",
-                                        "id": "BT_NIMBLE_GATT_CACHING_ASSOC_ENABLE",
-                                        "name": "BT_NIMBLE_GATT_CACHING_ASSOC_ENABLE",
-                                        "range": null,
-                                        "title": "Enable association-based GATT caching",
-                                        "type": "bool"
-                                    },
-                                    {
                                         "children": [],
                                         "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
                                         "help": "Set this option to enable blufi functionality.",
@@ -12826,18 +12975,7 @@
                                         "type": "bool"
                                     },
                                     {
-                                        "children": [
-                                            {
-                                                "children": [],
-                                                "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENC_ADV_DATA && BT_NIMBLE_ENABLED",
-                                                "help": "Defines maximum number of encrypted advertising data key material to save",
-                                                "id": "BT_NIMBLE_MAX_EADS",
-                                                "name": "BT_NIMBLE_MAX_EADS",
-                                                "range": null,
-                                                "title": "Maximum number of EAD devices to save across reboots",
-                                                "type": "int"
-                                            }
-                                        ],
+                                        "children": [],
                                         "depends_on": "BT_NIMBLE_ENABLED",
                                         "help": "This option is used to enable encrypted advertising data.",
                                         "id": "BT_NIMBLE_ENC_ADV_DATA",
@@ -12845,6 +12983,26 @@
                                         "range": null,
                                         "title": "Encrypted Advertising Data",
                                         "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "Enables concatenation of multiple UUIDs of the same type while parsing\nadvertising data on the central device. When disabled, only the last\nparsed UUID of a given type is retained.",
+                                        "id": "BT_NIMBLE_ADV_UUID_CONCAT",
+                                        "name": "BT_NIMBLE_ADV_UUID_CONCAT",
+                                        "range": null,
+                                        "title": "concatenate uuids while parsing advertising data",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENC_ADV_DATA && BT_NIMBLE_ENABLED",
+                                        "help": "Defines maximum number of encrypted advertising data key material to save",
+                                        "id": "BT_NIMBLE_MAX_EADS",
+                                        "name": "BT_NIMBLE_MAX_EADS",
+                                        "range": null,
+                                        "title": "Maximum number of EAD devices to save across reboots",
+                                        "type": "int"
                                     },
                                     {
                                         "children": [],
@@ -12884,6 +13042,86 @@
                                         "name": "BT_NIMBLE_SUBRATE",
                                         "range": null,
                                         "title": "Enable Subrate Change",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_SECURITY_ENABLE && BT_NIMBLE_ENABLED",
+                                        "help": "Enable support for user defined static passkey for SMP",
+                                        "id": "BT_NIMBLE_STATIC_PASSKEY",
+                                        "name": "BT_NIMBLE_STATIC_PASSKEY",
+                                        "range": null,
+                                        "title": "Enable support for Static Passkey",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "Enable DTM related test procedure support",
+                                        "id": "BT_NIMBLE_DTM_MODE_TEST",
+                                        "name": "BT_NIMBLE_DTM_MODE_TEST",
+                                        "range": null,
+                                        "title": "Enable DTM related test procedure support",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "This option enables memory optimizations in the NimBLE stack.",
+                                        "id": "BT_NIMBLE_MEM_OPTIMIZATION",
+                                        "name": "BT_NIMBLE_MEM_OPTIMIZATION",
+                                        "range": null,
+                                        "title": "Enable memory optimization",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "This option enables use of dynamic memory allocation instead of static\nallocation for variable global / local variable. This helps in improving\nmemory footprint",
+                                        "id": "BT_NIMBLE_STATIC_TO_DYNAMIC",
+                                        "name": "BT_NIMBLE_STATIC_TO_DYNAMIC",
+                                        "range": null,
+                                        "title": "Use Dynamic Memory allocations instead of static",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "Enable Sign counter operations",
+                                        "id": "BT_NIMBLE_SM_SIGN_CNT",
+                                        "name": "BT_NIMBLE_SM_SIGN_CNT",
+                                        "range": null,
+                                        "title": "Enable Sign counter operations",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "Enable CPFD and CAPD gatt descriptors support",
+                                        "id": "BT_NIMBLE_CPFD_CAFD",
+                                        "name": "BT_NIMBLE_CPFD_CAFD",
+                                        "range": null,
+                                        "title": "Enable CPFD/CAPD support",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "Enable Support to reconfigure L2CAP MTU / MPS",
+                                        "id": "BT_NIMBLE_RECONFIG_MTU",
+                                        "name": "BT_NIMBLE_RECONFIG_MTU",
+                                        "range": null,
+                                        "title": "Reconfig L2CAP MTU support",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED",
+                                        "help": "Disabling IRAM-optimized paths will place functions in FLASH (.irom.text)\ninstead of DRAM (.iram.text/.text in internal RAM). Suitable for low-speed\nGAP/GATT operations to reduce RAM usage.",
+                                        "id": "BT_NIMBLE_LOW_SPEED_MODE",
+                                        "name": "BT_NIMBLE_LOW_SPEED_MODE",
+                                        "range": null,
+                                        "title": "Reduce DRAM/IRAM usage by moving GATT/GAP/NPL functions to FLASH",
                                         "type": "bool"
                                     }
                                 ],
@@ -13265,6 +13503,16 @@
                             {
                                 "children": [
                                     {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && !BT_NIMBLE_ISO && BT_NIMBLE_ENABLED",
+                                        "help": "Enable NimBLE memory debug to track memory allocations and deallocations.\nThis feature records the function name, line number, and size of each allocation,\nand provides APIs to display memory usage statistics, find memory leaks, and\nmonitor peak memory usage.",
+                                        "id": "BT_NIMBLE_MEM_DEBUG",
+                                        "name": "BT_NIMBLE_MEM_DEBUG",
+                                        "range": null,
+                                        "title": "NimBLE memory debug",
+                                        "type": "bool"
+                                    },
+                                    {
                                         "children": [
                                             {
                                                 "children": [],
@@ -13401,11 +13649,69 @@
                                         "range": null,
                                         "title": "Enable BLE high duty advertising interval feature",
                                         "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "SOC_ESP_NIMBLE_CONTROLLER && BT_NIMBLE_50_FEATURE_SUPPORT && !IDF_TARGET_ESP32C2 && BT_NIMBLE_ENABLED",
+                                        "help": "This enable vendor-specific APIs to send specific DID for different advertising data in extended\nadvertising.",
+                                        "id": "BT_NIMBLE_ADV_SEND_CONSTANT_DID",
+                                        "name": "BT_NIMBLE_ADV_SEND_CONSTANT_DID",
+                                        "range": null,
+                                        "title": "Enable BLE Ext Adv to Send with Specific DID",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "SOC_ESP_NIMBLE_CONTROLLER && BT_NIMBLE_50_FEATURE_SUPPORT && !IDF_TARGET_ESP32C2 && BT_NIMBLE_ENABLED",
+                                        "help": "This enables vendor-specific APIs to only receive specific groups of ADIs, and implements DIDs\nduplicate filtering for extended scanning. Enabling this can reduce the unnecessary reception of\nsecondary channel PDUs carrying non-targeted ADIs.",
+                                        "id": "BT_NIMBLE_SCAN_ALLOW_ENH_ADI_FILTER",
+                                        "name": "BT_NIMBLE_SCAN_ALLOW_ENH_ADI_FILTER",
+                                        "range": null,
+                                        "title": "Enable BLE Ext Scan to Receive Packet with Specific ADI",
+                                        "type": "bool"
                                     }
                                 ],
                                 "depends_on": "BT_NIMBLE_ENABLED",
                                 "id": "component-config-bluetooth-nimble-options-vendor-optimization",
                                 "title": "Vendor / Optimization",
+                                "type": "menu"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "Enable support to query host status",
+                                        "id": "BT_NIMBLE_CHK_HOST_STATUS",
+                                        "name": "BT_NIMBLE_CHK_HOST_STATUS",
+                                        "range": null,
+                                        "title": "Enable host status query support",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "Enable support for misc APIs like set data addr change, read local resolv addr\nand set host feature",
+                                        "id": "BT_NIMBLE_UTIL_API",
+                                        "name": "BT_NIMBLE_UTIL_API",
+                                        "range": null,
+                                        "title": "Enable helper APIs",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                        "help": "Enable support for parsing of more adv fields as per spec",
+                                        "id": "BT_NIMBLE_EXTRA_ADV_FIELDS",
+                                        "name": "BT_NIMBLE_EXTRA_ADV_FIELDS",
+                                        "range": null,
+                                        "title": "Enable extra Adv report fields parsing",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "BT_NIMBLE_ENABLED",
+                                "id": "component-config-bluetooth-nimble-options-helper-utils",
+                                "title": "Helper Utils",
                                 "type": "menu"
                             }
                         ],
@@ -14549,6 +14855,46 @@
                             {
                                 "children": [
                                     {
+                                        "children": [],
+                                        "depends_on": "(BT_BLE_SMP_ENABLE || BT_SMP_ENABLE) && <choice BT_SMP_CRYPTO_STACK>",
+                                        "help": "Use the built-in Bluedroid cryptographic implementation.\nThis provides compatibility with all features.\nThis option is only available for Bluedroid host.",
+                                        "id": "BT_SMP_CRYPTO_STACK_NATIVE",
+                                        "name": "BT_SMP_CRYPTO_STACK_NATIVE",
+                                        "range": null,
+                                        "title": "Native Bluedroid implementation",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice BT_SMP_CRYPTO_STACK>",
+                                        "help": "Use TinyCrypt library for cryptographic operations.\nTinyCrypt is a lightweight cryptographic library designed for constrained devices.\nThis can reduce code size compared to the native implementation.\nThis is the default option.",
+                                        "id": "BT_SMP_CRYPTO_STACK_TINYCRYPT",
+                                        "name": "BT_SMP_CRYPTO_STACK_TINYCRYPT",
+                                        "range": null,
+                                        "title": "TinyCrypt",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice BT_SMP_CRYPTO_STACK>",
+                                        "help": "Use mbedTLS library for cryptographic operations.\nThis can provide hardware acceleration on supported platforms and reduce code size\nby sharing crypto implementations with other components.",
+                                        "id": "BT_SMP_CRYPTO_STACK_MBEDTLS",
+                                        "name": "BT_SMP_CRYPTO_STACK_MBEDTLS",
+                                        "range": null,
+                                        "title": "mbedTLS",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "BT_BLE_SMP_ENABLE || BT_SMP_ENABLE || BT_NIMBLE_SECURITY_ENABLE",
+                                "help": "Select the cryptographic library to use for SMP operations (AES, AES-CMAC, ECDH P-256).",
+                                "id": "component-config-bluetooth-common-options-smp-cryptographic-stack",
+                                "name": "BT_SMP_CRYPTO_STACK",
+                                "title": "SMP cryptographic stack",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [
+                                    {
                                         "children": [
                                             {
                                                 "children": [],
@@ -14621,6 +14967,27 @@
                                                         "range": null,
                                                         "title": "Buffer size for each peripheral transport of Link Layer LBM",
                                                         "type": "int"
+                                                    },
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "children": [],
+                                                                "depends_on": "BLE_LOG_LL_HCI_LOG_PAYLOAD_LEN_LIMIT_ENABLED && BLE_LOG_LL_ENABLED && BLE_LOG_ENABLED",
+                                                                "help": "Maximum length for LL HCI Log payload (len_append).\nWhen the feature is enabled and len_append exceeds this value,\nit will be truncated.",
+                                                                "id": "BLE_LOG_LL_HCI_LOG_PAYLOAD_LEN_LIMIT",
+                                                                "name": "BLE_LOG_LL_HCI_LOG_PAYLOAD_LEN_LIMIT",
+                                                                "range": null,
+                                                                "title": "LL HCI Log Payload Length Limit (bytes)",
+                                                                "type": "int"
+                                                            }
+                                                        ],
+                                                        "depends_on": "BLE_LOG_LL_ENABLED && BLE_LOG_ENABLED",
+                                                        "help": "Enable length limit for LL HCI Log payload (addr_append).\nWhen enabled, if len_append exceeds the configured limit,\nit will be truncated to the maximum length.",
+                                                        "id": "BLE_LOG_LL_HCI_LOG_PAYLOAD_LEN_LIMIT_ENABLED",
+                                                        "name": "BLE_LOG_LL_HCI_LOG_PAYLOAD_LEN_LIMIT_ENABLED",
+                                                        "range": null,
+                                                        "title": "Enable LL HCI Log Payload Length Limit",
+                                                        "type": "bool"
                                                     }
                                                 ],
                                                 "depends_on": "BT_CONTROLLER_ENABLED && BLE_LOG_ENABLED",
@@ -14634,11 +15001,31 @@
                                             {
                                                 "children": [],
                                                 "depends_on": "BLE_LOG_ENABLED",
+                                                "help": "Enable BLE Host side HCI Logging",
+                                                "id": "BLE_LOG_HOST_SIDE_HCI_LOG_ENABLED",
+                                                "name": "BLE_LOG_HOST_SIDE_HCI_LOG_ENABLED",
+                                                "range": null,
+                                                "title": "Enable BLE Host side HCI Logging",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_LOG_ENABLED",
                                                 "help": "Checksum is the default method for BLE Log data integrity check,\nbut for targets with slow CPU speed, it may cause significant system\nperformance decrease; a compromise could be made to balance the\nrealtime performance and log data integrity, which is calculating the\nchecksum of frame head and payload all together by default, or only\ncalculate the checksum of frame head to minimize performance decrease",
                                                 "id": "BLE_LOG_PAYLOAD_CHECKSUM_ENABLED",
                                                 "name": "BLE_LOG_PAYLOAD_CHECKSUM_ENABLED",
                                                 "range": null,
                                                 "title": "Enable payload checksum for BLE Log data integrity check",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_LOG_ENABLED",
+                                                "help": "XOR checksum is introduced for integrity check performance optimization.",
+                                                "id": "BLE_LOG_XOR_CHECKSUM_ENABLED",
+                                                "name": "BLE_LOG_XOR_CHECKSUM_ENABLED",
+                                                "range": null,
+                                                "title": "Enable XOR checksum for BLE Log payload integrity check",
                                                 "type": "bool"
                                             },
                                             {
@@ -14655,13 +15042,63 @@
                                                 "children": [
                                                     {
                                                         "children": [],
-                                                        "depends_on": "BLE_LOG_TS_ENABLED && BLE_LOG_ENABLED",
+                                                        "depends_on": "BLE_LOG_TS_ENABLED && BLE_LOG_TS_ENABLED && BLE_LOG_ENABLED",
                                                         "help": "GPIO number for TS toggle output",
                                                         "id": "BLE_LOG_SYNC_IO_NUM",
                                                         "name": "BLE_LOG_SYNC_IO_NUM",
                                                         "range": null,
                                                         "title": "GPIO number for Timestamp Synchronization (TS) toggle output",
                                                         "type": "int"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "BLE_LOG_TS_ENABLED && BLE_LOG_ENABLED",
+                                                        "help": "Timeout (ms) for Timestamp Synchronization toggle",
+                                                        "id": "BLE_LOG_TS_TRIGGER_TIMEOUT_MS",
+                                                        "name": "BLE_LOG_TS_TRIGGER_TIMEOUT_MS",
+                                                        "range": null,
+                                                        "title": "Timeout (ms) for Timestamp Synchronization toggle",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "children": [],
+                                                                "depends_on": "<choice BLE_LOG_TS_TRIGGER_CHOICE>",
+                                                                "help": "ESP Timer based periodic TS trigger",
+                                                                "id": "BLE_LOG_TS_TRIGGER_ESP_TIMER",
+                                                                "name": "BLE_LOG_TS_TRIGGER_ESP_TIMER",
+                                                                "range": null,
+                                                                "title": "BLE Log Timestamp Synchronization trigger - ESP Timer",
+                                                                "type": "bool"
+                                                            },
+                                                            {
+                                                                "children": [],
+                                                                "depends_on": "<choice BLE_LOG_TS_TRIGGER_CHOICE>",
+                                                                "help": "Task Event based TS trigger (Light Sleep Test Compatibility)",
+                                                                "id": "BLE_LOG_TS_TRIGGER_TASK_EVENT",
+                                                                "name": "BLE_LOG_TS_TRIGGER_TASK_EVENT",
+                                                                "range": null,
+                                                                "title": "BLE Log Timestamp Synchronization trigger - Task Event",
+                                                                "type": "bool"
+                                                            }
+                                                        ],
+                                                        "depends_on": "BLE_LOG_TS_ENABLED && BLE_LOG_ENABLED",
+                                                        "help": "Choose BLE Log Timestamp Synchronization trigger",
+                                                        "id": "component-config-bluetooth-common-options-ble-log-enable-ble-log-module-experimental--enable-ble-log-timestamp-synchronization-ts--ble-log-timestamp-synchronization-trigger-choice",
+                                                        "name": "BLE_LOG_TS_TRIGGER_CHOICE",
+                                                        "title": "BLE Log Timestamp Synchronization trigger choice",
+                                                        "type": "choice"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "BLE_LOG_TS_TRIGGER_ESP_TIMER && BLE_LOG_TS_ENABLED && BLE_LOG_ENABLED",
+                                                        "help": "Utilize ISR dispatch method for ESP Timer as Timestamp Synchronization trigger",
+                                                        "id": "BLE_LOG_TS_TRIGGER_ESP_TIMER_ISR_DISPATCH_METHOD",
+                                                        "name": "BLE_LOG_TS_TRIGGER_ESP_TIMER_ISR_DISPATCH_METHOD",
+                                                        "range": null,
+                                                        "title": "Utilize ISR dispatch method for ESP Timer as Timestamp Synchronization trigger",
+                                                        "type": "bool"
                                                     }
                                                 ],
                                                 "depends_on": "BLE_LOG_ENABLED",
@@ -16261,6 +16698,16 @@
                         "name": "BLE_MESH_RANDOM_ADV_INTERVAL",
                         "range": null,
                         "title": "Support using random adv interval for mesh packets",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "!BT_LE_CRYPTO_STACK_MBEDTLS && !BT_NIMBLE_CRYPTO_STACK_MBEDTLS && BLE_MESH",
+                        "help": "Enable this option to use the unified BLE tinycrypt solution\ninstead of the default one in BLE Mesh stack.",
+                        "id": "BLE_MESH_USE_UNIFIED_CRYPTO",
+                        "name": "BLE_MESH_USE_UNIFIED_CRYPTO",
+                        "range": null,
+                        "title": "Use the unified BLE tinycrypt implementation",
                         "type": "bool"
                     },
                     {
@@ -18197,22 +18644,328 @@
                                     }
                                 ],
                                 "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
-                                "help": "Enable support for BLOB Transfer Client model.",
+                                "help": "Enable support for BLOB Transfer Client model.\nWarn: This version of the Mesh Binary Large Object Transfer Model will be deprecated,\nand a new version will be released in the future.",
                                 "id": "BLE_MESH_MBT_CLI",
                                 "name": "BLE_MESH_MBT_CLI",
                                 "range": null,
-                                "title": "BLOB Transfer Client model",
+                                "title": "BLOB Transfer Client model(Deprecated)",
                                 "type": "bool"
                             },
                             {
                                 "children": [],
                                 "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
-                                "help": "Enable support for BLOB Transfer Server model.",
+                                "help": "Enable support for BLOB Transfer Server model.\nWarn: This version of the Mesh Binary Large Object Transfer Model will be deprecated,\nand a new version will be released in the future.",
                                 "id": "BLE_MESH_MBT_SRV",
                                 "name": "BLE_MESH_MBT_SRV",
                                 "range": null,
-                                "title": "BLOB Transfer Server model",
+                                "title": "BLOB Transfer Server model(Deprecated)",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_BLOB_SRV && BLE_MESH",
+                                                "help": "In Pull mode (Pull BLOB Transfer Mode), the BLOB Transfer Server\nrequests a fixed number of chunks from the Client. Use this option to\ncontrol the chunk count in the request. If the BLOB Transfer Server\nis instantiated on a Low Power node, the pull request count will be\ntrimmed to not overflow the Friend queue.",
+                                                "id": "BLE_MESH_BLOB_SRV_PULL_REQ_COUNT",
+                                                "name": "BLE_MESH_BLOB_SRV_PULL_REQ_COUNT",
+                                                "range": null,
+                                                "title": "Number of chunks to request for each pull",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_BLOB_SRV && BLE_MESH",
+                                                "help": "The maximum object size a BLOB Transfer Server can receive.",
+                                                "id": "BLE_MESH_BLOB_SIZE_MAX",
+                                                "name": "BLE_MESH_BLOB_SIZE_MAX",
+                                                "range": null,
+                                                "title": "Largest BLOB size in bytes",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_BLOB_SRV && BLE_MESH",
+                                                "help": "Minimum acceptable block size in a BLOB transfer. The transfer block\nsize will be some number that is a power of two, and is between block\nsize min and block size max. If no such number exists, a compile\ntime warning will be issued.",
+                                                "id": "BLE_MESH_BLOB_BLOCK_SIZE_MIN",
+                                                "name": "BLE_MESH_BLOB_BLOCK_SIZE_MIN",
+                                                "range": null,
+                                                "title": "Minimum block size",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_BLOB_SRV && BLE_MESH",
+                                                "help": "Maximum acceptable block size in a BLOB transfer. The transfer block\nsize will be some number that is a power of two, and is between block\nsize min and block size max. If no such number exists, a compile\ntime warning will be issued.",
+                                                "id": "BLE_MESH_BLOB_BLOCK_SIZE_MAX",
+                                                "name": "BLE_MESH_BLOB_BLOCK_SIZE_MAX",
+                                                "range": null,
+                                                "title": "Maximum block size",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_BLOB_SRV && BLE_MESH",
+                                                "help": "The timer value that Pull BLOB Transfer Server uses to report missed chunks.",
+                                                "id": "BLE_MESH_BLOB_REPORT_TIMEOUT",
+                                                "name": "BLE_MESH_BLOB_REPORT_TIMEOUT",
+                                                "range": null,
+                                                "title": "Partial Block Report interval in Pull mode",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "!BLE_MESH_ALIGN_CHUNK_SIZE_TO_MAX_SEGMENT && BLE_MESH_BLOB_SRV && BLE_MESH",
+                                                "help": "Set the chunk size for the BLOB Server.\nThe actual maximum chunk size depends on how many segments are\npossible and will be clamped to the max possible if set above.\nsee also: BLE_MESH_RX_SEG_MAX,\nand the maximum SDU a node can receive.",
+                                                "id": "BLE_MESH_RX_BLOB_CHUNK_SIZE",
+                                                "name": "BLE_MESH_RX_BLOB_CHUNK_SIZE",
+                                                "range": null,
+                                                "title": "BLOB Server chunk size",
+                                                "type": "int"
+                                            }
+                                        ],
+                                        "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
+                                        "help": "Enable the Binary Large Object (BLOB) Transfer Server model.",
+                                        "id": "BLE_MESH_BLOB_SRV",
+                                        "name": "BLE_MESH_BLOB_SRV",
+                                        "range": null,
+                                        "title": "Support for BLOB Transfer Server model",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_BLOB_CLI && BLE_MESH",
+                                                "help": "Controls the number of times the client will attempt to resend missing\nchunks to the BLOB receivers for every block.",
+                                                "id": "BLE_MESH_BLOB_CLI_BLOCK_RETRIES",
+                                                "name": "BLE_MESH_BLOB_CLI_BLOCK_RETRIES",
+                                                "range": null,
+                                                "title": "Number of retries per block",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "!BLE_MESH_ALIGN_CHUNK_SIZE_TO_MAX_SEGMENT && BLE_MESH_BLOB_CLI && BLE_MESH",
+                                                "help": "Set the chunk size for the BLOB Client.\nThe actual maximum chunk size depends on how many segments are\npossible and will be clamped to the max possible if set above.\nsee also: BLE_MESH_TX_SEG_MAX,\nand the maximum SDU a node can receive.",
+                                                "id": "BLE_MESH_TX_BLOB_CHUNK_SIZE",
+                                                "name": "BLE_MESH_TX_BLOB_CHUNK_SIZE",
+                                                "range": null,
+                                                "title": "BLOB Client chunk size",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_BLOB_CLI && BLE_MESH",
+                                                "help": "Set the interval in milliseconds in which chunks are sent during the BLOB transfer.\nNote: Without a delay between each sent chunk, the network might become too busy with the\nBLOB transfer for other communications to succeed.\nNote: Timing restrictions, like the timeout base, should be considered or changed\naccordingly when setting this interval. Otherwise, the interval might be too big for the\ntimeout settings and cause timeouts.",
+                                                "id": "BLE_MESH_TX_BLOB_CHUNK_SEND_INTERVAL",
+                                                "name": "BLE_MESH_TX_BLOB_CHUNK_SEND_INTERVAL",
+                                                "range": null,
+                                                "title": "BLOB Client chunk send interval",
+                                                "type": "int"
+                                            }
+                                        ],
+                                        "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
+                                        "help": "Enable the Binary Large Object (BLOB) Transfer Client model.",
+                                        "id": "BLE_MESH_BLOB_CLI",
+                                        "name": "BLE_MESH_BLOB_CLI",
+                                        "range": null,
+                                        "title": "Support for BLOB Transfer Client model",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH",
+                                                "help": "A BLOB transfer contains several blocks. Each block is made up of\nseveral chunks. This option controls the maximum chunk count per\nblock.",
+                                                "id": "BLE_MESH_BLOB_CHUNK_COUNT_MAX",
+                                                "name": "BLE_MESH_BLOB_CHUNK_COUNT_MAX",
+                                                "range": null,
+                                                "title": "Maximum chunk count per block",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH",
+                                                "help": null,
+                                                "id": "BLE_MESH_ALIGN_CHUNK_SIZE_TO_MAX_SEGMENT",
+                                                "name": "BLE_MESH_ALIGN_CHUNK_SIZE_TO_MAX_SEGMENT",
+                                                "range": null,
+                                                "title": "Align chunk size to max segmented message size",
+                                                "type": "bool"
+                                            }
+                                        ],
+                                        "depends_on": "BLE_MESH",
+                                        "id": "component-config-esp-ble-mesh-support-support-for-ble-mesh-client-server-models-binary-larger-object-transfer-model-blob-models-common-configuration",
+                                        "title": "BLOB models common configuration",
+                                        "type": "menu"
+                                    }
+                                ],
+                                "depends_on": "BLE_MESH",
+                                "id": "component-config-esp-ble-mesh-support-support-for-ble-mesh-client-server-models-binary-larger-object-transfer-model",
+                                "title": "Binary Larger Object Transfer model",
+                                "type": "menu"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "BLE_MESH_BLOB_SRV && BLE_MESH",
+                                        "help": "Enable the Firmware Update Server model.",
+                                        "id": "BLE_MESH_DFU_SRV",
+                                        "name": "BLE_MESH_DFU_SRV",
+                                        "range": null,
+                                        "title": "Support for Firmware Update Server model",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BLE_MESH_BLOB_CLI && BLE_MESH",
+                                        "help": "Enable the Firmware Update Client model.",
+                                        "id": "BLE_MESH_DFU_CLI",
+                                        "name": "BLE_MESH_DFU_CLI",
+                                        "range": null,
+                                        "title": "Support for Firmware Update Client model",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH",
+                                                "help": "This value defines the maximum length of an image's firmware ID.",
+                                                "id": "BLE_MESH_DFU_FWID_MAXLEN",
+                                                "name": "BLE_MESH_DFU_FWID_MAXLEN",
+                                                "range": null,
+                                                "title": "DFU FWID max length",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH",
+                                                "help": "This value defines the maximum length of an image's metadata.",
+                                                "id": "BLE_MESH_DFU_METADATA_MAXLEN",
+                                                "name": "BLE_MESH_DFU_METADATA_MAXLEN",
+                                                "range": null,
+                                                "title": "DFU metadata max length",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH",
+                                                "help": "This option adds a set of functions that can be used to encode and decode a firmware\nmetadata using the format defined in the Bluetooth mesh DFU subsystem.",
+                                                "id": "BLE_MESH_DFU_METADATA",
+                                                "name": "BLE_MESH_DFU_METADATA",
+                                                "range": null,
+                                                "title": "Support for the default metadata format",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH",
+                                                "help": "This value defines the maximum length of an image's URI, not including\na string terminator.",
+                                                "id": "BLE_MESH_DFU_URI_MAXLEN",
+                                                "name": "BLE_MESH_DFU_URI_MAXLEN",
+                                                "range": null,
+                                                "title": "DFU URI max length",
+                                                "type": "int"
+                                            }
+                                        ],
+                                        "depends_on": "BLE_MESH",
+                                        "id": "component-config-esp-ble-mesh-support-support-for-ble-mesh-client-server-models-device-firmware-update-model-firmware-update-model-configuration",
+                                        "title": "Firmware Update model configuration",
+                                        "type": "menu"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_DFU_SLOTS && BLE_MESH",
+                                                "help": "This value defines the number of firmware slots the DFU image slot manager\ncan keep simultaneously.",
+                                                "id": "BLE_MESH_DFU_SLOT_CNT",
+                                                "name": "BLE_MESH_DFU_SLOT_CNT",
+                                                "range": null,
+                                                "title": "Number of firmware image slots",
+                                                "type": "int"
+                                            }
+                                        ],
+                                        "depends_on": "BLE_MESH",
+                                        "help": "Enable the DFU image slot manager, for managing firmware distribution slots\nfor the Firmware Update Client model.",
+                                        "id": "BLE_MESH_DFU_SLOTS",
+                                        "name": "BLE_MESH_DFU_SLOTS",
+                                        "range": null,
+                                        "title": "Firmware image slot manager",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BLE_MESH",
+                                        "help": "Enable the Device Distribution Client model",
+                                        "id": "BLE_MESH_DFD_CLI",
+                                        "name": "BLE_MESH_DFD_CLI",
+                                        "range": null,
+                                        "title": "Support for Device Distribution Client model",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_DFD_SRV && BLE_MESH",
+                                                "help": "This value defines the largest DFU image a single slot can store.",
+                                                "id": "BLE_MESH_DFD_SRV_SLOT_MAX_SIZE",
+                                                "name": "BLE_MESH_DFD_SRV_SLOT_MAX_SIZE",
+                                                "range": null,
+                                                "title": "Largest DFU image that can be stored",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_DFD_SRV && BLE_MESH",
+                                                "help": "This value defines the total storage space dedicated to storing DFU\nimages on the Firmware Distribution Server.",
+                                                "id": "BLE_MESH_DFD_SRV_SLOT_SPACE",
+                                                "name": "BLE_MESH_DFD_SRV_SLOT_SPACE",
+                                                "range": null,
+                                                "title": "Total DFU image storage space",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_DFD_SRV && BLE_MESH",
+                                                "help": "This value defines the maximum number of Target nodes the Firmware\nDistribution Server can target simultaneously.",
+                                                "id": "BLE_MESH_DFD_SRV_TARGETS_MAX",
+                                                "name": "BLE_MESH_DFD_SRV_TARGETS_MAX",
+                                                "range": null,
+                                                "title": "Maximum Target node count",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BLE_MESH_DFD_SRV && BLE_MESH",
+                                                "help": "This enables support for OOB upload of firmware images for\ndistribution. This makes several callbacks and use of the init\nmacro BLE_MESH_DFD_SRV_INIT_OOB mandatory. See the API documentation\nfor bt_mesh_dfd_srv_cb for details about the mandatory callbacks.",
+                                                "id": "BLE_MESH_DFD_SRV_OOB_UPLOAD",
+                                                "name": "BLE_MESH_DFD_SRV_OOB_UPLOAD",
+                                                "range": null,
+                                                "title": "Support for DFU image OOB upload",
+                                                "type": "bool"
+                                            }
+                                        ],
+                                        "depends_on": "BLE_MESH_BLOB_SRV && BLE_MESH_DFU_CLI && BLE_MESH",
+                                        "help": "Enable the Firmware Distribution Server model.",
+                                        "id": "BLE_MESH_DFD_SRV",
+                                        "name": "BLE_MESH_DFD_SRV",
+                                        "range": null,
+                                        "title": "Support for Firmware Distribution Server model",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "BLE_MESH",
+                                "id": "component-config-esp-ble-mesh-support-support-for-ble-mesh-client-server-models-device-firmware-update-model",
+                                "title": "Device Firmware Update model",
+                                "type": "menu"
                             }
                         ],
                         "depends_on": "BLE_MESH",
@@ -19054,7 +19807,7 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "ESP_TLS_USING_MBEDTLS && SOC_DIG_SIGN_SUPPORTED && MBEDTLS_PK_RSA_ALT_SUPPORT",
+                        "depends_on": "ESP_TLS_USING_MBEDTLS && SOC_DIG_SIGN_SUPPORTED",
                         "help": "Enable use of the Digital Signature Peripheral for ESP-TLS.The DS peripheral\ncan only be used when it is appropriately configured for TLS.\nConsult the ESP-TLS documentation in ESP-IDF Programming Guide for more details.",
                         "id": "ESP_TLS_USE_DS_PERIPHERAL",
                         "name": "ESP_TLS_USE_DS_PERIPHERAL",
@@ -20256,7 +21009,7 @@
                     {
                         "children": [],
                         "depends_on": "SOC_GPSPI_SUPPORTED",
-                        "help": "Normally only the ISR of SPI slave is placed in the IRAM, so that it\ncan work without the flash when interrupt is triggered.\nFor other functions, there's some possibility that the flash cache\nmiss when running inside and out of SPI functions, which may increase\nthe interval of SPI transactions.\nEnable this to put ``queue_trans``, ``get_trans_result`` and\n``transmit`` functions into the IRAM to avoid possible cache miss.",
+                        "help": "Normally only the ISR of SPI slave is placed in the IRAM, so that it\ncan work without the flash when interrupt is triggered.\nFor other functions, there is some possibility that the flash cache\nmiss when running inside and out of SPI functions, which may increase\nthe interval of SPI transactions.\nEnable this to put ``queue_trans``, ``get_trans_result`` and\n``transmit`` functions into the IRAM to avoid possible cache miss.",
                         "id": "SPI_SLAVE_IN_IRAM",
                         "name": "SPI_SLAVE_IN_IRAM",
                         "range": null,
@@ -21102,6 +21855,16 @@
             {
                 "children": [
                     {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "ESP_HW_SUPPORT_FUNC_IN_IRAM",
+                        "name": "ESP_HW_SUPPORT_FUNC_IN_IRAM",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
                         "children": [
                             {
                                 "children": [
@@ -21562,6 +22325,26 @@
                                 ],
                                 "title": "Number of cycles for RTC_SLOW_CLK calibration",
                                 "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Place RTC clock module (all rtc clock functions and const data) into IRAM.",
+                                "id": "RTC_CLK_FUNC_IN_IRAM",
+                                "name": "RTC_CLK_FUNC_IN_IRAM",
+                                "range": null,
+                                "title": "Place RTC clock module functions into IRAM",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Place RTC time module (all rtc clock functions) into IRAM.",
+                                "id": "RTC_TIME_FUNC_IN_IRAM",
+                                "name": "RTC_TIME_FUNC_IN_IRAM",
+                                "range": null,
+                                "title": "Place RTC time module functions into IRAM",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": null,
@@ -25770,16 +26553,6 @@
                                                 "range": null,
                                                 "title": "Scan results expiry window (in seconds)",
                                                 "type": "int"
-                                            },
-                                            {
-                                                "children": [],
-                                                "depends_on": "ESP_WIFI_ENABLE_ROAMING_APP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
-                                                "help": "Max candidates that can be considered while scanning as a part of the\nnetwork at one time.",
-                                                "id": "ESP_WIFI_ROAMING_MAX_CANDIDATES",
-                                                "name": "ESP_WIFI_ROAMING_MAX_CANDIDATES",
-                                                "range": null,
-                                                "title": "Max Candidates in the network",
-                                                "type": "int"
                                             }
                                         ],
                                         "depends_on": "ESP_WIFI_ENABLE_ROAMING_APP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
@@ -25827,6 +26600,76 @@
                                         "range": null,
                                         "title": "Send periodic neighbor report request to AP for internal list updation",
                                         "type": "bool"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "children": [],
+                                                                "depends_on": "ESP_WIFI_ROAMING_AUTO_BLACKLISTING && ESP_WIFI_ENABLE_ROAMING_APP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
+                                                                "help": "Maximum number of connection failures before a BSSID is blacklisted.",
+                                                                "id": "ESP_WIFI_ROAMING_MAX_CONN_FAILURES",
+                                                                "name": "ESP_WIFI_ROAMING_MAX_CONN_FAILURES",
+                                                                "range": null,
+                                                                "title": "Maximum connection failures",
+                                                                "type": "int"
+                                                            }
+                                                        ],
+                                                        "depends_on": "ESP_WIFI_ROAMING_BSSID_BLACKLIST && ESP_WIFI_ENABLE_ROAMING_APP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
+                                                        "help": "Enable this to automatically blacklist BSSIDs after multiple failed connection attempts.",
+                                                        "id": "ESP_WIFI_ROAMING_AUTO_BLACKLISTING",
+                                                        "name": "ESP_WIFI_ROAMING_AUTO_BLACKLISTING",
+                                                        "range": null,
+                                                        "title": "Enable automatic BSSID blacklisting",
+                                                        "type": "bool"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "ESP_WIFI_ROAMING_BSSID_BLACKLIST && ESP_WIFI_ENABLE_ROAMING_APP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
+                                                        "help": "Time in seconds for which a BSSID remains in the blacklist.\nThis applies to both automatically and manually blacklisted BSSIDs.",
+                                                        "id": "ESP_WIFI_ROAMING_BLACKLIST_TIMEOUT",
+                                                        "name": "ESP_WIFI_ROAMING_BLACKLIST_TIMEOUT",
+                                                        "range": null,
+                                                        "title": "Blacklist timeout (in seconds)",
+                                                        "type": "int"
+                                                    }
+                                                ],
+                                                "depends_on": "ESP_WIFI_ENABLE_ROAMING_APP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
+                                                "help": "Enable this to blacklist BSSIDs.",
+                                                "id": "ESP_WIFI_ROAMING_BSSID_BLACKLIST",
+                                                "name": "ESP_WIFI_ROAMING_BSSID_BLACKLIST",
+                                                "range": null,
+                                                "title": "Enable BSSID blacklisting",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "ESP_WIFI_ENABLE_ROAMING_APP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
+                                                "help": "Maximum number of roaming candidates to consider. This also defines the size of the blacklist.",
+                                                "id": "ESP_WIFI_ROAMING_MAX_CANDIDATES",
+                                                "name": "ESP_WIFI_ROAMING_MAX_CANDIDATES",
+                                                "range": null,
+                                                "title": "Maximum number of roaming candidates",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "ESP_WIFI_ENABLE_ROAMING_APP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
+                                                "help": "If the currently connected AP sends a \"transition disable\" bit,\nthis option will make the roaming logic ignore less secure APs.\nThis helps prevent security downgrades when roaming in a mixed\nsecurity environment (e.g., WPA2/WPA3).",
+                                                "id": "ESP_WIFI_ROAMING_PREVENT_DOWNGRADE",
+                                                "name": "ESP_WIFI_ROAMING_PREVENT_DOWNGRADE",
+                                                "range": null,
+                                                "title": "Prevent security downgrade when roaming",
+                                                "type": "bool"
+                                            }
+                                        ],
+                                        "depends_on": "ESP_WIFI_ENABLE_ROAMING_APP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
+                                        "id": "component-config-wi-fi-advanced-support-for-wi-fi-roaming-experimental--configure-roaming-app-blacklist-configuration",
+                                        "title": "Blacklist Configuration",
+                                        "type": "menu"
                                     }
                                 ],
                                 "depends_on": "ESP_WIFI_ENABLE_ROAMING_APP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
@@ -26021,6 +26864,16 @@
                         "name": "ESP_WIFI_ENTERPRISE_SUPPORT",
                         "range": null,
                         "title": "Enable enterprise option",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "ESP_WIFI_ENHANCED_LIGHT_SLEEP && (ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED)",
+                        "help": "Enable debug assertions to verify modem RF flag update operations.\nThis option enables assert checks to verify that modem RF power state\nis correctly cleared before pmu sleep.",
+                        "id": "ESP_WIFI_MODEM_RF_FLAG_UPDATE_DEBUG",
+                        "name": "ESP_WIFI_MODEM_RF_FLAG_UPDATE_DEBUG",
+                        "range": null,
+                        "title": "Enable debug assertions for modem RF flag update",
                         "type": "bool"
                     }
                 ],
@@ -28166,6 +29019,16 @@
                                 "range": null,
                                 "title": "Enable multi-pan feature for frame filter",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "IEEE802154_ENABLED",
+                                "help": "Number of IEEE802154 interfaces",
+                                "id": "IEEE802154_INTERFACE_NUM",
+                                "name": "IEEE802154_INTERFACE_NUM",
+                                "range": null,
+                                "title": "Number of IEEE802154 interfaces",
+                                "type": "int"
                             },
                             {
                                 "children": [],
@@ -33671,6 +34534,16 @@
                                                 "name": "OPENTHREAD_NCP_VENDOR_HOOK",
                                                 "range": null,
                                                 "title": "Enable vendor command for RCP",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "OPENTHREAD_RADIO && OPENTHREAD_ENABLED",
+                                                "help": "Select this to enable sending console commands to OpenThread RCP via Spinel.",
+                                                "id": "OPENTHREAD_RCP_SPINEL_CONSOLE",
+                                                "name": "OPENTHREAD_RCP_SPINEL_CONSOLE",
+                                                "range": null,
+                                                "title": "Enable RCP console via Spinel",
                                                 "type": "bool"
                                             }
                                         ],

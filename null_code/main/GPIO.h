@@ -11,5 +11,6 @@ enum button_event{
 #define BIT_MASK(x) (uint64_t)((1<< x));
 static int GPIOS[] = {CONFIG_UP_BUTTON_GPIO, CONFIG_DOWN_BUTTON_GPIO, CONFIG_SELECT_BUTTON_GPIO}; 
 esp_err_t init_buttons();  
+esp_err_t init_IR(); 
 
 #endif 
