@@ -7025,6 +7025,80 @@
     {
         "children": [
             {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "ENV_GPIO_RANGE_MIN",
+                "name": "ENV_GPIO_RANGE_MIN",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "ENV_GPIO_RANGE_MAX",
+                "name": "ENV_GPIO_RANGE_MAX",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "ENV_GPIO_IN_RANGE_MAX",
+                "name": "ENV_GPIO_IN_RANGE_MAX",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "ENV_GPIO_OUT_RANGE_MAX",
+                "name": "ENV_GPIO_OUT_RANGE_MAX",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "\"The GPIO connected to the IR LED\"",
+                "id": "IR_SEND",
+                "name": "IR_SEND",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "GPIO_PIN",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "\"The GPIO connected to the IR Reciever\"",
+                "id": "IR_RECV",
+                "name": "IR_RECV",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "GPIO_PIN",
+                "type": "int"
+            }
+        ],
+        "depends_on": null,
+        "id": "ir-configuration",
+        "title": "IR Configuration",
+        "type": "menu"
+    },
+    {
+        "children": [
+            {
                 "children": [
                     {
                         "children": [],

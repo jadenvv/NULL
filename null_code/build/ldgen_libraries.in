@@ -161,8 +161,16 @@ $<TARGET_FILE:idf::touch_element>
 $<TARGET_FILE:idf::usb>
 $<TARGET_FILE:idf::wifi_provisioning>
 $<TARGET_FILE:__idf_json>
-$<TARGET_FILE:idf::lvgl__lvgl>
+$<TARGET_FILE:idf::i2c>
 $<TARGET_FILE:__idf_esp_lcd>
+$<TARGET_FILE:__idf_utility>
+$<TARGET_FILE:__idf_i2c>
+$<TARGET_FILE:idf::utility>
+$<TARGET_FILE:idf::GPIO>
+$<TARGET_FILE:idf::lvgl__lvgl>
 $<TARGET_FILE:__idf_lvgl__lvgl>
 $<TARGET_FILE:lvgl_port_lib>
 $<TARGET_FILE:idf::main>
+$<TARGET_FILE:__idf_GPIO>
+$<TARGET_FILE:idf::lora_rfid>
+$<TARGET_FILE:idf::wifi>

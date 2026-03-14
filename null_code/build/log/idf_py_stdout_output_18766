@@ -1,0 +1,10 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=0 /home/jadenv/Documents/NULL/null_code
+-- Minimal build - OFF
+-- Building ESP-IDF components for target esp32s3
+NOTICE: Processing 3 dependencies:
+NOTICE: [1/3] espressif/esp_lvgl_port (2.7.2)
+NOTICE: [2/3] lvgl/lvgl (9.5.0)
+NOTICE: [3/3] idf (5.5.3)
+-- ESP-TEE is currently supported only on the esp32c6;esp32h2;esp32c5 SoCs
+-- Project sdkconfig file /home/jadenv/Documents/NULL/null_code/sdkconfig
+-- Configuring incomplete, errors occurred!

@@ -1,0 +1,35 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=0 /home/jadenv/Documents/NULL/null_code
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages/kconfgen/__main__.py", line 18, in <module>
+    main()
+  File "/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages/kconfgen/core.py", line 724, in main
+    config = kconfiglib.Kconfig(args.kconfig, parser_version=parser_version)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages/kconfiglib/core.py", line 921, in __init__
+    self()
+  File "/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages/kconfiglib/core.py", line 935, in __call__
+    prev = self._parse_block(None, self.top_node, self.top_node)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages/kconfiglib/core.py", line 2633, in _parse_block
+    prev = self._parse_block(None, parent, prev)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages/kconfiglib/core.py", line 2633, in _parse_block
+    prev = self._parse_block(None, parent, prev)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages/kconfiglib/core.py", line 2670, in _parse_block
+    self._parse_block(_T_ENDMENU, node, node)
+  File "/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/lib/python3.12/site-packages/kconfiglib/core.py", line 2742, in _parse_block
+    raise KconfigError(
+kconfiglib.core.KconfigError: error: expected endmenu at end of /home/jadenv/Documents/NULL/null_code/main/Kconfig.projbuild
+CMake Error at /home/jadenv/esp/esp-idf/tools/cmake/kconfig.cmake:230 (message):
+  Failed to run kconfgen
+  (/home/jadenv/.espressif/python_env/idf5.5_py3.12_env/bin/python;-m;kconfgen;--list-separator=semicolon;--kconfig;/home/jadenv/esp/esp-idf/Kconfig;--sdkconfig-rename;/home/jadenv/esp/esp-idf/sdkconfig.rename;--config;/home/jadenv/Documents/NULL/null_code/sdkconfig;--env;IDF_MINIMAL_BUILD=n;--env-file;/home/jadenv/Documents/NULL/null_code/build/config.env).
+  Error 1
+Call Stack (most recent call first):
+  /home/jadenv/esp/esp-idf/tools/cmake/build.cmake:706 (__kconfig_generate_config)
+  /home/jadenv/esp/esp-idf/tools/cmake/project.cmake:741 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+

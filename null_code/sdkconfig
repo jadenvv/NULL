@@ -619,6 +619,13 @@ CONFIG_SELECT_BUTTON_GPIO=18
 # end of button IO configuration
 
 #
+# IR Configuration
+#
+CONFIG_IR_SEND=4
+CONFIG_IR_RECV=5
+# end of IR Configuration
+
+#
 # Compiler options
 #
 CONFIG_COMPILER_OPTIMIZATION_DEBUG=y

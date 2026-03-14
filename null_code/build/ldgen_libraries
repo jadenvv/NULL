@@ -161,8 +161,16 @@
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/usb/libusb.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/json/libjson.a
-/home/jadenv/Documents/NULL/null_code/build/esp-idf/lvgl__lvgl/liblvgl__lvgl.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/i2c/libi2c.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/esp_lcd/libesp_lcd.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/utility/libutility.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/i2c/libi2c.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/utility/libutility.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/GPIO/libGPIO.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/lvgl__lvgl/liblvgl__lvgl.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/lvgl__lvgl/liblvgl__lvgl.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/espressif__esp_lvgl_port/liblvgl_port_lib.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/main/libmain.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/GPIO/libGPIO.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/lora_rfid/liblora_rfid.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/wifi/libwifi.a

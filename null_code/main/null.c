@@ -3,7 +3,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "i2c.h"
-
+#include "GPIO.h"
 void app_main(void)
 {
 	//setup display	

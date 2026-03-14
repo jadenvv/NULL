@@ -70,6 +70,7 @@ menu "IR Configuration"
 	default 5 
 	help 
 	    "The GPIO connected to the IR Reciever"
+endmenu
     
     	
     
