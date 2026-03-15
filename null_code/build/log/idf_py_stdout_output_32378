@@ -1,0 +1,148 @@
+Command: ninja all
+[0/1] Re-running CMake...
+-- Minimal build - OFF
+-- Building ESP-IDF components for target esp32s3
+NOTICE: Processing 3 dependencies:
+NOTICE: [1/3] espressif/esp_lvgl_port (2.7.2)
+NOTICE: [2/3] lvgl/lvgl (9.5.0)
+NOTICE: [3/3] idf (5.5.3)
+-- ESP-TEE is currently supported only on the esp32c6;esp32h2;esp32c5 SoCs
+-- Project sdkconfig file /home/jadenv/Documents/NULL/null_code/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- USING O3
+-- App "null" version: eda2144-dirty
+-- Adding linker script /home/jadenv/Documents/NULL/null_code/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/jadenv/Documents/NULL/null_code/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.wdt.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_master.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_50.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_smp.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_dtm.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_test.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_scan.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script /home/jadenv/esp/esp-idf/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- LVGL version: 9.5.0
+-- Components: GPIO app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_bitscrambler esp_driver_cam esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_isp esp_driver_jpeg esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_ppa esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_touch_sens esp_driver_tsens esp_driver_twai esp_driver_uart esp_driver_usb_serial_jtag esp_eth esp_event esp_gdbstub esp_hal_ieee802154 esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_security esp_system esp_timer esp_vfs_console esp_wifi espcoredump espressif__esp_lvgl_port esptool_py fatfs freertos hal heap http_parser i2c idf_test ieee802154 json log lora_rfid lvgl__lvgl lwip main mbedtls mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread rt rust_top_level sdmmc soc spi_flash spiffs tcp_transport touch_element ulp unity usb utility vfs wear_levelling wifi wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/jadenv/Documents/NULL/null_code/components/GPIO /home/jadenv/esp/esp-idf/components/app_trace /home/jadenv/esp/esp-idf/components/app_update /home/jadenv/esp/esp-idf/components/bootloader /home/jadenv/esp/esp-idf/components/bootloader_support /home/jadenv/esp/esp-idf/components/bt /home/jadenv/esp/esp-idf/components/cmock /home/jadenv/esp/esp-idf/components/console /home/jadenv/esp/esp-idf/components/cxx /home/jadenv/esp/esp-idf/components/driver /home/jadenv/esp/esp-idf/components/efuse /home/jadenv/esp/esp-idf/components/esp-tls /home/jadenv/esp/esp-idf/components/esp_adc /home/jadenv/esp/esp-idf/components/esp_app_format /home/jadenv/esp/esp-idf/components/esp_bootloader_format /home/jadenv/esp/esp-idf/components/esp_coex /home/jadenv/esp/esp-idf/components/esp_common /home/jadenv/esp/esp-idf/components/esp_driver_ana_cmpr /home/jadenv/esp/esp-idf/components/esp_driver_bitscrambler /home/jadenv/esp/esp-idf/components/esp_driver_cam /home/jadenv/esp/esp-idf/components/esp_driver_dac /home/jadenv/esp/esp-idf/components/esp_driver_gpio /home/jadenv/esp/esp-idf/components/esp_driver_gptimer /home/jadenv/esp/esp-idf/components/esp_driver_i2c /home/jadenv/esp/esp-idf/components/esp_driver_i2s /home/jadenv/esp/esp-idf/components/esp_driver_isp /home/jadenv/esp/esp-idf/components/esp_driver_jpeg /home/jadenv/esp/esp-idf/components/esp_driver_ledc /home/jadenv/esp/esp-idf/components/esp_driver_mcpwm /home/jadenv/esp/esp-idf/components/esp_driver_parlio /home/jadenv/esp/esp-idf/components/esp_driver_pcnt /home/jadenv/esp/esp-idf/components/esp_driver_ppa /home/jadenv/esp/esp-idf/components/esp_driver_rmt /home/jadenv/esp/esp-idf/components/esp_driver_sdio /home/jadenv/esp/esp-idf/components/esp_driver_sdm /home/jadenv/esp/esp-idf/components/esp_driver_sdmmc /home/jadenv/esp/esp-idf/components/esp_driver_sdspi /home/jadenv/esp/esp-idf/components/esp_driver_spi /home/jadenv/esp/esp-idf/components/esp_driver_touch_sens /home/jadenv/esp/esp-idf/components/esp_driver_tsens /home/jadenv/esp/esp-idf/components/esp_driver_twai /home/jadenv/esp/esp-idf/components/esp_driver_uart /home/jadenv/esp/esp-idf/components/esp_driver_usb_serial_jtag /home/jadenv/esp/esp-idf/components/esp_eth /home/jadenv/esp/esp-idf/components/esp_event /home/jadenv/esp/esp-idf/components/esp_gdbstub /home/jadenv/esp/esp-idf/components/esp_hal_ieee802154 /home/jadenv/esp/esp-idf/components/esp_hid /home/jadenv/esp/esp-idf/components/esp_http_client /home/jadenv/esp/esp-idf/components/esp_http_server /home/jadenv/esp/esp-idf/components/esp_https_ota /home/jadenv/esp/esp-idf/components/esp_https_server /home/jadenv/esp/esp-idf/components/esp_hw_support /home/jadenv/esp/esp-idf/components/esp_lcd /home/jadenv/esp/esp-idf/components/esp_local_ctrl /home/jadenv/esp/esp-idf/components/esp_mm /home/jadenv/esp/esp-idf/components/esp_netif /home/jadenv/esp/esp-idf/components/esp_netif_stack /home/jadenv/esp/esp-idf/components/esp_partition /home/jadenv/esp/esp-idf/components/esp_phy /home/jadenv/esp/esp-idf/components/esp_pm /home/jadenv/esp/esp-idf/components/esp_psram /home/jadenv/esp/esp-idf/components/esp_ringbuf /home/jadenv/esp/esp-idf/components/esp_rom /home/jadenv/esp/esp-idf/components/esp_security /home/jadenv/esp/esp-idf/components/esp_system /home/jadenv/esp/esp-idf/components/esp_timer /home/jadenv/esp/esp-idf/components/esp_vfs_console /home/jadenv/esp/esp-idf/components/esp_wifi /home/jadenv/esp/esp-idf/components/espcoredump /home/jadenv/Documents/NULL/null_code/managed_components/espressif__esp_lvgl_port /home/jadenv/esp/esp-idf/components/esptool_py /home/jadenv/esp/esp-idf/components/fatfs /home/jadenv/esp/esp-idf/components/freertos /home/jadenv/esp/esp-idf/components/hal /home/jadenv/esp/esp-idf/components/heap /home/jadenv/esp/esp-idf/components/http_parser /home/jadenv/Documents/NULL/null_code/components/i2c /home/jadenv/esp/esp-idf/components/idf_test /home/jadenv/esp/esp-idf/components/ieee802154 /home/jadenv/esp/esp-idf/components/json /home/jadenv/esp/esp-idf/components/log /home/jadenv/Documents/NULL/null_code/components/lora_rfid /home/jadenv/Documents/NULL/null_code/managed_components/lvgl__lvgl /home/jadenv/esp/esp-idf/components/lwip /home/jadenv/Documents/NULL/null_code/main /home/jadenv/esp/esp-idf/components/mbedtls /home/jadenv/esp/esp-idf/components/mqtt /home/jadenv/esp/esp-idf/components/newlib /home/jadenv/esp/esp-idf/components/nvs_flash /home/jadenv/esp/esp-idf/components/nvs_sec_provider /home/jadenv/esp/esp-idf/components/openthread /home/jadenv/esp/esp-idf/components/partition_table /home/jadenv/esp/esp-idf/components/perfmon /home/jadenv/esp/esp-idf/components/protobuf-c /home/jadenv/esp/esp-idf/components/protocomm /home/jadenv/esp/esp-idf/components/pthread /home/jadenv/esp/esp-idf/components/rt /home/jadenv/Documents/NULL/null_code/components/rust_top_level /home/jadenv/esp/esp-idf/components/sdmmc /home/jadenv/esp/esp-idf/components/soc /home/jadenv/esp/esp-idf/components/spi_flash /home/jadenv/esp/esp-idf/components/spiffs /home/jadenv/esp/esp-idf/components/tcp_transport /home/jadenv/esp/esp-idf/components/touch_element /home/jadenv/esp/esp-idf/components/ulp /home/jadenv/esp/esp-idf/components/unity /home/jadenv/esp/esp-idf/components/usb /home/jadenv/Documents/NULL/null_code/components/utility /home/jadenv/esp/esp-idf/components/vfs /home/jadenv/esp/esp-idf/components/wear_levelling /home/jadenv/Documents/NULL/null_code/components/wifi /home/jadenv/esp/esp-idf/components/wifi_provisioning /home/jadenv/esp/esp-idf/components/wpa_supplicant /home/jadenv/esp/esp-idf/components/xtensa
+-- Configuring done (3.6s)
+-- Generating done (0.5s)
+-- Build files have been written to: /home/jadenv/Documents/NULL/null_code/build
+[1/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/eve/lv_draw_eve_ram_g.c.obj
+[2/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/espressif/ppa/lv_draw_ppa_buf.c.obj
+[3/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/espressif/ppa/lv_draw_ppa_fill.c.obj
+[4/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/espressif/ppa/lv_draw_ppa_img.c.obj
+[5/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/espressif/ppa/lv_draw_ppa.c.obj
+[6/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/eve/lv_draw_eve_fill.c.obj
+[7/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/eve/lv_draw_eve_image.c.obj
+[8/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/eve/lv_draw_eve_line.c.obj
+[9/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/eve/lv_draw_eve.c.obj
+[10/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/eve/lv_draw_eve_arc.c.obj
+[11/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/eve/lv_draw_eve_letter.c.obj
+[12/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/dma2d/lv_draw_dma2d_img.c.obj
+[13/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/eve/lv_draw_eve_triangle.c.obj
+[14/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_3d.c.obj
+[15/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/eve/lv_eve.c.obj
+[16/780] Performing build step for 'bootloader'
+[1/1] cd /home/jadenv/Documents/NULL/null_code/build/bootloader/esp-idf/esptool_py && /home/jadenv/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jadenv/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/jadenv/Documents/NULL/null_code/build/bootloader/bootloader.bin
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+[17/780] No install step for 'bootloader'
+[18/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_blur.c.obj
+[19/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_vector.c.obj
+[20/780] Completed 'bootloader'
+[21/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_mask.c.obj
+[22/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_arc.c.obj
+[23/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_arc.c.obj
+[24/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_3d.c.obj
+[25/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg.c.obj
+[26/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_border.c.obj
+[27/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_box_shadow.c.obj
+[28/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_fill.c.obj
+[29/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_image.c.obj
+[30/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_grad.c.obj
+[31/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_triangle.c.obj
+[32/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_image.c.obj
+[33/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_label.c.obj
+[34/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_line.c.obj
+[35/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_layer.c.obj
+[36/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_mask_rect.c.obj
+[37/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_vector.c.obj
+[38/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_line.c.obj
+[39/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_nanovg_fbo_cache.c.obj
+[40/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_image_decoder.c.obj
+[41/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_draw_nanovg_triangle.c.obj
+[42/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_nanovg_image_cache.c.obj
+[43/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nanovg/lv_nanovg_utils.c.obj
+[44/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_arc.c.obj
+[45/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_fill.c.obj
+[46/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_img.c.obj
+[47/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw.c.obj
+[48/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_label.c.obj
+[49/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_layer.c.obj
+[50/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_border.c.obj
+[51/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_rect.c.obj
+[52/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_buf.c.obj
+[53/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_stm32_hal.c.obj
+[54/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_line.c.obj
+[55/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_triangle.c.obj
+[56/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_utils.c.obj
+[57/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/g2d/lv_draw_g2d.c.obj
+[58/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx_vector.c.obj
+[59/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/g2d/lv_draw_buf_g2d.c.obj
+[60/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/g2d/lv_draw_g2d_fill.c.obj
+[61/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/g2d/lv_g2d_buf_map.c.obj
+[62/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/pxp/lv_draw_buf_pxp.c.obj
+[63/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/g2d/lv_draw_g2d_img.c.obj
+[64/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/g2d/lv_g2d_utils.c.obj
+[65/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/pxp/lv_draw_pxp_fill.c.obj
+[66/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/pxp/lv_draw_pxp.c.obj
+[67/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/pxp/lv_draw_pxp_layer.c.obj
+[68/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/pxp/lv_pxp_osa.c.obj
+[69/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/pxp/lv_draw_pxp_img.c.obj
+[70/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/pxp/lv_pxp_cfg.c.obj
+[71/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nxp/pxp/lv_pxp_utils.c.obj
+[72/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/lv_draw_label.c.obj
+[73/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/opengles/lv_draw_opengles.c.obj
+[74/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d.c.obj
+[75/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_border.c.obj
+[76/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_fill.c.obj
+[77/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_image.c.obj
+[78/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_label.c.obj
+[79/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_arc.c.obj
+[80/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_line.c.obj
+[81/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_mask_rectangle.c.obj
+[82/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_triangle.c.obj
+[83/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/renesas/dave2d/lv_draw_dave2d_utils.c.obj
+[84/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_draw_nema_gfx.c.obj
+[85/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/nema_gfx/lv_nema_gfx_path.c.obj
+[86/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/neon/lv_draw_sw_blend_neon_to_rgb565.c.obj
+[87/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/snapshot/lv_snapshot.c.obj
+[88/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sdl/lv_draw_sdl.c.obj
+[89/780] Building C object esp-idf/i2c/CMakeFiles/__idf_i2c.dir/i2c.c.obj
+FAILED: esp-idf/i2c/CMakeFiles/__idf_i2c.dir/i2c.c.obj 
+/home/jadenv/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.5.3\" -DLV_CONF_INCLUDE_SIMPLE -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/jadenv/Documents/NULL/null_code/build/config -I/home/jadenv/Documents/NULL/null_code/components/i2c/include -I/home/jadenv/esp/esp-idf/components/newlib/platform_include -I/home/jadenv/esp/esp-idf/components/freertos/config/include -I/home/jadenv/esp/esp-idf/components/freertos/config/include/freertos -I/home/jadenv/esp/esp-idf/components/freertos/config/xtensa/include -I/home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/jadenv/esp/esp-idf/components/freertos/esp_additions/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/include/soc -I/home/jadenv/esp/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/home/jadenv/esp/esp-idf/components/esp_hw_support/dma/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/ldo/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/debug_probe/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/power_supply/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/port/esp32s3/. -I/home/jadenv/esp/esp-idf/components/esp_hw_support/port/esp32s3/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/. -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/include -I/home/jadenv/esp/esp-idf/components/heap/include -I/home/jadenv/esp/esp-idf/components/heap/tlsf -I/home/jadenv/esp/esp-idf/components/log/include -I/home/jadenv/esp/esp-idf/components/soc/include -I/home/jadenv/esp/esp-idf/components/soc/esp32s3 -I/home/jadenv/esp/esp-idf/components/soc/esp32s3/include -I/home/jadenv/esp/esp-idf/components/soc/esp32s3/register -I/home/jadenv/esp/esp-idf/components/hal/platform_port/include -I/home/jadenv/esp/esp-idf/components/hal/esp32s3/include -I/home/jadenv/esp/esp-idf/components/hal/include -I/home/jadenv/esp/esp-idf/components/esp_rom/include -I/home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/include -I/home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/include/esp32s3 -I/home/jadenv/esp/esp-idf/components/esp_rom/esp32s3 -I/home/jadenv/esp/esp-idf/components/esp_common/include -I/home/jadenv/esp/esp-idf/components/esp_system/include -I/home/jadenv/esp/esp-idf/components/esp_system/port/soc -I/home/jadenv/esp/esp-idf/components/esp_system/port/include/private -I/home/jadenv/esp/esp-idf/components/xtensa/esp32s3/include -I/home/jadenv/esp/esp-idf/components/xtensa/include -I/home/jadenv/esp/esp-idf/components/xtensa/deprecated_include -I/home/jadenv/esp/esp-idf/components/lwip/include -I/home/jadenv/esp/esp-idf/components/lwip/include/apps -I/home/jadenv/esp/esp-idf/components/lwip/include/apps/sntp -I/home/jadenv/esp/esp-idf/components/lwip/lwip/src/include -I/home/jadenv/esp/esp-idf/components/lwip/port/include -I/home/jadenv/esp/esp-idf/components/lwip/port/freertos/include -I/home/jadenv/esp/esp-idf/components/lwip/port/esp32xx/include -I/home/jadenv/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/jadenv/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/jadenv/esp/esp-idf/components/esp_driver_i2c/include -I/home/jadenv/esp/esp-idf/components/esp_lcd/include -I/home/jadenv/esp/esp-idf/components/esp_lcd/interface -I/home/jadenv/esp/esp-idf/components/esp_lcd/rgb/include -I/home/jadenv/esp/esp-idf/components/driver/deprecated -I/home/jadenv/esp/esp-idf/components/driver/i2c/include -I/home/jadenv/esp/esp-idf/components/driver/touch_sensor/include -I/home/jadenv/esp/esp-idf/components/driver/twai/include -I/home/jadenv/esp/esp-idf/components/driver/touch_sensor/esp32s3/include -I/home/jadenv/esp/esp-idf/components/esp_pm/include -I/home/jadenv/esp/esp-idf/components/esp_ringbuf/include -I/home/jadenv/esp/esp-idf/components/esp_driver_gpio/include -I/home/jadenv/esp/esp-idf/components/esp_driver_pcnt/include -I/home/jadenv/esp/esp-idf/components/esp_driver_gptimer/include -I/home/jadenv/esp/esp-idf/components/esp_driver_spi/include -I/home/jadenv/esp/esp-idf/components/esp_driver_mcpwm/include -I/home/jadenv/esp/esp-idf/components/esp_driver_ana_cmpr/include -I/home/jadenv/esp/esp-idf/components/esp_driver_i2s/include -I/home/jadenv/esp/esp-idf/components/esp_driver_sdmmc/include -I/home/jadenv/esp/esp-idf/components/sdmmc/include -I/home/jadenv/esp/esp-idf/components/esp_driver_sdspi/include -I/home/jadenv/esp/esp-idf/components/esp_driver_sdio/include -I/home/jadenv/esp/esp-idf/components/esp_driver_dac/include -I/home/jadenv/esp/esp-idf/components/esp_driver_rmt/include -I/home/jadenv/esp/esp-idf/components/esp_driver_tsens/include -I/home/jadenv/esp/esp-idf/components/esp_driver_sdm/include -I/home/jadenv/esp/esp-idf/components/esp_driver_uart/include -I/home/jadenv/esp/esp-idf/components/vfs/include -I/home/jadenv/esp/esp-idf/components/esp_driver_ledc/include -I/home/jadenv/esp/esp-idf/components/esp_driver_parlio/include -I/home/jadenv/esp/esp-idf/components/esp_driver_usb_serial_jtag/include -I/home/jadenv/esp/esp-idf/components/esp_driver_twai/include -I/home/jadenv/Documents/NULL/null_code/components/utility/include -I/home/jadenv/esp/esp-idf/components/esp_timer/include -I/home/jadenv/Documents/NULL/null_code/managed_components/lvgl__lvgl -I/home/jadenv/Documents/NULL/null_code/managed_components/lvgl__lvgl/src -I/home/jadenv/Documents/NULL/null_code/managed_components -I/home/jadenv/Documents/NULL/null_code/managed_components/lvgl__lvgl/examples -I/home/jadenv/Documents/NULL/null_code/managed_components/lvgl__lvgl/demos -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/jadenv/Documents/NULL/null_code=. -fmacro-prefix-map=/home/jadenv/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/i2c/CMakeFiles/__idf_i2c.dir/i2c.c.obj -MF esp-idf/i2c/CMakeFiles/__idf_i2c.dir/i2c.c.obj.d -o esp-idf/i2c/CMakeFiles/__idf_i2c.dir/i2c.c.obj -c /home/jadenv/Documents/NULL/null_code/components/i2c/i2c.c
+In file included from /home/jadenv/Documents/NULL/null_code/components/i2c/i2c.c:1:
+/home/jadenv/Documents/NULL/null_code/components/i2c/include/i2c.h:7:10: fatal error: esp_lvgl_port.h: No such file or directory
+    7 | #include "esp_lvgl_port.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+[90/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend.c.obj
+[91/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/neon/lv_draw_sw_blend_neon_to_rgb888.c.obj
+[92/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/riscv_v/lv_draw_sw_blend_riscv_v_to_rgb888.c.obj
+[93/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_a8.c.obj
+[94/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_al88.c.obj
+[95/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/lv_draw_sw.c.obj
+[96/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_argb8888_premultiplied.c.obj
+[97/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_rgb888.c.obj
+[98/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_l8.c.obj
+[99/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_argb8888.c.obj
+[100/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_i1.c.obj
+[101/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565_swapped.c.obj
+[102/780] Building C object esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c.obj
+ninja: build stopped: subcommand failed.

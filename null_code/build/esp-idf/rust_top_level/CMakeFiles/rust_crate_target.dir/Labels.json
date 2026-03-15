@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/CMakeFiles/rust_crate_target"
+		},
+		{
+			"file" : "/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/CMakeFiles/rust_crate_target.rule"
+		},
+		{
+			"file" : "/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/CMakeFiles/rust_crate_target-complete.rule"
+		},
+		{
+			"file" : "/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/stamp/rust_crate_target-build.rule"
+		},
+		{
+			"file" : "/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/stamp/rust_crate_target-configure.rule"
+		},
+		{
+			"file" : "/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/stamp/rust_crate_target-download.rule"
+		},
+		{
+			"file" : "/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/stamp/rust_crate_target-install.rule"
+		},
+		{
+			"file" : "/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/stamp/rust_crate_target-mkdir.rule"
+		},
+		{
+			"file" : "/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/stamp/rust_crate_target-patch.rule"
+		},
+		{
+			"file" : "/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/stamp/rust_crate_target-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"rust_crate_target"
+		],
+		"name" : "rust_crate_target"
+	}
+}

@@ -1,11 +1,19 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 
 use core::ffi::c_void; 
+use esp_idf_sys::esp_restart; 
+
+#[panic_handler]
+fn panic(info: &PanicInfo) -> ! {
+    unsafe {
+        esp_restart();
+
+    }
+
+}
 
 
-static HELLO_ESP: &'static [u8] = b"HELLO " 
+
 
 #[no_mangle]
-pub extern "C" fn hello() -> *const c_void{
-    HELLO_ESP.as_ptr() as *const v_void 
-}
+pub extern "C" fn 

@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include "lora_rfid.h"
 
-void func(void)
+void init_SPI_bus()
 {
 
-}
+
+} 
