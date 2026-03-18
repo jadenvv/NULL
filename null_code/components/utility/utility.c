@@ -1,5 +1,6 @@
 #include "utility.h"
 #include "i2c.h"
+#include "wifi.h"
 esp_err_t configure_internal_state()
 {
 	struct i2c_handles OLED_handlers =init_OLED();
@@ -14,5 +15,9 @@ esp_err_t disconfigure_internal_state()
 {
 	heap_caps_free(display);
 	heap_caps_free(current);
+
+}
+esp_err_t disable_wifi(){
+
 
 }
