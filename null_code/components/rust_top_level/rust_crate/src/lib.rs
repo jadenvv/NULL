@@ -15,5 +15,3 @@ fn panic(info: &PanicInfo) -> ! {
 
 
 
-#[no_mangle]
-pub extern "C" fn 

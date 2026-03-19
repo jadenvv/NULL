@@ -1,0 +1,10 @@
+Command: ninja all
+[1/683] Performing build step for 'rust_crate_target'
+FAILED: esp-idf/rust_top_level/stamp/rust_crate_target-build esp-idf/rust_top_level/target/xtensa-esp32s3-none-elf/release/librust_crate.a /home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/stamp/rust_crate_target-build /home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/target/xtensa-esp32s3-none-elf/release/librust_crate.a 
+cd /home/jadenv/Documents/NULL/null_code/components/rust_top_level/rust_crate && /usr/bin/cmake -E env CARGO_BUILD_TARGET=xtensa-esp32s3-none-elf CARGO_BUILD_TARGET_DIR=/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/target cargo +esp build --release -Zbuild-std=core -Zbuild-std-features=compiler-builtins-weak-intrinsics
+error: toolchain 'esp' is not installed
+[2/683] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[3/683] Performing build step for 'bootloader'
+[1/1] cd /home/jadenv/Documents/NULL/null_code/build/bootloader/esp-idf/esptool_py && /home/jadenv/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jadenv/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/jadenv/Documents/NULL/null_code/build/bootloader/bootloader.bin
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+ninja: build stopped: subcommand failed.
