@@ -71,6 +71,40 @@ menu "IR Configuration"
 	help 
 	    "The GPIO connected to the IR Reciever"
 endmenu
+menu "SPI Configuration"
+    orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
+    config SPI_MOSI
+      int "GPIO_PIN"
+	    range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+	    default 11 
+	    help 
+	       "The GPIO for MOSI"
+    config SPI_MISO 
+      int "GPIO_PIN"
+	    range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+	    default 13 
+	    help 
+	       "The GPIO for MISO"
+    config SPI_CLK 
+      int "GPIO_PIN"
+	    range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+	    default 12 
+	    help 
+	       "The GPIO for clk speed for SPI bus"
+    config Lora_NSS 
+      int "GPIO_PIN"
+	    range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+	    default  10
+	    help 
+	       "The GPIO for Chip Select on LoRA Puck"
+    config RFID_CS 
+      int "GPIO_PIN"
+	    range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+	    default 21  
+	    help 
+	       "The GPIO for Chip Select on LoRA Puck"
+
+endmenu 
     
     	
     
