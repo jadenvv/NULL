@@ -1,0 +1,2 @@
+Command: ninja config
+ninja: error: unknown target 'config'

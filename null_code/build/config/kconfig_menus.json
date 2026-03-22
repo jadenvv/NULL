@@ -7099,6 +7099,119 @@
     {
         "children": [
             {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "ENV_GPIO_RANGE_MIN",
+                "name": "ENV_GPIO_RANGE_MIN",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "ENV_GPIO_RANGE_MAX",
+                "name": "ENV_GPIO_RANGE_MAX",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "ENV_GPIO_IN_RANGE_MAX",
+                "name": "ENV_GPIO_IN_RANGE_MAX",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "ENV_GPIO_OUT_RANGE_MAX",
+                "name": "ENV_GPIO_OUT_RANGE_MAX",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "\"The GPIO for MOSI\"",
+                "id": "SPI_MOSI",
+                "name": "SPI_MOSI",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "GPIO_PIN",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "\"The GPIO for MISO\"",
+                "id": "SPI_MISO",
+                "name": "SPI_MISO",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "GPIO_PIN",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "\"The GPIO for clk speed for SPI bus\"",
+                "id": "SPI_CLK",
+                "name": "SPI_CLK",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "GPIO_PIN",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "\"The GPIO for Chip Select on LoRA Puck\"",
+                "id": "Lora_NSS",
+                "name": "Lora_NSS",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "GPIO_PIN",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "\"The GPIO for Chip Select on LoRA Puck\"",
+                "id": "RFID_CS",
+                "name": "RFID_CS",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "GPIO_PIN",
+                "type": "int"
+            }
+        ],
+        "depends_on": null,
+        "id": "spi-configuration",
+        "title": "SPI Configuration",
+        "type": "menu"
+    },
+    {
+        "children": [
+            {
                 "children": [
                     {
                         "children": [],

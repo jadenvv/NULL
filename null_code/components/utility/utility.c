@@ -6,11 +6,13 @@ esp_err_t configure_internal_state() {
   display = heap_caps_maloc(sizeof(lv_disp_t), MALLOC_CAP_INTERNAL);
   strncpy(display, ssd1306_driver_init(OLED_handlers), sizeof(lv_disp_t));
   current = heap_caps_maloc(sizeof(current_state), MALLOC_CAP_INTERNAL);
+  create_screens();
   current->c_state = IR_EMU;
   current->c_menu = MAIN;
 }
 esp_err_t disconfigure_internal_state() {
   heap_caps_free(display);
   heap_caps_free(current);
+  heap_caps_free(create_screens());
 }
 esp_err_t disable_wifi() {}

@@ -626,6 +626,16 @@ CONFIG_IR_RECV=5
 # end of IR Configuration
 
 #
+# SPI Configuration
+#
+CONFIG_SPI_MOSI=11
+CONFIG_SPI_MISO=13
+CONFIG_SPI_CLK=12
+CONFIG_Lora_NSS=10
+CONFIG_RFID_CS=21
+# end of SPI Configuration
+
+#
 # Compiler options
 #
 CONFIG_COMPILER_OPTIMIZATION_DEBUG=y
