@@ -79,8 +79,15 @@ state *create_screens() {
     goto ret;
 
   for (size_t x = 0; x < NUM_OF_SCR; x++) {
-    screens[x].cur = all_menus[x];
-    screens[x].obj = lv_obj_create(NULL);
+    if (x == 0) {
+      screens[x].cur = all_menus[x];
+      screens[x].track.obj = lv_scr_act();
+      screens[x].track.active = true;
+    } else {
+      screens[x].cur = all_menus[x];
+      screens[x].track.obj = lv_obj_create(NULL);
+      screens[x].track.active = false;
+    }
   }
   ran = true;
 ret:
@@ -89,13 +96,48 @@ ret:
 esp_err_t change_screen(enum menu change_to) {
   state *states = create_screens();
 
-  switch (change_to) {
-  case MAIN:
-    lv_scr_load()
+  for (size_t i = 0; i < NUM_OF_SCR; i++) {
+    if (states[i].cur == change_to)
+      lv_scr_load(states[i].track.obj);
+    else
+      return ESP_ERR_INVALID_ARG;
   }
+  return ESP_OK;
 }
-esp_err_t menu(lv_disp_t *display) {
-  lv_obj_tCR *logo = lv_label_create(lv_scr_act());
+state_opt *menu_init_arr() {
+  state_opt *ptrs =
+      heap_caps_maloc(sizeof(state_opt) * NUM_OF_SCR, MALLOC_CAP_INTERNAL);
+}
+esp_err_t start_up_menu() {
+  if (create_screens()[0].track.obj != lv_scr_act())
+    return ESP_ERR_WRONG_SCREEN
+
+               // logo
+               lv_obj_t *
+               logo = lv_label_create(lv_scr_act());
   lv_label_set_text(logo, "NULL by Jaden V.");
-  lv_obj_set_style_text_font(logo, lv_font_montserrat_10, 0);
+  lv_obj_set_style_text_font(logo, &lv_font_montserrat_10, 0);
+  lv_obj_align(logo, LV_ALIGN_TOP_LEFT, 5, 5);
+  // ARP label
+  lv_obj_t *arp_label = lv_label_create(lv_scr_act());
+  lv_label_set_text(arp_label, "ARP Spoofing");
+  lv_obj_set_style_text_font(arp_label, &lv_font_montserrat_10, 0);
+  lv_obj_align(arp_label, LV_ALIGN_LEFT_MID, 0, -10);
+  // Lora label
+  lv_obj_t *lora_label = lv_label_create(lv_scr_act());
+  lv_label_set_text(lora_label, "lora emulation")
+      lv_obj_set_style_text_font(lora_label, &lv_font_montserrat_10, 0);
+  lv_obj_align_to(lora_label, arp_label, LV_ALIGN_OUT_BOTTOM_MID, 0, -0);
+  // Lora label
+  lv_obj_t *rfid_label = lv_label_create(lv_scr_act());
+  lv_label_set_text(rfid_label, "RFID Transieving")
+      lv_obj_set_style_text_font(rfid_label, &lv_font_montserrat_10, 0);
+  lv_obj_align_to(rfid_label, lora_label, LV_ALIGN_OUT_BOTTOM_MID, 0, -0);
+  // label
+  lv_obj_t *ir_label = lv_label_create(lv_scr_act());
+  lv_label_set_text(ir_label, "IR emulation");
+  lv_obj_set_style_text_font(ir_label, &lv_font_montserrat_10, 0);
+  lv_obj_align_to(ir_label, rfid_label, LV_ALIGN_OUT_BOTTOM_MID, 0, -0);
+
+  return ESP_OK;
 }

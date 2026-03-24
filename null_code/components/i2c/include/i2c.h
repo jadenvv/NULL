@@ -18,10 +18,19 @@ struct i2c_handles {
   i2c_master_dev_handle_t dev_handler;
 };
 struct {
-  enum menu cur;
   lv_obj_t *obj;
-} state;
-struct i2c_handles init_OLED();
-lv_disp_t *ssd1306_driver_init(struct i2c_handles dev_handle);
-esp_err_t start_up_menu(lv_disp_t *display) esp_err_t change_screen();
-#endif
+  bool active;
+} lv_tracking;
+struct {
+  enum menu cur;
+  lv_tracking track;
+  } state;
+  struct {
+    enum option_main cur;
+    lv_tracking track;
+  } state_opt;
+  struct i2c_handles init_OLED();
+  lv_disp_t *ssd1306_driver_init(struct i2c_handles dev_handle);
+  state_opt *menu_init_arr();
+  esp_err_t start_up_menu();
+  esp_err_t change_screen();
