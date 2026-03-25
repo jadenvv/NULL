@@ -589,12 +589,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/jadenv/Documents/NULL/null_code/build/esp-idf/utility/cmake_install.cmake")
+  include("/home/jadenv/Documents/NULL/null_code/build/esp-idf/GPIO/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/jadenv/Documents/NULL/null_code/build/esp-idf/GPIO/cmake_install.cmake")
+  include("/home/jadenv/Documents/NULL/null_code/build/esp-idf/utility/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -605,10 +605,5 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/jadenv/Documents/NULL/null_code/build/esp-idf/lora_rfid/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/cmake_install.cmake")
 endif()
 

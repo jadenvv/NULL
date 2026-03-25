@@ -1,7 +1,14 @@
 #include "GPIO.h"
-void gpio_handler_function(void * gpio_number)
-{
-	uint32_t gpio = *(uint32_t *)gpio_number; 
+void gpio_handler_function(void *gpio_number) {
+  uint32_t gpio = *(uint32_t *)gpio_number;
+  switch (gpio) {
+  case UP_EVENT:
+
+  case SELECT_EVENT:
+
+    case DOWN
+  }
+
 
 }
 esp_err_t init_buttons()

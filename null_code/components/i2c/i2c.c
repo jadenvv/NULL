@@ -5,6 +5,7 @@ static bool flush(esp_lcd_panel_io_handle_t panel_io,
   lvgl_port_flush_ready(disp);
   return false;
 }
+
 struct i2c_handles init_OLED() {
   ESP_LOGI(TAG, "intializing i2c...");
   i2c_master_bus_config_t bus_config = {.i2c_port = -1,
@@ -104,37 +105,68 @@ esp_err_t change_screen(enum menu change_to) {
   }
   return ESP_OK;
 }
+
 state_opt *menu_init_arr() {
-  state_opt *ptrs =
-      heap_caps_maloc(sizeof(state_opt) * NUM_OF_SCR, MALLOC_CAP_INTERNAL);
+  static bool ran = false;
+  static state_opt *ptrs =
+      heap_caps_maloc(sizeof(state_opt) * MAIN_OPT, MALLOC_CAP_INTERNAL);
+  if (ran)
+    goto ret;
+  for (size_t i = 0; i < MAIN_OPT; i++) {
+    ptrs[i].cur = menu_opt[i];
+    ptrs[i].track.obj = lv_label_create(create_screens()[0].track.obj);
+    if (i == 0)
+      ptrs[i].track.active = true;
+    else
+      ptrs[i].track.active = false;
+  }
+  ran = true;
+ret:
+  return screens;
+}
+esp_err_t update_opt(current_state *current) {
+  state_opt *checking = menu_init_arr();
+  for (size_t i = 0; i < MAIN_OPT; i++) {
+    state_opt check = checking[i];
+    if (current->c_state == check.cur) {
+      lv_obj_set_style_text_decor(checking[i].track.obj,
+                                  LV_TEXT_DECOR_UNDERLINE, 0);
+      checking[i].track.active = true;
+    } else {
+      // honestly this is for the previous as well as checking each one
+      lv_obj_set_style_text_decor(checking[i].track.obj, LV_TEXT_DECOR_NONE, 0);
+      checking[i].track.active = false;
+    }
+  }
+  return ESP_OK;
 }
 esp_err_t start_up_menu() {
   if (create_screens()[0].track.obj != lv_scr_act())
-    return ESP_ERR_WRONG_SCREEN
-
-               // logo
-               lv_obj_t *
-               logo = lv_label_create(lv_scr_act());
+    return ESP_ERR_WRONG_SCREEN;
+  // based off of the menu_opt array
+  state_opt *options = menu_init_arr();
+  // logo
+  lv_obj_t *logo = lv_label_create(lv_scr_act());
   lv_label_set_text(logo, "NULL by Jaden V.");
   lv_obj_set_style_text_font(logo, &lv_font_montserrat_10, 0);
   lv_obj_align(logo, LV_ALIGN_TOP_LEFT, 5, 5);
   // ARP label
-  lv_obj_t *arp_label = lv_label_create(lv_scr_act());
+  lv_obj_t *arp_label = options[0];
   lv_label_set_text(arp_label, "ARP Spoofing");
   lv_obj_set_style_text_font(arp_label, &lv_font_montserrat_10, 0);
   lv_obj_align(arp_label, LV_ALIGN_LEFT_MID, 0, -10);
   // Lora label
-  lv_obj_t *lora_label = lv_label_create(lv_scr_act());
+  lv_obj_t *lora_label = options[3];
   lv_label_set_text(lora_label, "lora emulation")
       lv_obj_set_style_text_font(lora_label, &lv_font_montserrat_10, 0);
   lv_obj_align_to(lora_label, arp_label, LV_ALIGN_OUT_BOTTOM_MID, 0, -0);
   // Lora label
-  lv_obj_t *rfid_label = lv_label_create(lv_scr_act());
+  lv_obj_t *rfid_label = options[2];
   lv_label_set_text(rfid_label, "RFID Transieving")
       lv_obj_set_style_text_font(rfid_label, &lv_font_montserrat_10, 0);
   lv_obj_align_to(rfid_label, lora_label, LV_ALIGN_OUT_BOTTOM_MID, 0, -0);
   // label
-  lv_obj_t *ir_label = lv_label_create(lv_scr_act());
+  lv_obj_t *ir_label = options[1];
   lv_label_set_text(ir_label, "IR emulation");
   lv_obj_set_style_text_font(ir_label, &lv_font_montserrat_10, 0);
   lv_obj_align_to(ir_label, rfid_label, LV_ALIGN_OUT_BOTTOM_MID, 0, -0);

@@ -6,12 +6,17 @@
 #include "lvgl.h"
 #include "sdkconfig.h"
 #include <string.h>
-enum option { ARP_OPT, IR_OPT, RFID_OPT, LORA_OPT };
+
+// ERRORS
+
+#define ESP_ERR_WRONG_SCREEN 0x2000
 enum menu { MAIN, ARP, RFID, IR };
+enum option_main { ARP_OPT, IR_OPT, RFID_OPT, LORA_OPT };
 struct current_state {
-  enum option c_state;
+  enum option_main c_state;
   enum menu c_menu;
 };
+
 static lv_disp_t *display = NULL;
 static struct current_state *current = NULL;
 esp_err_t configure_internal_state();

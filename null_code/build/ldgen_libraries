@@ -169,10 +169,9 @@
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/utility/libutility.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/i2c/libi2c.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/wifi/libwifi.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/GPIO/libGPIO.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/wifi/libwifi.a
+/home/jadenv/Documents/NULL/null_code/build/esp-idf/GPIO/libGPIO.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/utility/libutility.a
-/home/jadenv/Documents/NULL/null_code/build/esp-idf/GPIO/libGPIO.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/main/libmain.a
-/home/jadenv/Documents/NULL/null_code/build/esp-idf/GPIO/libGPIO.a
 /home/jadenv/Documents/NULL/null_code/build/esp-idf/lora_rfid/liblora_rfid.a
-/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/librust_top_level.a

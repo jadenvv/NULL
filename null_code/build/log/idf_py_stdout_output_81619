@@ -1,0 +1,24 @@
+Command: ninja all
+[1/1059] Linking C static library esp-idf/esp_https_ota/libesp_https_ota.a
+[2/1059] Linking C static library esp-idf/esp_http_server/libesp_http_server.a
+[3/1059] Performing build step for 'bootloader'
+[1/1] cd /home/jadenv/Documents/NULL/null_code/build/bootloader/esp-idf/esptool_py && /home/jadenv/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jadenv/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/jadenv/Documents/NULL/null_code/build/bootloader/bootloader.bin
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+[4/1059] Linking C static library esp-idf/esp_http_client/libesp_http_client.a
+[5/1059] No install step for 'bootloader'
+[6/1059] Linking C static library esp-idf/tcp_transport/libtcp_transport.a
+[7/1059] Completed 'bootloader'
+[8/1059] Linking C static library esp-idf/esp_adc/libesp_adc.a
+[9/1059] Linking C static library esp-idf/esp-tls/libesp-tls.a
+[10/1059] Linking C static library esp-idf/http_parser/libhttp_parser.a
+[11/1059] Linking C static library esp-idf/driver/libdriver.a
+[12/1059] Linking C static library esp-idf/esp_driver_twai/libesp_driver_twai.a
+[13/1059] Linking C static library esp-idf/esp_driver_ledc/libesp_driver_ledc.a
+[14/1059] Performing build step for 'rust_crate_target'
+FAILED: esp-idf/rust_top_level/stamp/rust_crate_target-build esp-idf/rust_top_level/target/xtensa-esp32s3-none-elf/release/librust_crate.a /home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/stamp/rust_crate_target-build /home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/target/xtensa-esp32s3-none-elf/release/librust_crate.a 
+cd /home/jadenv/Documents/NULL/null_code/components/rust_top_level/rust_crate && /usr/bin/cmake -E env CARGO_BUILD_TARGET=xtensa-esp32s3-none-elf CARGO_BUILD_TARGET_DIR=/home/jadenv/Documents/NULL/null_code/build/esp-idf/rust_top_level/target cargo +esp build --release -Zbuild-std=core -Zbuild-std-features=compiler-builtins-weak-intrinsics
+warning: unused manifest key: toolchain
+error: none of the selected packages contains this feature: compiler-builtins-weak-intrinsics
+selected packages: compiler_builtins, core, sysroot
+[15/1059] Linking C static library esp-idf/esp_driver_i2c/libesp_driver_i2c.a
+ninja: build stopped: subcommand failed.
