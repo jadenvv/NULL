@@ -5,9 +5,8 @@
 #include "esp_err.h"
 #include "esp_intr_alloc.h"
 #include "hal/spi_types.h"
-         "
 #include "sdkconfig.h"
-static const char *SPI_TAG = "SPI";
+
 struct {
   spi_device_handle_t RFID_handle;
   spi_device_handle_t LoRa_handle;

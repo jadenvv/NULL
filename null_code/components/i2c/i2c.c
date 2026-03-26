@@ -1,4 +1,7 @@
 #include "i2c.h"
+static enum menu all_menus[] = {MAIN, ARP, RFID, IR};
+static enum option_main menu_opt[] = {ARP_OPT, IR_OPT, RFID_OPT, LORA_OPT};
+static const char *TAG_I2C = "I2C_OLED";
 static bool flush(esp_lcd_panel_io_handle_t panel_io,
                   esp_lcd_panel_io_event_data_t *edata, void *user_ctx) {
   lv_disp_t *disp = (lv_disp_t *)user_ctx;
@@ -7,7 +10,7 @@ static bool flush(esp_lcd_panel_io_handle_t panel_io,
 }
 
 struct i2c_handles init_OLED() {
-  ESP_LOGI(TAG, "intializing i2c...");
+  ESP_LOGI(TAG_I2C, "intializing i2c...");
   i2c_master_bus_config_t bus_config = {.i2c_port = -1,
                                         .sda_io_num = CONFIG_I2C_MASTER_SDA,
                                         .scl_io_num = CONFIG_I2C_MASTER_SCL,
@@ -53,7 +56,7 @@ lv_disp_t *ssd1306_driver_init(struct i2c_handles handles) {
   ESP_ERROR_CHECK(esp_lcd_panel_init(panel_handle));
   ESP_ERROR_CHECK(esp_lcd_panel_disp_on_off(panel_handle, true));
 
-  ESP_LOGI(TAG, "successfully initialized i2c...");
+  ESP_LOGI(TAG_I2C, "successfully initialized i2c...");
   const lvgl_port_cfg_t lvgl_config = ESP_LVGL_PORT_INIT_CONFIG();
   lvgl_port_init(&lvgl_config);
   const lvgl_port_display_cfg_t disp_config = {
@@ -69,15 +72,16 @@ lv_disp_t *ssd1306_driver_init(struct i2c_handles handles) {
       .on_color_trans_done = flush,
   };
   esp_lcd_panel_io_register_event_callbacks(IO_handle, &cbs, disp);
-  ESP_LOGI(TAG, "initialized the LVGL display Handle");
+  ESP_LOGI(TAG_I2C, "initialized the LVGL display Handle");
   return disp;
 }
+
 state *create_screens() {
-  static bool ran = false;
-  static state *screens =
-      heap_caps_maloc(sizeof(state) * NUM_OF_SCR, MALLOC_CAP_INTERNAL);
+  bool ran = false;
+  static state *screens = NULL;
   if (ran)
     goto ret;
+  screens = heap_caps_malloc(sizeof(state) * NUM_OF_SCR, MALLOC_CAP_INTERNAL);
 
   for (size_t x = 0; x < NUM_OF_SCR; x++) {
     if (x == 0) {
@@ -108,10 +112,10 @@ esp_err_t change_screen(enum menu change_to) {
 
 state_opt *menu_init_arr() {
   static bool ran = false;
-  static state_opt *ptrs =
-      heap_caps_maloc(sizeof(state_opt) * MAIN_OPT, MALLOC_CAP_INTERNAL);
+  static state_opt *ptrs = NULL;
   if (ran)
     goto ret;
+  ptrs = heap_caps_malloc(sizeof(state_opt) * MAIN_OPT, MALLOC_CAP_INTERNAL);
   for (size_t i = 0; i < MAIN_OPT; i++) {
     ptrs[i].cur = menu_opt[i];
     ptrs[i].track.obj = lv_label_create(create_screens()[0].track.obj);
@@ -122,9 +126,9 @@ state_opt *menu_init_arr() {
   }
   ran = true;
 ret:
-  return screens;
+  return ptrs;
 }
-esp_err_t update_opt(current_state *current) {
+esp_err_t update_opt(struct current_state *current) {
   state_opt *checking = menu_init_arr();
   for (size_t i = 0; i < MAIN_OPT; i++) {
     state_opt check = checking[i];
@@ -148,27 +152,27 @@ esp_err_t start_up_menu() {
   // logo
   lv_obj_t *logo = lv_label_create(lv_scr_act());
   lv_label_set_text(logo, "NULL by Jaden V.");
-  lv_obj_set_style_text_font(logo, &lv_font_montserrat_10, 0);
+  lv_obj_set_style_text_font(logo, &lv_font_montserrat_14, 0);
   lv_obj_align(logo, LV_ALIGN_TOP_LEFT, 5, 5);
   // ARP label
-  lv_obj_t *arp_label = options[0];
+  lv_obj_t *arp_label = options[0].track.obj;
   lv_label_set_text(arp_label, "ARP Spoofing");
-  lv_obj_set_style_text_font(arp_label, &lv_font_montserrat_10, 0);
+  lv_obj_set_style_text_font(arp_label, &lv_font_montserrat_14, 0);
   lv_obj_align(arp_label, LV_ALIGN_LEFT_MID, 0, -10);
   // Lora label
-  lv_obj_t *lora_label = options[3];
-  lv_label_set_text(lora_label, "lora emulation")
-      lv_obj_set_style_text_font(lora_label, &lv_font_montserrat_10, 0);
+  lv_obj_t *lora_label = options[3].track.obj;
+  lv_label_set_text(lora_label, "lora emulation");
+  lv_obj_set_style_text_font(lora_label, &lv_font_montserrat_14, 0);
   lv_obj_align_to(lora_label, arp_label, LV_ALIGN_OUT_BOTTOM_MID, 0, -0);
   // Lora label
-  lv_obj_t *rfid_label = options[2];
-  lv_label_set_text(rfid_label, "RFID Transieving")
-      lv_obj_set_style_text_font(rfid_label, &lv_font_montserrat_10, 0);
+  lv_obj_t *rfid_label = options[2].track.obj;
+  lv_label_set_text(rfid_label, "RFID Transieving");
+  lv_obj_set_style_text_font(rfid_label, &lv_font_montserrat_14, 0);
   lv_obj_align_to(rfid_label, lora_label, LV_ALIGN_OUT_BOTTOM_MID, 0, -0);
   // label
-  lv_obj_t *ir_label = options[1];
+  lv_obj_t *ir_label = options[1].track.obj;
   lv_label_set_text(ir_label, "IR emulation");
-  lv_obj_set_style_text_font(ir_label, &lv_font_montserrat_10, 0);
+  lv_obj_set_style_text_font(ir_label, &lv_font_montserrat_14, 0);
   lv_obj_align_to(ir_label, rfid_label, LV_ALIGN_OUT_BOTTOM_MID, 0, -0);
 
   return ESP_OK;

@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "null",
-    "project_version":    "309168b-dirty",
+    "project_version":    "3363c6c-dirty",
     "project_path":       "/home/jadenv/Documents/NULL/null_code",
     "idf_path":           "/home/jadenv/esp/esp-idf",
     "build_dir":          "/home/jadenv/Documents/NULL/null_code/build",

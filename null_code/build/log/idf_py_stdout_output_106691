@@ -1,0 +1,1022 @@
+Command: ninja all
+[1/20] Performing build step for 'bootloader'
+[1/1] cd /home/jadenv/Documents/NULL/null_code/build/bootloader/esp-idf/esptool_py && /home/jadenv/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/jadenv/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/jadenv/Documents/NULL/null_code/build/bootloader/bootloader.bin
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+[2/20] Building C object esp-idf/lora_rfid/CMakeFiles/__idf_lora_rfid.dir/lora_rfid.c.obj
+FAILED: esp-idf/lora_rfid/CMakeFiles/__idf_lora_rfid.dir/lora_rfid.c.obj 
+/home/jadenv/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.5.3\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/jadenv/Documents/NULL/null_code/build/config -I/home/jadenv/Documents/NULL/null_code/components/lora_rfid/include -I/home/jadenv/esp/esp-idf/components/newlib/platform_include -I/home/jadenv/esp/esp-idf/components/freertos/config/include -I/home/jadenv/esp/esp-idf/components/freertos/config/include/freertos -I/home/jadenv/esp/esp-idf/components/freertos/config/xtensa/include -I/home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/jadenv/esp/esp-idf/components/freertos/esp_additions/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/include/soc -I/home/jadenv/esp/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/home/jadenv/esp/esp-idf/components/esp_hw_support/dma/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/ldo/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/debug_probe/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/power_supply/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/port/esp32s3/. -I/home/jadenv/esp/esp-idf/components/esp_hw_support/port/esp32s3/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/. -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/include -I/home/jadenv/esp/esp-idf/components/heap/include -I/home/jadenv/esp/esp-idf/components/heap/tlsf -I/home/jadenv/esp/esp-idf/components/log/include -I/home/jadenv/esp/esp-idf/components/soc/include -I/home/jadenv/esp/esp-idf/components/soc/esp32s3 -I/home/jadenv/esp/esp-idf/components/soc/esp32s3/include -I/home/jadenv/esp/esp-idf/components/soc/esp32s3/register -I/home/jadenv/esp/esp-idf/components/hal/platform_port/include -I/home/jadenv/esp/esp-idf/components/hal/esp32s3/include -I/home/jadenv/esp/esp-idf/components/hal/include -I/home/jadenv/esp/esp-idf/components/esp_rom/include -I/home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/include -I/home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/include/esp32s3 -I/home/jadenv/esp/esp-idf/components/esp_rom/esp32s3 -I/home/jadenv/esp/esp-idf/components/esp_common/include -I/home/jadenv/esp/esp-idf/components/esp_system/include -I/home/jadenv/esp/esp-idf/components/esp_system/port/soc -I/home/jadenv/esp/esp-idf/components/esp_system/port/include/private -I/home/jadenv/esp/esp-idf/components/xtensa/esp32s3/include -I/home/jadenv/esp/esp-idf/components/xtensa/include -I/home/jadenv/esp/esp-idf/components/xtensa/deprecated_include -I/home/jadenv/esp/esp-idf/components/lwip/include -I/home/jadenv/esp/esp-idf/components/lwip/include/apps -I/home/jadenv/esp/esp-idf/components/lwip/include/apps/sntp -I/home/jadenv/esp/esp-idf/components/lwip/lwip/src/include -I/home/jadenv/esp/esp-idf/components/lwip/port/include -I/home/jadenv/esp/esp-idf/components/lwip/port/freertos/include -I/home/jadenv/esp/esp-idf/components/lwip/port/esp32xx/include -I/home/jadenv/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/jadenv/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/jadenv/esp/esp-idf/components/esp_driver_spi/include -I/home/jadenv/esp/esp-idf/components/esp_pm/include -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/jadenv/Documents/NULL/null_code=. -fmacro-prefix-map=/home/jadenv/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/lora_rfid/CMakeFiles/__idf_lora_rfid.dir/lora_rfid.c.obj -MF esp-idf/lora_rfid/CMakeFiles/__idf_lora_rfid.dir/lora_rfid.c.obj.d -o esp-idf/lora_rfid/CMakeFiles/__idf_lora_rfid.dir/lora_rfid.c.obj -c /home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c
+In file included from /home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:1:
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/include/lora_rfid.h:8:10: warning: missing terminating " character
+    8 |          "
+      |          ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/include/lora_rfid.h:8:10: error: missing terminating " character
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c: In function 'init_SPI_bus':
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:3:3: error: unknown type name 'spi_bust_config_t'; did you mean 'spi_bus_config_t'?
+    3 |   spi_bust_config_t bus_config = {.mosi_io_num = CONFIG_SPI_MOSI,
+      |   ^~~~~~~~~~~~~~~~~
+      |   spi_bus_config_t
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:3:35: error: field name not in record or union initializer
+    3 |   spi_bust_config_t bus_config = {.mosi_io_num = CONFIG_SPI_MOSI,
+      |                                   ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:3:35: note: (near initialization for 'bus_config')
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:4:35: error: field name not in record or union initializer
+    4 |                                   .miso_io_num = CONFIG_SPI_MISO,
+      |                                   ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:4:35: note: (near initialization for 'bus_config')
+In file included from /home/jadenv/esp/esp-idf/components/esp_driver_spi/include/driver/spi_common.h:11,
+                 from /home/jadenv/Documents/NULL/null_code/components/lora_rfid/include/lora_rfid.h:3:
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:489:25: warning: excess elements in scalar initializer
+  489 | #define CONFIG_SPI_MISO 13
+      |                         ^~
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:4:50: note: in expansion of macro 'CONFIG_SPI_MISO'
+    4 |                                   .miso_io_num = CONFIG_SPI_MISO,
+      |                                                  ^~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:489:25: note: (near initialization for 'bus_config')
+  489 | #define CONFIG_SPI_MISO 13
+      |                         ^~
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:4:50: note: in expansion of macro 'CONFIG_SPI_MISO'
+    4 |                                   .miso_io_num = CONFIG_SPI_MISO,
+      |                                                  ^~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:5:35: error: field name not in record or union initializer
+    5 |                                   .sclk_io_num = CONFIG_SPI_CLK,
+      |                                   ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:5:35: note: (near initialization for 'bus_config')
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:490:24: warning: excess elements in scalar initializer
+  490 | #define CONFIG_SPI_CLK 12
+      |                        ^~
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:5:50: note: in expansion of macro 'CONFIG_SPI_CLK'
+    5 |                                   .sclk_io_num = CONFIG_SPI_CLK,
+      |                                                  ^~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:490:24: note: (near initialization for 'bus_config')
+  490 | #define CONFIG_SPI_CLK 12
+      |                        ^~
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:5:50: note: in expansion of macro 'CONFIG_SPI_CLK'
+    5 |                                   .sclk_io_num = CONFIG_SPI_CLK,
+      |                                                  ^~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:6:35: error: field name not in record or union initializer
+    6 |                                   .isr_cpu_id = ESP_INTR_CPU_AFFINITY_0,
+      |                                   ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:6:35: note: (near initialization for 'bus_config')
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:6:49: warning: excess elements in scalar initializer
+    6 |                                   .isr_cpu_id = ESP_INTR_CPU_AFFINITY_0,
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:6:49: note: (near initialization for 'bus_config')
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:7:35: error: field name not in record or union initializer
+    7 |                                   .intr_flags = ESP_INTR_FLAG_NMI};
+      |                                   ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:7:35: note: (near initialization for 'bus_config')
+In file included from /home/jadenv/esp/esp-idf/components/esp_hw_support/include/esp_cpu.h:21,
+                 from /home/jadenv/esp/esp-idf/components/esp_hw_support/include/spinlock.h:11,
+                 from /home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:49,
+                 from /home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:57,
+                 from /home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:69,
+                 from /home/jadenv/esp/esp-idf/components/esp_driver_spi/include/driver/spi_master.h:10,
+                 from /home/jadenv/Documents/NULL/null_code/components/lora_rfid/include/lora_rfid.h:4:
+/home/jadenv/esp/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h:39:37: warning: excess elements in scalar initializer
+   39 | #define ESP_INTR_FLAG_NMI           (1<<7)  ///< Accept a Level 7 interrupt vector (highest priority)
+      |                                     ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:7:49: note: in expansion of macro 'ESP_INTR_FLAG_NMI'
+    7 |                                   .intr_flags = ESP_INTR_FLAG_NMI};
+      |                                                 ^~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h:39:37: note: (near initialization for 'bus_config')
+   39 | #define ESP_INTR_FLAG_NMI           (1<<7)  ///< Accept a Level 7 interrupt vector (highest priority)
+      |                                     ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:7:49: note: in expansion of macro 'ESP_INTR_FLAG_NMI'
+    7 |                                   .intr_flags = ESP_INTR_FLAG_NMI};
+      |                                                 ^~~~~~~~~~~~~~~~~
+In file included from /home/jadenv/esp/esp-idf/components/esp_driver_spi/include/driver/spi_common.h:12:
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:8:19: error: implicit declaration of function 'spi_bus_intialize'; did you mean 'spi_bus_initialize'? [-Wimplicit-function-declaration]
+    8 |   ESP_ERROR_CHECK(spi_bus_intialize(SPI1_HOST, &bus_config, SPI_DMA_CH_ATUO));
+      |                   ^~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:8:61: error: 'SPI_DMA_CH_ATUO' undeclared (first use in this function); did you mean 'SPI_DMA_CH_AUTO'?
+    8 |   ESP_ERROR_CHECK(spi_bus_intialize(SPI1_HOST, &bus_config, SPI_DMA_CH_ATUO));
+      |                                                             ^~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:8:61: note: each undeclared identifier is reported only once for each function it appears in
+    8 |   ESP_ERROR_CHECK(spi_bus_intialize(SPI1_HOST, &bus_config, SPI_DMA_CH_ATUO));
+      |                                                             ^~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:9:3: error: implicit declaration of function 'ESP_LOGI'; did you mean 'ESP_OK'? [-Wimplicit-function-declaration]
+    9 |   ESP_LOGI(SPI_TAG, "SPI bus intialized");
+      |   ^~~~~~~~
+      |   ESP_OK
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:15:33: error: expected expression before ')' token
+   15 |   spi_bus_add_device(SPI1_HOST, )
+      |                                 ^
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:15:3: error: too few arguments to function 'spi_bus_add_device'
+   15 |   spi_bus_add_device(SPI1_HOST, )
+      |   ^~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_driver_spi/include/driver/spi_master.h:196:11: note: declared here
+  196 | esp_err_t spi_bus_add_device(spi_host_device_t host_id, const spi_device_interface_config_t *dev_config, spi_device_handle_t *handle);
+      |           ^~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/lora_rfid/lora_rfid.c:12:33: warning: unused variable 'config_RFID' [-Wunused-variable]
+   12 |   spi_device_interface_config_t config_RFID = {
+      |                                 ^~~~~~~~~~~
+[3/20] No install step for 'bootloader'
+[4/20] Building C object esp-idf/wifi/CMakeFiles/__idf_wifi.dir/wifi.c.obj
+FAILED: esp-idf/wifi/CMakeFiles/__idf_wifi.dir/wifi.c.obj 
+/home/jadenv/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.5.3\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/jadenv/Documents/NULL/null_code/build/config -I/home/jadenv/Documents/NULL/null_code/components/wifi/include -I/home/jadenv/esp/esp-idf/components/newlib/platform_include -I/home/jadenv/esp/esp-idf/components/freertos/config/include -I/home/jadenv/esp/esp-idf/components/freertos/config/include/freertos -I/home/jadenv/esp/esp-idf/components/freertos/config/xtensa/include -I/home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/jadenv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/jadenv/esp/esp-idf/components/freertos/esp_additions/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/include/soc -I/home/jadenv/esp/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/home/jadenv/esp/esp-idf/components/esp_hw_support/dma/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/ldo/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/debug_probe/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/power_supply/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/port/esp32s3/. -I/home/jadenv/esp/esp-idf/components/esp_hw_support/port/esp32s3/include -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/. -I/home/jadenv/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/include -I/home/jadenv/esp/esp-idf/components/heap/include -I/home/jadenv/esp/esp-idf/components/heap/tlsf -I/home/jadenv/esp/esp-idf/components/log/include -I/home/jadenv/esp/esp-idf/components/soc/include -I/home/jadenv/esp/esp-idf/components/soc/esp32s3 -I/home/jadenv/esp/esp-idf/components/soc/esp32s3/include -I/home/jadenv/esp/esp-idf/components/soc/esp32s3/register -I/home/jadenv/esp/esp-idf/components/hal/platform_port/include -I/home/jadenv/esp/esp-idf/components/hal/esp32s3/include -I/home/jadenv/esp/esp-idf/components/hal/include -I/home/jadenv/esp/esp-idf/components/esp_rom/include -I/home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/include -I/home/jadenv/esp/esp-idf/components/esp_rom/esp32s3/include/esp32s3 -I/home/jadenv/esp/esp-idf/components/esp_rom/esp32s3 -I/home/jadenv/esp/esp-idf/components/esp_common/include -I/home/jadenv/esp/esp-idf/components/esp_system/include -I/home/jadenv/esp/esp-idf/components/esp_system/port/soc -I/home/jadenv/esp/esp-idf/components/esp_system/port/include/private -I/home/jadenv/esp/esp-idf/components/xtensa/esp32s3/include -I/home/jadenv/esp/esp-idf/components/xtensa/include -I/home/jadenv/esp/esp-idf/components/xtensa/deprecated_include -I/home/jadenv/esp/esp-idf/components/lwip/include -I/home/jadenv/esp/esp-idf/components/lwip/include/apps -I/home/jadenv/esp/esp-idf/components/lwip/include/apps/sntp -I/home/jadenv/esp/esp-idf/components/lwip/lwip/src/include -I/home/jadenv/esp/esp-idf/components/lwip/port/include -I/home/jadenv/esp/esp-idf/components/lwip/port/freertos/include -I/home/jadenv/esp/esp-idf/components/lwip/port/esp32xx/include -I/home/jadenv/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/jadenv/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/jadenv/esp/esp-idf/components/esp_wifi/include -I/home/jadenv/esp/esp-idf/components/esp_wifi/include/local -I/home/jadenv/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/home/jadenv/esp/esp-idf/components/esp_wifi/wifi_apps/nan_app/include -I/home/jadenv/esp/esp-idf/components/esp_event/include -I/home/jadenv/esp/esp-idf/components/esp_phy/include -I/home/jadenv/esp/esp-idf/components/esp_phy/esp32s3/include -I/home/jadenv/esp/esp-idf/components/esp_netif/include -I/home/jadenv/esp/esp-idf/components/esp_timer/include -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/jadenv/Documents/NULL/null_code=. -fmacro-prefix-map=/home/jadenv/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/wifi/CMakeFiles/__idf_wifi.dir/wifi.c.obj -MF esp-idf/wifi/CMakeFiles/__idf_wifi.dir/wifi.c.obj.d -o esp-idf/wifi/CMakeFiles/__idf_wifi.dir/wifi.c.obj -c /home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c: In function 'init_wifi':
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:3: warning: braces around scalar initializer
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |   ^~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:3: note: (near initialization for 'config.osi_funcs')
+In file included from /home/jadenv/Documents/NULL/null_code/components/wifi/include/wifi.h:5,
+                 from /home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:1:
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:309:5: error: field name not in record or union initializer
+  309 |     .osi_funcs = &g_wifi_osi_funcs, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:309:5: note: (near initialization for 'config.osi_funcs')
+  309 |     .osi_funcs = &g_wifi_osi_funcs, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:310:5: error: field name not in record or union initializer
+  310 |     .wpa_crypto_funcs = g_wifi_default_wpa_crypto_funcs, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:310:5: note: (near initialization for 'config.osi_funcs')
+  310 |     .wpa_crypto_funcs = g_wifi_default_wpa_crypto_funcs, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:310:25: warning: excess elements in scalar initializer
+  310 |     .wpa_crypto_funcs = g_wifi_default_wpa_crypto_funcs, \
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:310:25: note: (near initialization for 'config.osi_funcs')
+  310 |     .wpa_crypto_funcs = g_wifi_default_wpa_crypto_funcs, \
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:311:5: error: field name not in record or union initializer
+  311 |     .static_rx_buf_num = CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:311:5: note: (near initialization for 'config.osi_funcs')
+  311 |     .static_rx_buf_num = CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jadenv/esp/esp-idf/components/log/include/esp_log.h:12,
+                 from /home/jadenv/Documents/NULL/null_code/components/wifi/include/wifi.h:3:
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:661:46: warning: excess elements in scalar initializer
+  661 | #define CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM 10
+      |                                              ^~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:311:26: note: in expansion of macro 'CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM'
+  311 |     .static_rx_buf_num = CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM,\
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:661:46: note: (near initialization for 'config.osi_funcs')
+  661 | #define CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM 10
+      |                                              ^~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:311:26: note: in expansion of macro 'CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM'
+  311 |     .static_rx_buf_num = CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM,\
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:312:5: error: field name not in record or union initializer
+  312 |     .dynamic_rx_buf_num = CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:312:5: note: (near initialization for 'config.osi_funcs')
+  312 |     .dynamic_rx_buf_num = CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:662:47: warning: excess elements in scalar initializer
+  662 | #define CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM 32
+      |                                               ^~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:312:27: note: in expansion of macro 'CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM'
+  312 |     .dynamic_rx_buf_num = CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM,\
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:662:47: note: (near initialization for 'config.osi_funcs')
+  662 | #define CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM 32
+      |                                               ^~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:312:27: note: in expansion of macro 'CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM'
+  312 |     .dynamic_rx_buf_num = CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM,\
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:313:5: error: field name not in record or union initializer
+  313 |     .tx_buf_type = CONFIG_ESP_WIFI_TX_BUFFER_TYPE,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:313:5: note: (near initialization for 'config.osi_funcs')
+  313 |     .tx_buf_type = CONFIG_ESP_WIFI_TX_BUFFER_TYPE,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:664:40: warning: excess elements in scalar initializer
+  664 | #define CONFIG_ESP_WIFI_TX_BUFFER_TYPE 1
+      |                                        ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:313:20: note: in expansion of macro 'CONFIG_ESP_WIFI_TX_BUFFER_TYPE'
+  313 |     .tx_buf_type = CONFIG_ESP_WIFI_TX_BUFFER_TYPE,\
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:664:40: note: (near initialization for 'config.osi_funcs')
+  664 | #define CONFIG_ESP_WIFI_TX_BUFFER_TYPE 1
+      |                                        ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:313:20: note: in expansion of macro 'CONFIG_ESP_WIFI_TX_BUFFER_TYPE'
+  313 |     .tx_buf_type = CONFIG_ESP_WIFI_TX_BUFFER_TYPE,\
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:314:5: error: field name not in record or union initializer
+  314 |     .static_tx_buf_num = WIFI_STATIC_TX_BUFFER_NUM,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:314:5: note: (near initialization for 'config.osi_funcs')
+  314 |     .static_tx_buf_num = WIFI_STATIC_TX_BUFFER_NUM,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:129:35: warning: excess elements in scalar initializer
+  129 | #define WIFI_STATIC_TX_BUFFER_NUM 0
+      |                                   ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:314:26: note: in expansion of macro 'WIFI_STATIC_TX_BUFFER_NUM'
+  314 |     .static_tx_buf_num = WIFI_STATIC_TX_BUFFER_NUM,\
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:129:35: note: (near initialization for 'config.osi_funcs')
+  129 | #define WIFI_STATIC_TX_BUFFER_NUM 0
+      |                                   ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:314:26: note: in expansion of macro 'WIFI_STATIC_TX_BUFFER_NUM'
+  314 |     .static_tx_buf_num = WIFI_STATIC_TX_BUFFER_NUM,\
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:315:5: error: field name not in record or union initializer
+  315 |     .dynamic_tx_buf_num = WIFI_DYNAMIC_TX_BUFFER_NUM,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:315:5: note: (near initialization for 'config.osi_funcs')
+  315 |     .dynamic_tx_buf_num = WIFI_DYNAMIC_TX_BUFFER_NUM,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:665:47: warning: excess elements in scalar initializer
+  665 | #define CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER_NUM 32
+      |                                               ^~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:139:36: note: in expansion of macro 'CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER_NUM'
+  139 | #define WIFI_DYNAMIC_TX_BUFFER_NUM CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER_NUM
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:315:27: note: in expansion of macro 'WIFI_DYNAMIC_TX_BUFFER_NUM'
+  315 |     .dynamic_tx_buf_num = WIFI_DYNAMIC_TX_BUFFER_NUM,\
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:665:47: note: (near initialization for 'config.osi_funcs')
+  665 | #define CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER_NUM 32
+      |                                               ^~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:139:36: note: in expansion of macro 'CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER_NUM'
+  139 | #define WIFI_DYNAMIC_TX_BUFFER_NUM CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER_NUM
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:315:27: note: in expansion of macro 'WIFI_DYNAMIC_TX_BUFFER_NUM'
+  315 |     .dynamic_tx_buf_num = WIFI_DYNAMIC_TX_BUFFER_NUM,\
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:316:5: error: field name not in record or union initializer
+  316 |     .rx_mgmt_buf_type = CONFIG_ESP_WIFI_DYNAMIC_RX_MGMT_BUF,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:316:5: note: (near initialization for 'config.osi_funcs')
+  316 |     .rx_mgmt_buf_type = CONFIG_ESP_WIFI_DYNAMIC_RX_MGMT_BUF,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:667:45: warning: excess elements in scalar initializer
+  667 | #define CONFIG_ESP_WIFI_DYNAMIC_RX_MGMT_BUF 0
+      |                                             ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:316:25: note: in expansion of macro 'CONFIG_ESP_WIFI_DYNAMIC_RX_MGMT_BUF'
+  316 |     .rx_mgmt_buf_type = CONFIG_ESP_WIFI_DYNAMIC_RX_MGMT_BUF,\
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:667:45: note: (near initialization for 'config.osi_funcs')
+  667 | #define CONFIG_ESP_WIFI_DYNAMIC_RX_MGMT_BUF 0
+      |                                             ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:316:25: note: in expansion of macro 'CONFIG_ESP_WIFI_DYNAMIC_RX_MGMT_BUF'
+  316 |     .rx_mgmt_buf_type = CONFIG_ESP_WIFI_DYNAMIC_RX_MGMT_BUF,\
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:317:5: error: field name not in record or union initializer
+  317 |     .rx_mgmt_buf_num = WIFI_RX_MGMT_BUF_NUM_DEF,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:317:5: note: (near initialization for 'config.osi_funcs')
+  317 |     .rx_mgmt_buf_num = WIFI_RX_MGMT_BUF_NUM_DEF,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:668:45: warning: excess elements in scalar initializer
+  668 | #define CONFIG_ESP_WIFI_RX_MGMT_BUF_NUM_DEF 5
+      |                                             ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:145:34: note: in expansion of macro 'CONFIG_ESP_WIFI_RX_MGMT_BUF_NUM_DEF'
+  145 | #define WIFI_RX_MGMT_BUF_NUM_DEF CONFIG_ESP_WIFI_RX_MGMT_BUF_NUM_DEF
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:317:24: note: in expansion of macro 'WIFI_RX_MGMT_BUF_NUM_DEF'
+  317 |     .rx_mgmt_buf_num = WIFI_RX_MGMT_BUF_NUM_DEF,\
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:668:45: note: (near initialization for 'config.osi_funcs')
+  668 | #define CONFIG_ESP_WIFI_RX_MGMT_BUF_NUM_DEF 5
+      |                                             ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:145:34: note: in expansion of macro 'CONFIG_ESP_WIFI_RX_MGMT_BUF_NUM_DEF'
+  145 | #define WIFI_RX_MGMT_BUF_NUM_DEF CONFIG_ESP_WIFI_RX_MGMT_BUF_NUM_DEF
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:317:24: note: in expansion of macro 'WIFI_RX_MGMT_BUF_NUM_DEF'
+  317 |     .rx_mgmt_buf_num = WIFI_RX_MGMT_BUF_NUM_DEF,\
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:318:5: error: field name not in record or union initializer
+  318 |     .cache_tx_buf_num = WIFI_CACHE_TX_BUFFER_NUM,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:318:5: note: (near initialization for 'config.osi_funcs')
+  318 |     .cache_tx_buf_num = WIFI_CACHE_TX_BUFFER_NUM,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:135:35: warning: excess elements in scalar initializer
+  135 | #define WIFI_CACHE_TX_BUFFER_NUM  0
+      |                                   ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:318:25: note: in expansion of macro 'WIFI_CACHE_TX_BUFFER_NUM'
+  318 |     .cache_tx_buf_num = WIFI_CACHE_TX_BUFFER_NUM,\
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:135:35: note: (near initialization for 'config.osi_funcs')
+  135 | #define WIFI_CACHE_TX_BUFFER_NUM  0
+      |                                   ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:318:25: note: in expansion of macro 'WIFI_CACHE_TX_BUFFER_NUM'
+  318 |     .cache_tx_buf_num = WIFI_CACHE_TX_BUFFER_NUM,\
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:319:5: error: field name not in record or union initializer
+  319 |     .csi_enable = WIFI_CSI_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:319:5: note: (near initialization for 'config.osi_funcs')
+  319 |     .csi_enable = WIFI_CSI_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:153:34: warning: excess elements in scalar initializer
+  153 | #define WIFI_CSI_ENABLED         0
+      |                                  ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:319:19: note: in expansion of macro 'WIFI_CSI_ENABLED'
+  319 |     .csi_enable = WIFI_CSI_ENABLED,\
+      |                   ^~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:153:34: note: (near initialization for 'config.osi_funcs')
+  153 | #define WIFI_CSI_ENABLED         0
+      |                                  ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:319:19: note: in expansion of macro 'WIFI_CSI_ENABLED'
+  319 |     .csi_enable = WIFI_CSI_ENABLED,\
+      |                   ^~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:320:5: error: field name not in record or union initializer
+  320 |     .ampdu_rx_enable = WIFI_AMPDU_RX_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:320:5: note: (near initialization for 'config.osi_funcs')
+  320 |     .ampdu_rx_enable = WIFI_AMPDU_RX_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:157:38: warning: excess elements in scalar initializer
+  157 | #define WIFI_AMPDU_RX_ENABLED        1
+      |                                      ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:320:24: note: in expansion of macro 'WIFI_AMPDU_RX_ENABLED'
+  320 |     .ampdu_rx_enable = WIFI_AMPDU_RX_ENABLED,\
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:157:38: note: (near initialization for 'config.osi_funcs')
+  157 | #define WIFI_AMPDU_RX_ENABLED        1
+      |                                      ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:320:24: note: in expansion of macro 'WIFI_AMPDU_RX_ENABLED'
+  320 |     .ampdu_rx_enable = WIFI_AMPDU_RX_ENABLED,\
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:321:5: error: field name not in record or union initializer
+  321 |     .ampdu_tx_enable = WIFI_AMPDU_TX_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:321:5: note: (near initialization for 'config.osi_funcs')
+  321 |     .ampdu_tx_enable = WIFI_AMPDU_TX_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:163:38: warning: excess elements in scalar initializer
+  163 | #define WIFI_AMPDU_TX_ENABLED        1
+      |                                      ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:321:24: note: in expansion of macro 'WIFI_AMPDU_TX_ENABLED'
+  321 |     .ampdu_tx_enable = WIFI_AMPDU_TX_ENABLED,\
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:163:38: note: (near initialization for 'config.osi_funcs')
+  163 | #define WIFI_AMPDU_TX_ENABLED        1
+      |                                      ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:321:24: note: in expansion of macro 'WIFI_AMPDU_TX_ENABLED'
+  321 |     .ampdu_tx_enable = WIFI_AMPDU_TX_ENABLED,\
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:322:5: error: field name not in record or union initializer
+  322 |     .amsdu_tx_enable = WIFI_AMSDU_TX_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:322:5: note: (near initialization for 'config.osi_funcs')
+  322 |     .amsdu_tx_enable = WIFI_AMSDU_TX_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:171:38: warning: excess elements in scalar initializer
+  171 | #define WIFI_AMSDU_TX_ENABLED        0
+      |                                      ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:322:24: note: in expansion of macro 'WIFI_AMSDU_TX_ENABLED'
+  322 |     .amsdu_tx_enable = WIFI_AMSDU_TX_ENABLED,\
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:171:38: note: (near initialization for 'config.osi_funcs')
+  171 | #define WIFI_AMSDU_TX_ENABLED        0
+      |                                      ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:322:24: note: in expansion of macro 'WIFI_AMSDU_TX_ENABLED'
+  322 |     .amsdu_tx_enable = WIFI_AMSDU_TX_ENABLED,\
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:323:5: error: field name not in record or union initializer
+  323 |     .nvs_enable = WIFI_NVS_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:323:5: note: (near initialization for 'config.osi_funcs')
+  323 |     .nvs_enable = WIFI_NVS_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:175:35: warning: excess elements in scalar initializer
+  175 | #define WIFI_NVS_ENABLED          1
+      |                                   ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:323:19: note: in expansion of macro 'WIFI_NVS_ENABLED'
+  323 |     .nvs_enable = WIFI_NVS_ENABLED,\
+      |                   ^~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:175:35: note: (near initialization for 'config.osi_funcs')
+  175 | #define WIFI_NVS_ENABLED          1
+      |                                   ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:323:19: note: in expansion of macro 'WIFI_NVS_ENABLED'
+  323 |     .nvs_enable = WIFI_NVS_ENABLED,\
+      |                   ^~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:324:5: error: field name not in record or union initializer
+  324 |     .nano_enable = WIFI_NANO_FORMAT_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:324:5: note: (near initialization for 'config.osi_funcs')
+  324 |     .nano_enable = WIFI_NANO_FORMAT_ENABLED,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:183:35: warning: excess elements in scalar initializer
+  183 | #define WIFI_NANO_FORMAT_ENABLED  0
+      |                                   ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:324:20: note: in expansion of macro 'WIFI_NANO_FORMAT_ENABLED'
+  324 |     .nano_enable = WIFI_NANO_FORMAT_ENABLED,\
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:183:35: note: (near initialization for 'config.osi_funcs')
+  183 | #define WIFI_NANO_FORMAT_ENABLED  0
+      |                                   ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:324:20: note: in expansion of macro 'WIFI_NANO_FORMAT_ENABLED'
+  324 |     .nano_enable = WIFI_NANO_FORMAT_ENABLED,\
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:325:5: error: field name not in record or union initializer
+  325 |     .rx_ba_win = WIFI_DEFAULT_RX_BA_WIN,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:325:5: note: (near initialization for 'config.osi_funcs')
+  325 |     .rx_ba_win = WIFI_DEFAULT_RX_BA_WIN,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:672:35: warning: excess elements in scalar initializer
+  672 | #define CONFIG_ESP_WIFI_RX_BA_WIN 6
+      |                                   ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:192:32: note: in expansion of macro 'CONFIG_ESP_WIFI_RX_BA_WIN'
+  192 | #define WIFI_DEFAULT_RX_BA_WIN CONFIG_ESP_WIFI_RX_BA_WIN
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:325:18: note: in expansion of macro 'WIFI_DEFAULT_RX_BA_WIN'
+  325 |     .rx_ba_win = WIFI_DEFAULT_RX_BA_WIN,\
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:672:35: note: (near initialization for 'config.osi_funcs')
+  672 | #define CONFIG_ESP_WIFI_RX_BA_WIN 6
+      |                                   ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:192:32: note: in expansion of macro 'CONFIG_ESP_WIFI_RX_BA_WIN'
+  192 | #define WIFI_DEFAULT_RX_BA_WIN CONFIG_ESP_WIFI_RX_BA_WIN
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:325:18: note: in expansion of macro 'WIFI_DEFAULT_RX_BA_WIN'
+  325 |     .rx_ba_win = WIFI_DEFAULT_RX_BA_WIN,\
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:326:5: error: field name not in record or union initializer
+  326 |     .wifi_task_core_id = WIFI_TASK_CORE_ID,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:326:5: note: (near initialization for 'config.osi_funcs')
+  326 |     .wifi_task_core_id = WIFI_TASK_CORE_ID,\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:200:27: warning: excess elements in scalar initializer
+  200 | #define WIFI_TASK_CORE_ID 0
+      |                           ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:326:26: note: in expansion of macro 'WIFI_TASK_CORE_ID'
+  326 |     .wifi_task_core_id = WIFI_TASK_CORE_ID,\
+      |                          ^~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:200:27: note: (near initialization for 'config.osi_funcs')
+  200 | #define WIFI_TASK_CORE_ID 0
+      |                           ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:326:26: note: in expansion of macro 'WIFI_TASK_CORE_ID'
+  326 |     .wifi_task_core_id = WIFI_TASK_CORE_ID,\
+      |                          ^~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:327:5: error: field name not in record or union initializer
+  327 |     .beacon_max_len = WIFI_SOFTAP_BEACON_MAX_LEN, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:327:5: note: (near initialization for 'config.osi_funcs')
+  327 |     .beacon_max_len = WIFI_SOFTAP_BEACON_MAX_LEN, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:675:47: warning: excess elements in scalar initializer
+  675 | #define CONFIG_ESP_WIFI_SOFTAP_BEACON_MAX_LEN 752
+      |                                               ^~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:204:36: note: in expansion of macro 'CONFIG_ESP_WIFI_SOFTAP_BEACON_MAX_LEN'
+  204 | #define WIFI_SOFTAP_BEACON_MAX_LEN CONFIG_ESP_WIFI_SOFTAP_BEACON_MAX_LEN
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:327:23: note: in expansion of macro 'WIFI_SOFTAP_BEACON_MAX_LEN'
+  327 |     .beacon_max_len = WIFI_SOFTAP_BEACON_MAX_LEN, \
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:675:47: note: (near initialization for 'config.osi_funcs')
+  675 | #define CONFIG_ESP_WIFI_SOFTAP_BEACON_MAX_LEN 752
+      |                                               ^~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:204:36: note: in expansion of macro 'CONFIG_ESP_WIFI_SOFTAP_BEACON_MAX_LEN'
+  204 | #define WIFI_SOFTAP_BEACON_MAX_LEN CONFIG_ESP_WIFI_SOFTAP_BEACON_MAX_LEN
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:327:23: note: in expansion of macro 'WIFI_SOFTAP_BEACON_MAX_LEN'
+  327 |     .beacon_max_len = WIFI_SOFTAP_BEACON_MAX_LEN, \
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:328:5: error: field name not in record or union initializer
+  328 |     .mgmt_sbuf_num = WIFI_MGMT_SBUF_NUM, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:328:5: note: (near initialization for 'config.osi_funcs')
+  328 |     .mgmt_sbuf_num = WIFI_MGMT_SBUF_NUM, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:676:39: warning: excess elements in scalar initializer
+  676 | #define CONFIG_ESP_WIFI_MGMT_SBUF_NUM 32
+      |                                       ^~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:210:28: note: in expansion of macro 'CONFIG_ESP_WIFI_MGMT_SBUF_NUM'
+  210 | #define WIFI_MGMT_SBUF_NUM CONFIG_ESP_WIFI_MGMT_SBUF_NUM
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:328:22: note: in expansion of macro 'WIFI_MGMT_SBUF_NUM'
+  328 |     .mgmt_sbuf_num = WIFI_MGMT_SBUF_NUM, \
+      |                      ^~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:676:39: note: (near initialization for 'config.osi_funcs')
+  676 | #define CONFIG_ESP_WIFI_MGMT_SBUF_NUM 32
+      |                                       ^~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:210:28: note: in expansion of macro 'CONFIG_ESP_WIFI_MGMT_SBUF_NUM'
+  210 | #define WIFI_MGMT_SBUF_NUM CONFIG_ESP_WIFI_MGMT_SBUF_NUM
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:328:22: note: in expansion of macro 'WIFI_MGMT_SBUF_NUM'
+  328 |     .mgmt_sbuf_num = WIFI_MGMT_SBUF_NUM, \
+      |                      ^~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:329:5: error: field name not in record or union initializer
+  329 |     .feature_caps = WIFI_FEATURE_CAPS, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:329:5: note: (near initialization for 'config.osi_funcs')
+  329 |     .feature_caps = WIFI_FEATURE_CAPS, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:298:27: warning: excess elements in scalar initializer
+  298 | #define WIFI_FEATURE_CAPS (WIFI_ENABLE_WPA3_SAE | \
+      |                           ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:329:21: note: in expansion of macro 'WIFI_FEATURE_CAPS'
+  329 |     .feature_caps = WIFI_FEATURE_CAPS, \
+      |                     ^~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:298:27: note: (near initialization for 'config.osi_funcs')
+  298 | #define WIFI_FEATURE_CAPS (WIFI_ENABLE_WPA3_SAE | \
+      |                           ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:329:21: note: in expansion of macro 'WIFI_FEATURE_CAPS'
+  329 |     .feature_caps = WIFI_FEATURE_CAPS, \
+      |                     ^~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:330:5: error: field name not in record or union initializer
+  330 |     .sta_disconnected_pm = WIFI_STA_DISCONNECTED_PM_ENABLED,  \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:330:5: note: (near initialization for 'config.osi_funcs')
+  330 |     .sta_disconnected_pm = WIFI_STA_DISCONNECTED_PM_ENABLED,  \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: warning: excess elements in scalar initializer
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: (near initialization for 'config.osi_funcs')
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:331:5: error: field name not in record or union initializer
+  331 |     .espnow_max_encrypt_num = CONFIG_ESP_WIFI_ESPNOW_MAX_ENCRYPT_NUM, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:331:5: note: (near initialization for 'config.osi_funcs')
+  331 |     .espnow_max_encrypt_num = CONFIG_ESP_WIFI_ESPNOW_MAX_ENCRYPT_NUM, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:690:48: warning: excess elements in scalar initializer
+  690 | #define CONFIG_ESP_WIFI_ESPNOW_MAX_ENCRYPT_NUM 7
+      |                                                ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:331:31: note: in expansion of macro 'CONFIG_ESP_WIFI_ESPNOW_MAX_ENCRYPT_NUM'
+  331 |     .espnow_max_encrypt_num = CONFIG_ESP_WIFI_ESPNOW_MAX_ENCRYPT_NUM, \
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/build/config/sdkconfig.h:690:48: note: (near initialization for 'config.osi_funcs')
+  690 | #define CONFIG_ESP_WIFI_ESPNOW_MAX_ENCRYPT_NUM 7
+      |                                                ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:331:31: note: in expansion of macro 'CONFIG_ESP_WIFI_ESPNOW_MAX_ENCRYPT_NUM'
+  331 |     .espnow_max_encrypt_num = CONFIG_ESP_WIFI_ESPNOW_MAX_ENCRYPT_NUM, \
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:332:5: error: field name not in record or union initializer
+  332 |     .tx_hetb_queue_num = WIFI_TX_HETB_QUEUE_NUM, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:332:5: note: (near initialization for 'config.osi_funcs')
+  332 |     .tx_hetb_queue_num = WIFI_TX_HETB_QUEUE_NUM, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:278:32: warning: excess elements in scalar initializer
+  278 | #define WIFI_TX_HETB_QUEUE_NUM 1
+      |                                ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:332:26: note: in expansion of macro 'WIFI_TX_HETB_QUEUE_NUM'
+  332 |     .tx_hetb_queue_num = WIFI_TX_HETB_QUEUE_NUM, \
+      |                          ^~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:278:32: note: (near initialization for 'config.osi_funcs')
+  278 | #define WIFI_TX_HETB_QUEUE_NUM 1
+      |                                ^
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:332:26: note: in expansion of macro 'WIFI_TX_HETB_QUEUE_NUM'
+  332 |     .tx_hetb_queue_num = WIFI_TX_HETB_QUEUE_NUM, \
+      |                          ^~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:333:5: error: field name not in record or union initializer
+  333 |     .dump_hesigb_enable = WIFI_DUMP_HESIGB_ENABLED, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:333:5: note: (near initialization for 'config.osi_funcs')
+  333 |     .dump_hesigb_enable = WIFI_DUMP_HESIGB_ENABLED, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: warning: excess elements in scalar initializer
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: (near initialization for 'config.osi_funcs')
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:334:5: error: field name not in record or union initializer
+  334 |     .magic = WIFI_INIT_CONFIG_MAGIC\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:334:5: note: (near initialization for 'config.osi_funcs')
+  334 |     .magic = WIFI_INIT_CONFIG_MAGIC\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:189:35: warning: excess elements in scalar initializer
+  189 | #define WIFI_INIT_CONFIG_MAGIC    0x1F2F3F4F
+      |                                   ^~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:334:14: note: in expansion of macro 'WIFI_INIT_CONFIG_MAGIC'
+  334 |     .magic = WIFI_INIT_CONFIG_MAGIC\
+  335 | }
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:189:35: note: (near initialization for 'config.osi_funcs')
+  189 | #define WIFI_INIT_CONFIG_MAGIC    0x1F2F3F4F
+      |                                   ^~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:334:14: note: in expansion of macro 'WIFI_INIT_CONFIG_MAGIC'
+  334 |     .magic = WIFI_INIT_CONFIG_MAGIC\
+  335 | }
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:32: note: in expansion of macro 'WIFI_INIT_CONFIG_DEFAULT'
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:14:3: warning: missing initializer for field 'wpa_crypto_funcs' of 'wifi_init_config_t' [-Wmissing-field-initializers]
+   14 |   wifi_init_config_t config = {WIFI_INIT_CONFIG_DEFAULT()};
+      |   ^~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:99:28: note: 'wpa_crypto_funcs' declared here
+   99 |     wpa_crypto_funcs_t     wpa_crypto_funcs;       /**< WiFi station crypto functions when connect */
+      |                            ^~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c: In function 'find_conn_AP':
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:3: error: unknown type name 'esp_wifi_scan_config_t'; did you mean 'wifi_scan_config_t'?
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+      |   wifi_scan_config_t
+In file included from /home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types.h:8,
+                 from /home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:54:
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:195:5: error: field name not in record or union initializer
+  195 |     .scan_time.active.min = WIFI_ACTIVE_SCAN_MIN_DEFAULT_TIME, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:195:5: note: (near initialization for 'config')
+  195 |     .scan_time.active.min = WIFI_ACTIVE_SCAN_MIN_DEFAULT_TIME, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:196:5: error: field name not in record or union initializer
+  196 |     .scan_time.active.max = WIFI_ACTIVE_SCAN_MAX_DEFAULT_TIME, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:196:5: note: (near initialization for 'config')
+  196 |     .scan_time.active.max = WIFI_ACTIVE_SCAN_MAX_DEFAULT_TIME, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:190:43: warning: excess elements in scalar initializer
+  190 | #define WIFI_ACTIVE_SCAN_MAX_DEFAULT_TIME 120           /**< Default maximum active scan time per channel */
+      |                                           ^~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:196:29: note: in expansion of macro 'WIFI_ACTIVE_SCAN_MAX_DEFAULT_TIME'
+  196 |     .scan_time.active.max = WIFI_ACTIVE_SCAN_MAX_DEFAULT_TIME, \
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:190:43: note: (near initialization for 'config')
+  190 | #define WIFI_ACTIVE_SCAN_MAX_DEFAULT_TIME 120           /**< Default maximum active scan time per channel */
+      |                                           ^~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:196:29: note: in expansion of macro 'WIFI_ACTIVE_SCAN_MAX_DEFAULT_TIME'
+  196 |     .scan_time.active.max = WIFI_ACTIVE_SCAN_MAX_DEFAULT_TIME, \
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:197:5: error: field name not in record or union initializer
+  197 |     .scan_time.passive = WIFI_PASSIVE_SCAN_DEFAULT_TIME, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:197:5: note: (near initialization for 'config')
+  197 |     .scan_time.passive = WIFI_PASSIVE_SCAN_DEFAULT_TIME, \
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:191:40: warning: excess elements in scalar initializer
+  191 | #define WIFI_PASSIVE_SCAN_DEFAULT_TIME 360              /**< Default passive scan time per channel */
+      |                                        ^~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:197:26: note: in expansion of macro 'WIFI_PASSIVE_SCAN_DEFAULT_TIME'
+  197 |     .scan_time.passive = WIFI_PASSIVE_SCAN_DEFAULT_TIME, \
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:191:40: note: (near initialization for 'config')
+  191 | #define WIFI_PASSIVE_SCAN_DEFAULT_TIME 360              /**< Default passive scan time per channel */
+      |                                        ^~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:197:26: note: in expansion of macro 'WIFI_PASSIVE_SCAN_DEFAULT_TIME'
+  197 |     .scan_time.passive = WIFI_PASSIVE_SCAN_DEFAULT_TIME, \
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:198:5: error: field name not in record or union initializer
+  198 |     .home_chan_dwell_time = WIFI_SCAN_HOME_CHANNEL_DWELL_DEFAULT_TIME\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:198:5: note: (near initialization for 'config')
+  198 |     .home_chan_dwell_time = WIFI_SCAN_HOME_CHANNEL_DWELL_DEFAULT_TIME\
+      |     ^
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:192:51: warning: excess elements in scalar initializer
+  192 | #define WIFI_SCAN_HOME_CHANNEL_DWELL_DEFAULT_TIME 30    /**< Default time spent at home channel between scanning consecutive channels */
+      |                                                   ^~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:198:29: note: in expansion of macro 'WIFI_SCAN_HOME_CHANNEL_DWELL_DEFAULT_TIME'
+  198 |     .home_chan_dwell_time = WIFI_SCAN_HOME_CHANNEL_DWELL_DEFAULT_TIME\
+  199 | }
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:192:51: note: (near initialization for 'config')
+  192 | #define WIFI_SCAN_HOME_CHANNEL_DWELL_DEFAULT_TIME 30    /**< Default time spent at home channel between scanning consecutive channels */
+      |                                                   ^~
+/home/jadenv/esp/esp-idf/components/esp_wifi/include/esp_wifi_types_generic.h:198:29: note: in expansion of macro 'WIFI_SCAN_HOME_CHANNEL_DWELL_DEFAULT_TIME'
+  198 |     .home_chan_dwell_time = WIFI_SCAN_HOME_CHANNEL_DWELL_DEFAULT_TIME\
+  199 | }
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:31:35: note: in expansion of macro 'WIFI_SCAN_PARAMS_DEFAULT_CONFIG'
+   31 |   esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:32:16: warning: unused variable 'handler_task' [-Wunused-variable]
+   32 |   TaskHandle_t handler_task =
+      |                ^~~~~~~~~~~~
+/home/jadenv/Documents/NULL/null_code/components/wifi/wifi.c:28:13: warning: unused variable 'err' [-Wunused-variable]
+   28 |   esp_err_t err = ESP_OK;
+      |             ^~~
+[5/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/null.c.obj
+/home/jadenv/Documents/NULL/null_code/main/null.c: In function 'app_main':
+/home/jadenv/Documents/NULL/null_code/main/null.c:11:21: warning: unused variable 'disp_handler' [-Wunused-variable]
+   11 |         lv_disp_t * disp_handler = ssd1306_driver_init(handles);
+      |                     ^~~~~~~~~~~~
+[6/20] Building C object esp-idf/utility/CMakeFiles/__idf_utility.dir/utility.c.obj
+/home/jadenv/Documents/NULL/null_code/components/utility/utility.c: In function 'configure_internal_state':
+/home/jadenv/Documents/NULL/null_code/components/utility/utility.c:5:22: warning: unused variable 'OLED_handlers' [-Wunused-variable]
+    5 |   struct i2c_handles OLED_handlers = init_OLED();
+      |                      ^~~~~~~~~~~~~
+[7/20] Building C object esp-idf/GPIO/CMakeFiles/__idf_GPIO.dir/GPIO.c.obj
+[8/20] Building C object esp-idf/i2c/CMakeFiles/__idf_i2c.dir/i2c.c.obj
+ninja: build stopped: subcommand failed.

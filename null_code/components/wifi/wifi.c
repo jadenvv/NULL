@@ -1,10 +1,12 @@
 #include "wifi.h"
 #include "freertos/idf_additions.h"
+static char *TAG_WIFI = "WIFI";
+static esp_timer_handle_t timer_handle;
 static inline void scanning(void *args) {
   esp_wifi_scan_start((wifi_scan_config_t *)args, false);
 }
 static inline void timer_callback(void *args) {
-  ESP_LOGI(TAG, "killing scanning ");
+  ESP_LOGI(TAG_WIFI, "killing scanning ");
   vTaskDelete(args);
 }
 esp_err_t init_wifi() {
@@ -26,8 +28,9 @@ esp_err_t find_conn_AP() {
   esp_err_t err = ESP_OK;
   StackType_t stack[200];
   StaticTask_t task_buffer;
-  esp_wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
+  wifi_scan_config_t config = WIFI_SCAN_PARAMS_DEFAULT_CONFIG();
   TaskHandle_t handler_task =
       xTaskCreateStatic(scanning, "scanning", TASK_STACK_SIZE, (void *)&config,
                         2, stack, &task_buffer);
+  return ESP_OK;
 }
