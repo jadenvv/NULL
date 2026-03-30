@@ -7,9 +7,9 @@
 #include "hal/spi_types.h"
 #include "sdkconfig.h"
 
-struct {
-  spi_device_handle_t RFID_handle;
-  spi_device_handle_t LoRa_handle;
+typedef struct {
+  spi_device_handle_t *RFID_handle;
+  spi_device_handle_t *LoRa_handle;
 } spi_handles;
-void init_SPI_bus();
+spi_handles init_SPI_bus();
 #endif

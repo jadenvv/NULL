@@ -36,10 +36,10 @@ esp_err_t find_conn_AP() {
 
   };
   esp_timer_create(&timer_config, &timer_handle);
-  esp_timer_start_once(&timer_handle, 10000000);
+  esp_timer_start_once(timer_handle, 10000000);
   vTaskResume(handler_task);
 
-  return ESP_OK;
+  return err;
 }
 esp_err_t ap_connect() {
   uint16_t num_APs;
@@ -49,16 +49,21 @@ esp_err_t ap_connect() {
       heap_caps_malloc(sizeof(wifi_ap_record_t), MALLOC_CAP_INTERNAL);
   memcpy(records, 0, num_APs * sizeof(wifi_ap_record_t));
   for (; i < num_APs; i++) {
-    if (strcmp(records[i].ssid, CONFIG_SSID) == 0)
-      ;
-    break;
+    if (strcmp((char *)records[i].ssid, CONFIG_SSID) == 0)
+      break;
   }
-
   wifi_sta_config_t conf = {
-
+      .bssid_set = true,
+      .channel = records[i].primary,
+      .scan_method = WIFI_CONNECT_AP_BY_SIGNAL,
   };
-
-  esp_wifi_set_config(WIFI_IF_STA, conf);
+  strncpy((char *)conf.bssid, (char *)records[i].bssid, 6);
+  strncpy((char *)conf.ssid, (char *)records[i].ssid, 33);
+  strcpy((char *)conf.password, CONFIG_PASS);
+  esp_wifi_set_config(WIFI_IF_STA, (wifi_config_t *)&conf);
+  esp_wifi_connect();
+  // lwkirk we need to add event handling to see if i'm actually connected or no
+  // lmao
 
   return ESP_OK;
 }

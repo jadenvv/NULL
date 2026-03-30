@@ -1,6 +1,6 @@
 #ifndef WIFI_H
 #define WIFI_H
-#include "dtype.h"
+#include "dtypes.h"
 #include "esp_log.h"
 #include "esp_timer.h"
 #include "esp_wifi.h"
