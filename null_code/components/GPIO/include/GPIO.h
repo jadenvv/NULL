@@ -4,9 +4,9 @@
 #include "dtypes.h"
 #include "utility.h"
 
-#define BIT_MASK(x) (uint64_t)((1 << x));
-
 esp_err_t init_buttons();
 esp_err_t init_IR();
+esp_err_t init_IRQ_RFID();
+inline void soft_shudown_RFID();
 
 #endif

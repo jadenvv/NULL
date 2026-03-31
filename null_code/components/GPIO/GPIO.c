@@ -1,9 +1,21 @@
 #include "GPIO.h"
+#include ""
 static uint32_t GPIOS[] = {CONFIG_UP_BUTTON_GPIO, CONFIG_DOWN_BUTTON_GPIO,
                            CONFIG_SELECT_BUTTON_GPIO};
 void gpio_handler_function(void *gpio_number) {
   int gpio = *(int *)gpio_number;
   updating_internal(gpio);
+}
+void RFID_IRQ_handler(void *arg) {
+  uint8_t base = ADDR_RFID(1) | 0x0C; // the register for IRQ status
+  uint8_t buffer = 0;
+  spi_transaction_t trans = {
+      .length = 8,
+      .rx_length = 0,
+      .rx_buffer = &buffer,
+      .tx_buffer = &base, // move to DMA?
+  };
+  spi_device_queue_trans();
 }
 esp_err_t init_buttons() {
   gpio_config_t gpio_cfg = {
@@ -27,6 +39,27 @@ esp_err_t init_buttons() {
   }
   return ESP_OK;
 }
+esp_err_t init_RFID() {
+
+  gpio_pulldown_en(CONFIG_RFID_EN);
+  gpio_set_direction(CONFIG_RFID_EN, GPIO_MODE_OUTPUT);
+  gpio_set_level(CONFIG_RFID_EN, 1);
+  gpio_config_t cfg_IRQ = {
+      .pin_bit_mask = BIT_MASK(CONFIG_RFID_IRQ),
+      .mode = GPIO_MODE_INPUT,
+      .pull_up_en =
+          GPIO_PULLUP_ENABLE, // we need to pull up high since we don't have an
+                              // external pull up resistor to +3v
+      .pull_down_en = GPIO_PULLDOWN_DISABLE,
+      .intr_type = GPIO_INTR_NEG_EDGE};
+  gpio_isr_handler_add(CONFIG_RFID_IRQ, RFID_IRQ_handler, (void *)1);
+  return ESP_OK;
+}
+inline void soft_shutdown_RFID() {
+  gpio_set_level(CONFIG_RFID_EN, 0);
+  return;
+}
+
 esp_err_t init_IR() {
   gpio_config_t gpio_cfg_recv = {.pin_bit_mask = CONFIG_IR_RECV,
                                  .mode = GPIO_MODE_INPUT,

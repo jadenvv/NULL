@@ -15,14 +15,17 @@ spi_handles init_SPI_bus() {
       heap_caps_calloc(2, sizeof(spi_device_handle_t), MALLOC_CAP_DEFAULT);
   handles.RFID_handle = &handles_tmp[0];
   handles.LoRa_handle = &handles_tmp[1];
-  spi_device_interface_config_t config_RFID = {.command_bits = 0,
-                                               .address_bits =
-                                                   0, // pg 31 of trF datasheet
-                                               .dummy_bits = 0,
-                                               .mode = 1, // page 39 of ds
-                                               .
-
+  spi_device_interface_config_t config_RFID = {
+      .command_bits = 0,
+      .address_bits = 0, // pg 31 of trF datasheet
+      .dummy_bits = 0,
+      .mode = 1, // page 39 of ds
+      .clock_source = SPI_CLK_SRC_XTAL,
+      .spics_io_num = CONFIG_RFID_CS,
+      .queue_size = 5, // this is lwkirk abitrarily picked haha
+      //  Could add pre tranmission cb functiion for Dma or smth in the future
   };
+
   spi_bus_add_device(SPI1_HOST, &config_RFID, handles.RFID_handle);
 
   // initializing LORA
@@ -32,3 +35,5 @@ spi_handles init_SPI_bus() {
   spi_bus_add_device(SPI1_HOST, &config_LoRa, handles.LoRa_handle);
   return handles;
 }
+
+void init_RFID_loRa() { init_RFID(); }
