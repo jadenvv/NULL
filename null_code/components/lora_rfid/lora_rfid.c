@@ -2,7 +2,7 @@
 #include "esp_log.h"
 static const char *SPI_TAG = "SPI";
 spi_handles init_SPI_bus() {
-  spi_handles handles = {0};
+  lr_handles = {0};
   spi_bus_config_t bus_config = {.mosi_io_num = CONFIG_SPI_MOSI,
                                  .miso_io_num = CONFIG_SPI_MISO,
                                  .sclk_io_num = CONFIG_SPI_CLK,
@@ -13,8 +13,8 @@ spi_handles init_SPI_bus() {
   // initializing RFID
   spi_device_handle_t *handles_tmp =
       heap_caps_calloc(2, sizeof(spi_device_handle_t), MALLOC_CAP_DEFAULT);
-  handles.RFID_handle = &handles_tmp[0];
-  handles.LoRa_handle = &handles_tmp[1];
+  lr_handles.RFID_handle = &handles_tmp[0];
+  lr_handles.LoRa_handle = &handles_tmp[1];
   spi_device_interface_config_t config_RFID = {
       .command_bits = 0,
       .address_bits = 0, // pg 31 of trF datasheet
@@ -28,6 +28,12 @@ spi_handles init_SPI_bus() {
 
   spi_bus_add_device(SPI1_HOST, &config_RFID, handles.RFID_handle);
 
+  // start condition for IC
+  addr_read(0x0C);
+  addr_read(0x0D);
+  send_cmd(0x03);
+  send_cmd(0x00);
+
   // initializing LORA
   spi_device_interface_config_t config_LoRa = {
 
@@ -36,4 +42,20 @@ spi_handles init_SPI_bus() {
   return handles;
 }
 
-void init_RFID_loRa() { init_RFID(); }
+// NOTE: the settings seem really arbitrary but just look at the TRF docs on
+// page 23 &24
+uint8_t *recv_RFID() {
+  RFID_cond = RECV;
+  uint8_t settings = 0x28;
+  addr_write(0x01, &settings, 1);
+}
+void trans_RFID(uint8_t *send) {
+  RFID_cond = TRANS;
+  uint8_t settings = 0x3C;
+  addr_write(0x01, &settings, 1);
+}
+
+void init_RFID_loRa() {
+  init_SPI_bus();
+  init_RFID();
+}

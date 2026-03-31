@@ -8,10 +8,8 @@
 #include "hal/spi_types.h"
 #include "sdkconfig.h"
 
-typedef struct {
-  spi_device_handle_t *RFID_handle;
-  spi_device_handle_t *LoRa_handle;
-} spi_handles;
 spi_handles init_SPI_bus();
 void init_RFID_LoRa();
+uint8_t *recv_RFID();
+esp_err_t trans_RFID(uint8_t *send);
 #endif
