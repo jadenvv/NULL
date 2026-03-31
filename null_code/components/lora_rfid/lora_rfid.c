@@ -44,15 +44,22 @@ spi_handles init_SPI_bus() {
 
 // NOTE: the settings seem really arbitrary but just look at the TRF docs on
 // page 23 &24
-uint8_t *recv_RFID() {
+RFID_seq recv_RFID() {
   RFID_cond = RECV;
   uint8_t settings = 0x28;
   addr_write(0x01, &settings, 1);
+  send_cmd(0x17); // initiate recieving refer to docs at pg 51
+  return get_RFID();
 }
-void trans_RFID(uint8_t *send) {
+void trans_RFID(RFID_seq seq) {
   RFID_cond = TRANS;
   uint8_t settings = 0x3C;
   addr_write(0x01, &settings, 1);
+  send_cmd(0x0F); // clear FIFO
+  send_cmd(0x11); // initiate transmiting
+
+  heap_caps_free(seq->buffer);
+  seq->buffer = NULL;
 }
 
 void init_RFID_loRa() {
